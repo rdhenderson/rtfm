@@ -1,2 +1,4 @@
-# second-project
-Second group project
+# Simplify My Code
+
+
+# Create My Template
