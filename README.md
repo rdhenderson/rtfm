@@ -1,4 +1,5 @@
 # Simplify My Code
+<i>I can't RTFM</i>
 <p>This application will search for simplified documentation and examples based on a snippet of code that the user inputs. The search results will display multiple code examples and/or documentation related to the search term.</p>
 
 # Create My Template
