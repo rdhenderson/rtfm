@@ -17,13 +17,13 @@
   - git push origin feature-branch-name
 * Making pull request when feature is complete
   - Commit final feature to your branch (as above)
-  - Go to [Github repository] (https://github.com/rdhenderson/rtfm)
+  - Go to [Github repository](https://github.com/rdhenderson/rtfm)
   - You should see yellow box listing your recently pushed branches.  Click green button on right "Compare & pull request"
   - Leave a brief message about the changes in comment box on following page
   - Click on "reviewers" on right hand side to assign someone to review your pull request
   - Click green "Create pull request" button when you're finished
 * Reviewing a pull request
-  - Go to [Github repository] (https://github.com/rdhenderson/rtfm)
+  - Go to [Github repository](https://github.com/rdhenderson/rtfm)
   - Go to "pull requests" tab and select the pull request you want to merge
   - Review the changes and resolve conflicts [docs](https://help.github.com/articles/resolving-a-merge-conflict-on-github/)
   - Click green "merge pull request" button to merge the branch into the master branch
