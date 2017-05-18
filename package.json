@@ -1,0 +1,26 @@
+{
+  "name": "rtfm",
+  "version": "1.0.0",
+  "description": "Server for fuzzy searching and better code example discovery",
+  "main": "server.js",
+  "scripts": {
+    "test": "mocha",
+    "post-install": "node ./db/initDbScript.js <DATABASE NAME>"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/rdhenderson/rtfm.git"
+  },
+  "keywords": [
+    "documentation",
+    "man",
+    "fuzzy",
+    "search"
+  ],
+  "author": "team-effort",
+  "license": "MIT",
+  "dependencies": {
+    "scrape-mdn": "^1.0.2",
+    "sequelize": "^3.30.4"
+  }
+}
