@@ -28,7 +28,7 @@ var db = require("./models");
 
 
 // Routes =============================================================
-require("./controllers/burgers_controller.js")(app);
+require("./controllers/routes.js")(app);
 
 // Syncing our sequelize models and then starting our express app
 db.sequelize.sync({ force: true }).then(function() {

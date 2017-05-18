@@ -5,7 +5,7 @@
   "main": "server.js",
   "scripts": {
     "test": "mocha",
-    "post-install" : "node ./db/initDbScript.js <DATABASE NAME>"
+    "post-install": "node ./db/initDbScript.js <DATABASE NAME>"
   },
   "repository": {
     "type": "git",
@@ -20,6 +20,7 @@
   "author": "team-effort",
   "license": "MIT",
   "dependencies": {
-    "scrape-mdn": "^1.0.2"
+    "scrape-mdn": "^1.0.2",
+    "sequelize": "^3.30.4"
   }
 }
