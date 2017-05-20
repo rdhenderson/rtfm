@@ -20,6 +20,9 @@
   "author": "team-effort",
   "license": "MIT",
   "dependencies": {
+    "body-parser": "^1.17.2",
+    "express": "^4.15.3",
+    "mysql": "^2.13.0",
     "scrape-mdn": "^1.0.2",
     "sequelize": "^3.30.4"
   }
