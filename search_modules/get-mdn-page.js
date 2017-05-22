@@ -3,8 +3,7 @@
 const request = require('request');
 
 module.exports = (url, callback) => {
-    console.log('url is ', url);
-  request(url + '%24json',  (err, res, body) => {
+  request(url,  (err, res, body) => {
     if (err) throw err;
     console.log(JSON.parse(body));
     return (callback) ? callback(JSON.parse(body)) : JSON.parse(body);

@@ -10,9 +10,14 @@ module.exports = function(app) {
     res.sendFile(path.join(__dirname, "../public/test.html"));
   });
 
-  app.get('/api/search/:query', function (req, res) {
-    searchMDN(req.params.query, (results) => getMDN(results[0].url, (results) => res.json(results)));
-      // db.Burger.findAll().then((results) => res.json(results))
+  app.get('/api/mdn/search/:query', function (req, res) {
+    searchMDN(req.params.query, (results) =>
+      getMDN(results[0].url + '%24json', (results) =>
+        res.json(results)));
+  });
+
+  app.get('/api/stack/search/:query'), (req, res) => {
+    searchStack(req.params.query, (results) => console.log(results));
   });
 
   app.post('/api/burger', function(req, res) {
