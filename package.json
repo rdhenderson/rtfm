@@ -20,6 +20,10 @@
   "author": "team-effort",
   "license": "MIT",
   "dependencies": {
+    "cheerio": "^0.22.0",
+    "node-fetch": "^1.6.3",
+    "osmosis": "^1.1.4",
+    "request": "^2.81.0",
     "scrape-mdn": "^1.0.2",
     "sequelize": "^3.30.4"
   }
