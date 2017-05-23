@@ -2,9 +2,11 @@ var http = require("http"),
     zlib = require("zlib");
 
 module.exports = (query, callback) => {
-  let url = 'http://api.stackexchange.com/2.2/search?order=desc&site=stackoverflow&sort=relevance&tagged=javascript';
+  //Create stackoverflow API search string
+  let url = 'http://api.stackexchange.com/2.2/search?';
+  url += 'order=desc&site=stackoverflow&sort=relevance&tagged=javascript';
   url += '&intitle=' + encodeURIComponent(query);
-  console.log('url', url);
+
     // buffer to store the streamed decompression
     var buffer = [];
     http.get(url, function(res) {
