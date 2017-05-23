@@ -1,0 +1,70 @@
+body {
+  background-color: #353434;
+  color: #eee;
+}
+
+.right {
+  text-align: right;
+  position: absolute;
+  right: 5%;
+}
+
+.left {
+  text-align: left;
+}
+
+.center {
+  text-align: center;
+}
+
+/*Header Styling*/
+.logo {
+  font-family: 'Roboto Mono', monospace;
+  font-size: 28px;
+}
+
+#tagline {
+  font-family: 'Tinos', serif;
+}
+
+.borderbtm{
+  border-bottom: 2px solid #eee;
+}
+/*Search Styling*/
+
+.smallimg {
+    padding: 20px;
+    width: 210px;
+    height: 210px;
+}
+
+.centerimg {
+  text-align: right;
+  position: absolute;
+  right: 35%;
+  width: 210px;
+  height: 210px;
+  margin-top: 80px;
+}
+
+/*Search Results Div Styling*/
+#searchresult {
+  background-color: #abacac;
+  height: 400px;
+  width: 100%;
+}
+
+.verticalhr {
+  border-right: 2px solid #ffffff;
+  height: 300px;
+  margin-top: 40px;
+}
+/*Footer Styling*/
+.social {
+  width: 40px;
+  height: 40px;
+}
+
+.padding {
+  padding-top: 30px;
+}
