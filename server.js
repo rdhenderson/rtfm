@@ -24,18 +24,25 @@ app.use(express.static("./public"));
 
 
 // Requiring our models for syncing
-var db = require("./models");
+// var db = require("./models");
 
 
 // Routes =============================================================
 require("./controllers/routes.js")(app);
 
 // Syncing our sequelize models and then starting our express app
-db.sequelize.sync({ force: true }).then(function() {
-  app.listen(PORT, function() {
-    //Uncomment this line to seed database first time
-    require("./db/seeds.js")(db);
+// db.sequelize.sync({ force: true }).then(function() {
+//   app.listen(PORT, function() {
+//     //Uncomment this line to seed database first time
+//     require("./db/seeds.js")(db);
+//
+//     console.log("App listening on PORT " + PORT);
+//   });
+// });
 
-    console.log("App listening on PORT " + PORT);
-  });
+app.listen(PORT, function() {
+  //Uncomment this line to seed database first time
+  // require("./db/seeds.js")(db);
+
+  console.log("App listening on PORT " + PORT);
 });

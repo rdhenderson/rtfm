@@ -20,6 +20,9 @@
   "author": "team-effort",
   "license": "MIT",
   "dependencies": {
+    "body-parser": "^1.17.2",
+    "express": "^4.15.3",
+    "mysql": "^2.13.0",
     "cheerio": "^0.22.0",
     "node-fetch": "^1.6.3",
     "osmosis": "^1.1.4",
