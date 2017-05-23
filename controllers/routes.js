@@ -1,9 +1,9 @@
 //Require sequelize models
 var path = require('path');
 let db = require("../models");
-let path = require('path');
 let searchMDN = require('../search_modules/search-mdn.js');
-let getMDN = require('../search_modules/get-mdn-page.js')
+const searchStack = require('../search_modules/search-stack.js');
+let getMDN = require('../search_modules/get-mdn-page.js');
 
 module.exports = function(app) {
 
@@ -28,8 +28,11 @@ module.exports = function(app) {
         res.json(results)));
   });
 
-  app.get('/api/stack/search/:query'), (req, res) => {
-    //
-
+  app.get('/api/stack/search/:query', (req, res) => {
+    searchStack(req.params.query, (err, results) => {
+      if (err) throw err;
+      // console.log(results);
+      res.json(results);
+    });
   });
 };
