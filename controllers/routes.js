@@ -27,10 +27,10 @@ module.exports = function(app) {
     searchExpress( req.params.query, ( err, results ) => {
       if (err) return console.log(err)
       res.send( results[0].section );
-    }
-  )
+    })
   });
 
+  //Returns array of objects with name and html keys
   app.get( '/api/express/methods/', function ( req, res ) {
     searchExpress( null,  ( err, results ) => {
       if ( err ) {
@@ -43,6 +43,7 @@ module.exports = function(app) {
     });
   });
 
+  //Queries MDN and requests a JSON response
   app.get('/api/mdn/search/:query', function (req, res) {
     searchMDN(req.params.query, (results) =>
       getMDN(results[0].url + '%24json', (results) =>
@@ -56,4 +57,5 @@ module.exports = function(app) {
       res.json(results);
     });
   });
+  
 };
