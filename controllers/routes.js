@@ -5,6 +5,7 @@ let searchMDN = require('../search_modules/search-mdn.js');
 const searchStack = require('../search_modules/search-stack.js');
 let getMDN = require('../search_modules/get-mdn-page.js');
 let searchExpress = require('../search_modules/search-express.js');
+const searchFuzzy = require('../search_modules/search-fuzzy.js');
 
 module.exports = function(app) {
 
@@ -57,5 +58,15 @@ module.exports = function(app) {
       res.json(results);
     });
   });
-  
+
+  app.get('/api/express/fuzzy/:query', (req, res) => {
+    //get method list
+    searchExpress(null, (err, results) => {
+      if (err) throw err;
+      let matches = searchFuzzy(results, req.params.query);
+      console.log(matches.reduce( (string, elem) => string += elem.item.name + '\n', ''));
+      res.json(matches);
+    });
+  });
+
 };
