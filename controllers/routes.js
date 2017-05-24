@@ -10,19 +10,19 @@ const searchFuzzy = require('../search_modules/search-fuzzy.js');
 module.exports = function(app) {
 
   app.get("/", function(req, res) {
-
     res.sendFile(path.join(__dirname, "../public/index.html"));
   });
 
-  app.get( '/api/express/search/:query', function ( req, res ) {
+  app.get( '/api/express/search/:query', ( req, res ) => {
     searchExpress( req.params.query, ( err, results ) => {
+      console.log('results', results);
       if (err) return console.log(err)
-      res.send( results[0].section );
+      res.send( results[0].html );
     })
   });
 
   //Returns array of objects with name and html keys
-  app.get( '/api/express/methods/', function ( req, res ) {
+  app.get( '/api/express/methods/', ( req, res ) => {
     searchExpress( null,  ( err, results ) => {
       if ( err ) {
         console.log( err )
@@ -35,7 +35,7 @@ module.exports = function(app) {
   });
 
   //Queries MDN and requests a JSON response
-  app.get('/api/mdn/search/:query', function (req, res) {
+  app.get('/api/mdn/search/:query', (req, res) => {
     searchMDN(req.params.query, (results) =>
       getMDN(results[0].url + '%24json', (results) =>
         res.json(results)));
