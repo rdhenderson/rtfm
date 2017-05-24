@@ -3,12 +3,17 @@
   <head>
     <meta charset="utf-8">
     <title>Simplify My Code</title>
-    <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css"
-     integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ"
-     crossorigin="anonymous">
+    integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js"
+    integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"
+    integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"
+    integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+     <!-- <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script> -->
     <link href="https://fonts.googleapis.com/css?family=Roboto+Mono|Tinos:400i" rel="stylesheet">
-    <link rel="stylesheet" href="stylertfm.css" type="text/css">
+    <link rel="stylesheet" href="../public/assets/css/style.css" type="text/css">
   </head>
   <body>
     <div class="container">
@@ -31,7 +36,7 @@
      <!--Search Container-->
      <div class="row">
        <div class="col-md-4">
-         <img class="smallimg" src="08.jpg" alt="Coding Image">
+         <img class="smallimg" src="../public/assets/images/08.jpg" alt="Coding Image">
        </div>
        <div class="col-md-6">
          <div class="center padding">
@@ -42,8 +47,8 @@
                Action <span class="caret"></span>
              </button>
              <ul class="dropdown-menu" aria-labelledby="dropdownmenu1">
-               <li><a href="#">Action</a></li>
-               <li><a href="#">Another action</a></li>
+               <li><a href="#">Express</a></li>
+               <li><a href="#">JavaScript</a></li>
                <li><a href="#">Something else here</a></li>
                <li role="separator" class="divider"></li>
                <li><a href="#">Separated link</a></li>
@@ -51,9 +56,9 @@
            </div>
            <!--Search Box-->
            <div class="input-group padding">
-             <input type="text" class="form-control" placeholder="Enter code here...">
+             <input type="text" id="entersearch" class="form-control" placeholder="Enter code here...">
               <span class="input-group-btn">
-                <button class="btn btn-default" type="button">Go!</button>
+                <button class="btn btn-default" id="searchbox" type="button">Go!</button>
               </span>
           </div>
         </div>
@@ -63,23 +68,25 @@
     <div class="row padding">
       <div class="col-lg-12">
         <div id="searchresult">
+          <!--Stack Overflow Icon-->
           <div class="row">
             <div class="col-md-6">
-              <img src="stack-overflow.png" alt="Stack Overflow Image"
-              class="centerimg">
+              <img src="../public/assets/images/stack-overflow.png" alt="Stack Overflow Image"
+              class="centerimg" id="stack-div-show">
               <div class="verticalhr">
                 &nbsp;
               </div>
-              <!--Empty Search Results Div-->
-              <!-- <div class="col-md-6">
-              </div> -->
+              <!--Empty Stack Overflow Search Results Div-->
+              <div class="col-md-6 hidden" id="stack-div">
+              </div>
             </div>
-            <div class="col-md-6">
-              <img src="documentation.png" alt="Documentation Image"
-              class="centerimg">
-              <!--Empty Search Results Div-->
-              <!-- <div class="col-md-6">
-              </div> -->
+            <!--Documentation Icon-->
+            <div class="col-md-6" id="documentation-div">
+              <img src="../public/assets/images/documentation.png" alt="Documentation Image"
+              class="centerimg" id="documentation-show">
+              <!--Empty Documentation Search Results Div-->
+              <div class="col-md-6 hidden">
+              </div>
             </div>
           </div>
         </div>
@@ -91,9 +98,9 @@
          <div id="footer" class="center padding">
            <div class="container">
              <div class="right">
-               <img class="center social" src="facebook.png" alt="FaceBook Log">
-               <img class="center social" src="instagram.png" alt="Instagram Logo">
-               <img class="center social" src="twitter.png" alt="Twitter Logo">
+               <img class="center social" src="../public/assets/images/facebook.png" alt="FaceBook Log">
+               <img class="center social" src="../public/assets/images/instagram.png" alt="Instagram Logo">
+               <img class="center social" src="../public/assets/images/twitter.png" alt="Twitter Logo">
              </div>
              <div class="padding">
                <p>© 2017 Simplify My Code</p>
@@ -108,5 +115,18 @@
             $('.dropdown-toggle').dropdown();
         });
    </script> -->
+   <!--Showing and hiding the Search Results div elements-->
+   <script>
+       $(document).ready(function(){
+       $("#searchbox").click((function(){
+       $("#stack-div").show();
+       $("#documentation-div").show();
+       $("#stack-div").removeClass("hidden");
+       $("#documentation-div").removeClass("hidden");
+       $("#stack-div-show").addClass("hidden");
+       $("#documentation-show").addClass("hidden");
+     }))
+    });
+   </script>
   </body>
 </html>
