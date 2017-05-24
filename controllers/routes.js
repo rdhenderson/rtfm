@@ -10,18 +10,8 @@ const searchFuzzy = require('../search_modules/search-fuzzy.js');
 module.exports = function(app) {
 
   app.get("/", function(req, res) {
-    // var queryURL = "https://api.stackexchange.com/2.2/search?" +  "order=desc&sort=activity&site=stackoverflow";
-    //
-    // $.ajax({
-    //   url: queryURL,
-    //   method: "GET"
-    // }).done(function(res){
-    //
-    //   console.log(res);
-    // })
-    res.end("It worked!");
 
-    // res.sendFile(path.join(__dirname, "../public/test.html"));
+    res.sendFile(path.join(__dirname, "../public/index.html"));
   });
 
   app.get( '/api/express/search/:query', function ( req, res ) {
