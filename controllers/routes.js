@@ -6,6 +6,7 @@ const searchStack = require('../search_modules/search-stack.js');
 let getMDN = require('../search_modules/get-mdn-page.js');
 let searchExpress = require('../search_modules/search-express.js');
 const searchFuzzy = require('../search_modules/search-fuzzy.js');
+const fs = require('fs');
 
 module.exports = function(app) {
 
@@ -18,11 +19,17 @@ module.exports = function(app) {
   });
 
   app.get( '/api/express/search/:query', ( req, res ) => {
-    console.log('responding to request in express ', req.params.query);
     searchExpress( req.params.query, ( err, results ) => {
       // console.log('results', results);
       if (err) return console.log(err)
-      return res.json( results[0] );
+
+      // TEMPORARY TO WRITE HTML RESULTS FOR TESTING PURPOSES
+      fs.writeFile("./express-response.html", results[0].html,  (err) => {
+        if(err) return console.log(err);
+
+        console.log("The file was saved!");
+        return res.json( results[0] );
+      });
     })
   });
 

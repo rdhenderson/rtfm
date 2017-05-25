@@ -1,0 +1,41 @@
+
+<h3 id="express.router" class="h2">express.Router([options])</h3>
+<p>Creates a new <a href="#router">router</a> object.</p>
+<pre><code class="language-js">var router = express.Router([options]);
+</code></pre>
+<p>The optional <code>options</code> parameter specifies the behavior of the router.</p>
+<div class="table-scroller">
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Description</th>
+<th>Default</th>
+<th>Availability</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>caseSensitive</code></td>
+<td>Enable case sensitivity.</td>
+<td>Disabled by default, treating &#x201C;/Foo&#x201D; and &#x201C;/foo&#x201D; as the same.</td>
+<td>&#xA0;</td>
+</tr>
+<tr>
+<td><code>mergeParams</code></td>
+<td>Preserve the <code>req.params</code> values from the parent router. If the parent and the child have conflicting param names, the child&#x2019;s value take precedence.</td>
+<td><code>false</code></td>
+<td>4.5.0+</td>
+</tr>
+<tr>
+<td><code>strict</code></td>
+<td>Enable strict routing.</td>
+<td>Disabled by default, &#x201C;/foo&#x201D; and &#x201C;/foo/&#x201D; are treated the same by the router.</td>
+<td>&#xA0;</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>You can add middleware and HTTP method routes (such as <code>get</code>, <code>put</code>, <code>post</code>, and
+so on) to <code>router</code> just like an application.</p>
+<p>For more information, see <a href="#router">Router</a>.</p>
