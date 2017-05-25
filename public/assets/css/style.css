@@ -38,6 +38,24 @@ body {
     height: 210px;
 }
 
+.leftDiv {
+  float: left;
+  width: 40%;
+  height: 100px;
+  overflow-y: scroll;
+  background-color: #FC6E51;
+  text-align: left;
+}
+
+.rightDiv {
+  float: left;
+  overflow-y: scroll;
+  height: 100px;
+  width: 60%;
+  background-color: #4FC1E9;
+  text-align: center;
+}
+
 .centerimg {
   text-align: right;
   position: absolute;
