@@ -80,6 +80,21 @@ body {
 #documentation-div {
   overflow: auto;
 }
+
+/*Documentation Template Styling*/
+.template {
+  background-color: #ffffff;
+  width:100%;
+  color: #353434;
+}
+
+th {
+  background-color: #353434;
+  color: #eee;
+  margin-right: 25px;
+  width: 50%;
+  padding: 10px;
+}
 /*Footer Styling*/
 .social {
   width: 40px;
