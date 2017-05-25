@@ -56,7 +56,7 @@
            </div>
            <!--Search Box-->
            <div class="input-group padding">
-             <input type="text" id="entersearch" class="form-control" placeholder="Enter code here...">
+             <input type="text" id="enterSearch" class="form-control" placeholder="Enter code here...">
               <span class="input-group-btn">
                 <button class="btn btn-default" id="searchbox" type="button">Go!</button>
               </span>
@@ -70,7 +70,7 @@
         <div id="searchresult">
           <!--Stack Overflow Icon-->
           <div class="row">
-            <div class="col-md-6">
+            <div class="col-md-6" id=searcInfo>
               <img src="./assets/images/stack-overflow.png" alt="Stack Overflow Image"
               class="centerimg" id="stack-div-show">
               <div class="verticalhr">
@@ -127,6 +127,15 @@
        $("#documentation-show").addClass("hidden");
      }))
     });
+$('#searchbox').click(
+  console.log("clicked");
+  // $.ajax({
+  //   url: "/api/stack/search/" + $("#enterSearch").val(),
+  //   success: function(result){
+  //     $("#searchInfo").html(result)
+  // }});
+)
+
    </script>
   </body>
 </html>
