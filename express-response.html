@@ -1,45 +1,41 @@
 
-<h3 id="res.format">res.format(object)</h3>
-<p>Performs content-negotiation on the <code>Accept</code> HTTP header on the request object, when present.
-It uses <a href="#req.accepts">req.accepts()</a> to select a handler for the request, based on the acceptable
-types ordered by their quality values. If the header is not specified, the first callback is invoked.
-When no match is found, the server responds with 406 &#x201C;Not Acceptable&#x201D;, or invokes the <code>default</code> callback.</p>
-<p>The <code>Content-Type</code> response header is set when a callback is selected. However, you may alter
-this within the callback using methods such as <code>res.set()</code> or <code>res.type()</code>.</p>
-<p>The following example would respond with <code>{ &quot;message&quot;: &quot;hey&quot; }</code> when the <code>Accept</code> header field is set
-to &#x201C;application/json&#x201D; or &#x201C;*/json&#x201D; (however if it is &#x201C;*/*&#x201D;, then the response will be &#x201C;hey&#x201D;).</p>
-<pre><code class="language-js">res.format({
-  &apos;text/plain&apos;: function(){
-    res.send(&apos;hey&apos;);
-  },
-
-  &apos;text/html&apos;: function(){
-    res.send(&apos;&lt;p&gt;hey&lt;/p&gt;&apos;);
-  },
-
-  &apos;application/json&apos;: function(){
-    res.send({ message: &apos;hey&apos; });
-  },
-
-  &apos;default&apos;: function() {
-    // log the request and respond with 406
-    res.status(406).send(&apos;Not Acceptable&apos;);
-  }
-});
+<h3 id="express.router" class="h2">express.Router([options])</h3>
+<p>Creates a new <a href="#router">router</a> object.</p>
+<pre><code class="language-js">var router = express.Router([options]);
 </code></pre>
-<p>In addition to canonicalized MIME types, you may also use extension names mapped
-to these types for a slightly less verbose implementation:</p>
-<pre><code class="language-js">res.format({
-  text: function(){
-    res.send(&apos;hey&apos;);
-  },
-
-  html: function(){
-    res.send(&apos;&lt;p&gt;hey&lt;/p&gt;&apos;);
-  },
-
-  json: function(){
-    res.send({ message: &apos;hey&apos; });
-  }
-});
-</code></pre>
+<p>The optional <code>options</code> parameter specifies the behavior of the router.</p>
+<div class="table-scroller">
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Description</th>
+<th>Default</th>
+<th>Availability</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>caseSensitive</code></td>
+<td>Enable case sensitivity.</td>
+<td>Disabled by default, treating &#x201C;/Foo&#x201D; and &#x201C;/foo&#x201D; as the same.</td>
+<td>&#xA0;</td>
+</tr>
+<tr>
+<td><code>mergeParams</code></td>
+<td>Preserve the <code>req.params</code> values from the parent router. If the parent and the child have conflicting param names, the child&#x2019;s value take precedence.</td>
+<td><code>false</code></td>
+<td>4.5.0+</td>
+</tr>
+<tr>
+<td><code>strict</code></td>
+<td>Enable strict routing.</td>
+<td>Disabled by default, &#x201C;/foo&#x201D; and &#x201C;/foo/&#x201D; are treated the same by the router.</td>
+<td>&#xA0;</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>You can add middleware and HTTP method routes (such as <code>get</code>, <code>put</code>, <code>post</code>, and
+so on) to <code>router</code> just like an application.</p>
+<p>For more information, see <a href="#router">Router</a>.</p>
