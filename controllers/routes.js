@@ -13,24 +13,40 @@ module.exports = function(app) {
     res.sendFile(path.join(__dirname, "../public/index.html"));
   });
 
+  app.get("/test-search.html", function(req, res) {
+    res.sendFile(path.join(__dirname, "../public/test-search.html"));
+  });
+
   app.get( '/api/express/search/:query', ( req, res ) => {
+    console.log('responding to request in express ', req.params.query);
     searchExpress( req.params.query, ( err, results ) => {
-      console.log('results', results);
+      // console.log('results', results);
       if (err) return console.log(err)
-      res.send( results[0].html );
+      return res.json( results[0] );
     })
   });
 
+  app.get( '/test-search.html', ( req, res ) => {
+    res.sendFile(path.join(__dirname, "../public/test-search.html"));
+  });
+
   //Returns array of objects with name and html keys
-  app.get( '/api/express/methods/', ( req, res ) => {
+  app.get( '/api/express/methods/:format?', ( req, res ) => {
     searchExpress( null,  ( err, results ) => {
       if ( err ) {
         console.log( err )
         throw err;
       }
-      console.log( 'results', results );
-      const methods = results.reduce( (string, elem) => string += '<li>' + elem.name + '</li>', '<ul>') + '</ul>';
-      res.send(methods);
+      // console.log( 'results', results );
+      // const methods = results.reduce( (string, elem) => string += '<li>' + elem.name + '</li>', '<ul>') + '</ul>';
+      // let format = req.params.format;
+      // if (format && format === 'html') {
+      //   // const methods = results.reduce( (string, elem) => string += '<li>' + elem.name + '</li>', '<ul>') + '</ul>';
+      // } else if (format && format === 'array') {
+      //
+      // }
+      //const methods = results.map( (item) => item.name );
+      res.send(results);
     });
   });
 
