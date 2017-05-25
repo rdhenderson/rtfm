@@ -6,7 +6,7 @@ const cheerio = require('cheerio');
 
 // Private function that escapes CSS characters and adds leading # to identify ID
 function escapeID( myid ) {
-  return "#" + myid.replace( /(:|\.|\[|\]|,|=|@)/g, "\\$1" );
+  return "#" + myid.toLowerCase().replace( /(:|\.|\[|\]|,|=|@)/g, "\\$1" );
 }
 
 module.exports = function(id, callback) {

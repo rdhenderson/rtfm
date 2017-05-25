@@ -38,6 +38,21 @@ body {
     height: 210px;
 }
 
+.leftDiv {
+  float: left;
+  width: 50%;
+  overflow-y: scroll;
+  background-color: #FC6E51;
+  text-align: center;
+}
+
+.rightDiv {
+  float: left;
+  overflow-y: scroll;
+  width: 50%;
+  background-color: #4FC1E9;
+  text-align: center;
+}
 .centerimg {
   text-align: right;
   position: absolute;
@@ -88,4 +103,8 @@ body {
 
 .padding {
   padding-top: 30px;
+}
+
+.ui-draggable, .ui-droppable {
+	background-position: top;
 }
