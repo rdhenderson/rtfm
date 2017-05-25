@@ -16,8 +16,8 @@ $(document).ready( () => {
     });
 
     // Print list of methods
-    const methodListItems = methods.reduce( (string, elem) => string += '<li>' + elem.name + '</li>', '<ul>') + '</ul>';
-    $('#stack-div').append(methodListItems);
+    // const methodListItems = methods.reduce( (string, elem) => string += '<li>' + elem.name + '</li>', '<ul>') + '</ul>';
+    // $('#stack-div').append(methodListItems);
   });
 });
 
@@ -30,11 +30,20 @@ function getMethods(callback) {
 function searchHandler() {
     hideImages();
     //Strip the arguments portion of name before query
-    let query = encodeURIComponent($('#search-input').val().split('(')[0].trim());
+    let query = encodeURIComponent($('#search-input').val().trim());
+    let expressQuery = query.split('(')[0];
+
     //Template literal expansion using backticks instead of quote/apostrophe
-    $.get(`/api/express/search/${query}`, (resp) => {
+    $.get(`/api/express/search/${expressQuery}`, (resp) => {
       console.log('html', resp.html);
       $('#documentation-div').empty().html(resp.html);
+    });
+
+    $.get(`api/stack/search/${query}`, (resp) => {
+      // console.log('stack: ', resp.items);
+      let stackAnswers = resp.items.reduce( (string, elem) => string += '<li><a href=' + elem.link +'> ' + elem.title + '</a></li><p>' + elem.score, '<ul>');
+      stackAnswers += '</ul>';
+      $('#stack-div').empty().html(stackAnswers);
     });
 }
 
