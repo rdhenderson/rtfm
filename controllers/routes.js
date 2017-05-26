@@ -66,12 +66,18 @@ module.exports = function(app) {
   });
 
   app.get('/api/stack/search/:query', (req, res) => {
-    console.log('In router');
     searchStack(req.params.query, (err, results) => {
       if (err) throw err;
       // console.log(results);
       res.json(results);
     });
+  });
+
+  app.get('/api/stack/question/:id', (req, res) => {
+    searchStack(null, (err, results) => {
+      if (err) throw err;
+      res.json(results);
+    }, req.params.id);
   });
 
   app.get('/api/express/fuzzy/:query', (req, res) => {

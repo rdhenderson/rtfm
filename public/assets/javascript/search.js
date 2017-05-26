@@ -1,5 +1,14 @@
 $(document).ready( () => {
   $('.dropdown-toggle').dropdown();
+  $('#stack-div').on('click', '.stack-question', function () {
+    let id = $(this).data('id');
+    console.log('id', id);
+    $.get('/api/stack/question/'+id, (resp) => {
+        $("#"+id).append(resp.items[0].body);
+
+        console.log(resp);
+    });
+  });
   $('#search-submit').on('click', searchHandler);
 
   // Init Methods and then populate fuzzy search handler
@@ -12,6 +21,7 @@ $(document).ready( () => {
     });
 
     $('#search-input').fuzzyComplete(methodArray);
+
     $('input').on('keyup blur', () => {
       $(this).parent().find(".output").html($(this).parent().find("select").val());
     });
@@ -41,12 +51,21 @@ function searchHandler() {
     });
 
     $.get(`/api/stack/search/${query}`, (resp) => {
-        // console.log('stack: ', resp.items);
-        let stackAnswers = resp.items.reduce( (string, elem) => string += '<li><a href=' + elem.link +'> ' + elem.title + '</a></li><p>' + elem.score, '<ul>');
-        stackAnswers += '</ul>';
-        $('#stack-div').empty().html(stackAnswers);
+        console.log('stack: ', resp.items);
+        let stackQuestions = resp.items.reduce( (string, elem) => {
+          let listItem = $('<li>');
+          listItem
+            .addClass('stack-question')
+            .html(elem.body || elem.title)
+            .attr('id', elem.question_id)
+            .data('id', elem.question_id);
+          return string.append(listItem);
+        }, $('<ul>'));
+        // console.log(stackQuestions.children().eq(1).data('id'));
+        $('#stack-div').empty().append(stackQuestions);
     });
 }
+
 
 //Look into a simpler .toggle
 function hideImages() {
