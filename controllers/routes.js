@@ -19,18 +19,19 @@ module.exports = function(app) {
   });
 
   app.get( '/api/express/search/:query', ( req, res ) => {
+
     searchExpress( req.params.query, ( err, results ) => {
       // console.log('results', results);
       if (err) return console.log(err)
+      return res.json( results[0] );
 
-      // TEMPORARY TO WRITE HTML RESULTS FOR TESTING PURPOSES
-      fs.writeFile("./express-response.html", results[0].html,  (err) => {
-        if(err) return console.log(err);
-
-        console.log("The file was saved!");
-        return res.json( results[0] );
-      });
-    })
+      // // TEMPORARY TO WRITE HTML RESULTS FOR TESTING PURPOSES
+      // fs.writeFile("./express-response.html", results[0].html,  (err) => {
+      //   if(err) return console.log(err);
+      //
+      //   console.log("The file was saved!");
+      // });
+    });
   });
 
   app.get( '/test-search.html', ( req, res ) => {
@@ -65,6 +66,7 @@ module.exports = function(app) {
   });
 
   app.get('/api/stack/search/:query', (req, res) => {
+    console.log('In router');
     searchStack(req.params.query, (err, results) => {
       if (err) throw err;
       // console.log(results);

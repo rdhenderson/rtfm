@@ -43,14 +43,12 @@ body {
   height: 400px;
   overflow-y: scroll;
   background-color: #FC6E51;
-  text-align: left;
 }
 
 .rightDiv {
   overflow-y: scroll;
   height: 400px;
   background-color: #4FC1E9;
-  text-align: center;
 }
 
 .centerimg {
@@ -67,6 +65,7 @@ body {
 #searchresult {
   background-color: #abacac;
   width: 100%;
+  text-align: center;
 }
 
 .verticalhr {
@@ -103,4 +102,8 @@ body {
 
 .padding {
   padding-top: 30px;
+}
+
+.ui-draggable, .ui-droppable {
+	background-position: top;
 }

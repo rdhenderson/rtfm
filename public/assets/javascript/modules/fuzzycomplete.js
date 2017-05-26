@@ -11,7 +11,6 @@
   }
 
   $.fn.fuzzyComplete = function(jsonData, options) {
-
     return this.each(function() {
 
       // Default options: search all keys, display and output the first one
