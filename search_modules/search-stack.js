@@ -1,16 +1,7 @@
 var http = require("http"),
     zlib = require("zlib");
 
-module.exports = (query, callback, id) => {
-  //Create stackoverflow API search string
-  let url = 'http://api.stackexchange.com/2.2/search?';
-
-  url += 'order=desc&site=stackoverflow&sort=relevance&tagged=javascript&filter=withbody';
-  url += '&intitle=' + encodeURIComponent(query);
-
-  if ( id ) {
-    url = 'http://api.stackexchange.com/2.2/questions/' + id + '/answers/?pagesize=1&order=desc&sort=votes&site=stackoverflow&filter=withbody'
-  }
+function queryStack (url, callback) {
     // buffer to store the streamed decompression
     var buffer = [];
     http.get(url, function(res) {
@@ -33,4 +24,18 @@ module.exports = (query, callback, id) => {
     }).on('error', function(e) {
         callback(e)
     });
+}
+
+ module.exports = {
+  search : (query, callback) => {
+    //Create stackoverflow API search string
+    let url = 'http://api.stackexchange.com/2.2/search?';
+    url += 'order=desc&site=stackoverflow&sort=relevance&tagged=javascript&filter=withbody';
+    url += '&intitle=' + encodeURIComponent(query);
+    return queryStack(url, callback);
+  },
+  getAnswers : ( id, callback ) => {
+    const url = 'http://api.stackexchange.com/2.2/questions/' + id + '/answers/?pagesize=1&order=desc&sort=votes&site=stackoverflow&filter=withbody'
+    return queryStack(url, callback);
+  }
 }

@@ -2,7 +2,7 @@
 var path = require('path');
 let db = require("../models");
 let searchMDN = require('../search_modules/search-mdn.js');
-const searchStack = require('../search_modules/search-stack.js');
+const stack = require('../search_modules/search-stack.js');
 let getMDN = require('../search_modules/get-mdn-page.js');
 let searchExpress = require('../search_modules/search-express.js');
 const searchFuzzy = require('../search_modules/search-fuzzy.js');
@@ -39,21 +39,9 @@ module.exports = function(app) {
   });
 
   //Returns array of objects with name and html keys
-  app.get( '/api/express/methods/:format?', ( req, res ) => {
+  app.get( '/api/express/methods/', ( req, res ) => {
     searchExpress( null,  ( err, results ) => {
-      if ( err ) {
-        console.log( err )
-        throw err;
-      }
-      // console.log( 'results', results );
-      // const methods = results.reduce( (string, elem) => string += '<li>' + elem.name + '</li>', '<ul>') + '</ul>';
-      // let format = req.params.format;
-      // if (format && format === 'html') {
-      //   // const methods = results.reduce( (string, elem) => string += '<li>' + elem.name + '</li>', '<ul>') + '</ul>';
-      // } else if (format && format === 'array') {
-      //
-      // }
-      //const methods = results.map( (item) => item.name );
+      if ( err ) throw err;
       res.send(results);
     });
   });
@@ -66,18 +54,17 @@ module.exports = function(app) {
   });
 
   app.get('/api/stack/search/:query', (req, res) => {
-    searchStack(req.params.query, (err, results) => {
+    stack.search(req.params.query, (err, results) => {
       if (err) throw err;
-      // console.log(results);
       res.json(results);
     });
   });
 
   app.get('/api/stack/question/:id', (req, res) => {
-    searchStack(null, (err, results) => {
+    stack.getAnswers(req.params.id, (err, results) => {
       if (err) throw err;
       res.json(results);
-    }, req.params.id);
+    });
   });
 
   app.get('/api/express/fuzzy/:query', (req, res) => {
