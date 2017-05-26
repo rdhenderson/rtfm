@@ -4,7 +4,7 @@ var http = require("http"),
 module.exports = (query, callback) => {
   //Create stackoverflow API search string
   let url = 'http://api.stackexchange.com/2.2/search?';
-  url += 'order=desc&site=stackoverflow&sort=relevance&tagged=javascript';
+  url += 'order=desc&site=stackoverflow&pagesize=5&sort=relevance&tagged=javascript';
   url += '&intitle=' + encodeURIComponent(query);
 
     // buffer to store the streamed decompression
