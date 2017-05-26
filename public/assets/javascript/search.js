@@ -50,12 +50,12 @@ function searchHandler() {
 
 //Look into a simpler .toggle
 function hideImages() {
-  // $("#stack-div").show();
-  // $("#documentation-div").show();
-  // $("#stack-div").removeClass("hidden");
-  // $("#documentation-div").removeClass("hidden");
-  // $("#stack-div-show").addClass("hidden");
-  // $("#documentation-show").addClass("hidden");
+  $("#stack-div").show();
+  $("#documentation-div").show();
+  $("#stack-div").removeClass("hidden");
+  $("#documentation-div").removeClass("hidden");
+  $("#stack-div-show").addClass("hidden");
+  $("#documentation-show").addClass("hidden");
 }
 
 // //Global var to hold methods for autocomplete

@@ -17,6 +17,7 @@ body {
   text-align: center;
 }
 
+
 /*Header Styling*/
 .logo {
   font-family: 'Roboto Mono', monospace;
@@ -39,34 +40,32 @@ body {
 }
 
 .leftDiv {
-  float: left;
-  width: 50%;
+  height: 400px;
   overflow-y: scroll;
   background-color: #FC6E51;
-  text-align: center;
 }
 
 .rightDiv {
-  float: left;
   overflow-y: scroll;
-  width: 50%;
+  height: 400px;
   background-color: #4FC1E9;
-  text-align: center;
 }
+
 .centerimg {
-  text-align: right;
+  /*text-align: right;
   position: absolute;
-  right: 35%;
+  right: 35%;*/
   width: 210px;
   height: 210px;
   margin-top: 80px;
+  margin-bottom: 80px;
 }
 
 /*Search Results Div Styling*/
 #searchresult {
   background-color: #abacac;
-  height: 400px;
   width: 100%;
+  text-align: center;
 }
 
 .verticalhr {

@@ -78,28 +78,33 @@
     <!--Search Results Div-->
     <div class="row padding">
       <div class="col-lg-12">
-        <div id="searchresult">
+        <div class="container" id="searchresult">
           <!--Stack Overflow Icon-->
           <div class="row">
-            <div class="col-md-6" id="stack-div">
+            <!--Left section-->
+            <div class="col-6">
               <img src="./assets/images/stack-overflow.png" alt="Stack Overflow Image"
               class="centerimg" id="stack-div-show">
-              <div class="verticalhr">
-                &nbsp;
-              </div>
-              <!--Empty Stack Overflow Search Results Div-->
-              <div class="col-md-6 hidden" id="stack-div">
-              </div>
             </div>
+              <!--<div class="verticalhr">
+                &nbsp;
+              </div>-->
+              <!--Empty Stack Overflow Search Results Div-->
             <!--Documentation Icon-->
-            <div class="col-md-6" id="documentation-div">
+            <div class="col-6">
               <img src="./assets/images/documentation.png" alt="Documentation Image"
-              class="centerimg" id="documentation-show">
-              <!--Empty Documentation Search Results Div-->
-              <div class="col-md-6 hidden">
-              </div>
+                 class="centerimg" id="documentation-show">
             </div>
           </div>
+
+          <!--Empty Search Results Div-->
+          <div class="row">
+            <div class="col-6 hidden leftDiv" id="stack-div">
+            </div>
+            <div class="col-6 hidden rightDiv" id="documentation-div">
+            </div>
+          </div>
+
         </div>
       </div>
     </div>
