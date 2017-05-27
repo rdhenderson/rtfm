@@ -61,7 +61,7 @@ this["Template"]["stack_answers"] = Handlebars.template({"1":function(container,
     + alias4(((helper = (helper = helpers.answer_id || (depth0 != null ? depth0.answer_id : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"answer_id","hash":{},"data":data}) : helper)))
     + "\" aria-expanded=\"true\" aria-controls=\"#"
     + alias4(((helper = (helper = helpers.id || (depth0 != null ? depth0.id : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"id","hash":{},"data":data}) : helper)))
-    + "-header\">\n          "
+    + "-header\">\n          User: "
     + alias4(container.lambda(((stack1 = (depth0 != null ? depth0.owner : depth0)) != null ? stack1.display_name : stack1), depth0))
     + " - score: "
     + alias4(((helper = (helper = helpers.score || (depth0 != null ? depth0.score : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"score","hash":{},"data":data}) : helper)))
@@ -99,13 +99,13 @@ this["Template"]["stack"] = Handlebars.template({"1":function(container,depth0,h
     + alias4(((helper = (helper = helpers.question_id || (depth0 != null ? depth0.question_id : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"question_id","hash":{},"data":data}) : helper)))
     + "\" class=\"collapse\" role=\"tabpanel\" aria-labelledby=\"header-"
     + alias4(((helper = (helper = helpers.question_id || (depth0 != null ? depth0.question_id : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"question_id","hash":{},"data":data}) : helper)))
-    + "\">\n      <div class=\"card-block leftDiv\">\n        <button class=\"btn btn-primary stack-question\" data-id=\""
-    + alias4(((helper = (helper = helpers.question_id || (depth0 != null ? depth0.question_id : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"question_id","hash":{},"data":data}) : helper)))
-    + "\">See Answers</button>\n        "
+    + "\">\n      <div class=\"card-block leftDiv\">\n        "
     + ((stack1 = ((helper = (helper = helpers.body || (depth0 != null ? depth0.body : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"body","hash":{},"data":data}) : helper))) != null ? stack1 : "")
-    + "\n      </div>\n      <div id=\"answers-"
+    + "\n        <div id=\"answers-"
     + alias4(((helper = (helper = helpers.question_id || (depth0 != null ? depth0.question_id : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"question_id","hash":{},"data":data}) : helper)))
-    + "\"></div>\n      </div>\n    </div>\n  </div>\n";
+    + "\">\n          <button class=\"btn btn-primary stack-question\" data-id=\""
+    + alias4(((helper = (helper = helpers.question_id || (depth0 != null ? depth0.question_id : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"question_id","hash":{},"data":data}) : helper)))
+    + "\">See Answers</button>\n        </div>\n      </div>\n\n      </div>\n    </div>\n  </div>\n";
 },"compiler":[7,">= 4.0.0"],"main":function(container,depth0,helpers,partials,data) {
     var stack1;
 

@@ -39,6 +39,7 @@
     "grunt-contrib-handlebars": "^1.0.0",
     "grunt-contrib-nodemon": "^0.5.4",
     "grunt-contrib-watch": "^1.0.0",
+    "nodemon": "^1.11.0",
     "open": "0.0.5"
   }
 }

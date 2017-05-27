@@ -57,11 +57,11 @@ module.exports = function(grunt) {
   },
     watch: {
       options: {
-        spawn: false
+        spawn: false,
       },
       handlebars: {
         files: ['views/*.handlebars'],
-        tasks: ['handlebars:compile']
+        tasks: ['process-and-concat'],
       },
       concat: {
         files: ['public/assets/javascript/modules/*.js'],
@@ -69,10 +69,13 @@ module.exports = function(grunt) {
       },
       server: {
         files: ['.rebooted'],
-        options: {
-          livereload: true
-        }
-      }
+      },
+      livereload: {
+      // Here we watch the files the sass task will compile to
+      // These files are sent to the live reload server after sass compiles to them
+        options: { livereload: true },
+        files: ['public/assets/css/*.css', 'server.js','controllers/*.js', 'public/*.html', 'public/assets/javascript/modules.js']
+    },
     },
     handlebars: {
       options: {
@@ -88,7 +91,11 @@ module.exports = function(grunt) {
       }
     }
   });
-grunt.registerTask('default', ['handlebars', 'concat']);
+grunt.registerTask('default', ['handlebars', 'concat', 'concurrent']);
+grunt.registerTask('rtfm', ['handlebars', 'concat', 'concurrent']);
+
+grunt.registerTask('process-and-concat', ['handlebars:compile', 'concat']);
+
 grunt.loadNpmTasks('grunt-contrib-handlebars');
 grunt.loadNpmTasks('grunt-contrib-watch');
 grunt.loadNpmTasks('grunt-contrib-nodemon');
