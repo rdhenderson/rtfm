@@ -1,7 +1,8 @@
+// Added wrapper function to ensure 'use strict'
+// doesn't cause conflict with other modules we import
 (function() {
   'use strict';
-  $(document).ready(
-    () => {
+  $(document).ready(() => {
       // Initialize dropdown boxs
       $('.dropdown-toggle').dropdown();
 
