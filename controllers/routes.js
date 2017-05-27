@@ -60,8 +60,10 @@ module.exports = function(app) {
     });
   });
 
-  app.get('/api/stack/question/:id', (req, res) => {
-    stack.getAnswers(req.params.id, (err, results) => {
+  app.get('/api/stack/question/:id?', (req, res) => {
+    const id = (req.params.id || req.body.ids );
+    
+    stack.getAnswers(id, (err, results) => {
       if (err) throw err;
       res.json(results);
     });

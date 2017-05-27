@@ -32,5 +32,11 @@
     "request": "^2.81.0",
     "scrape-mdn": "^1.0.2",
     "sequelize": "^3.30.4"
+  },
+  "devDependencies": {
+    "grunt": "^1.0.1",
+    "grunt-contrib-concat": "^1.0.1",
+    "grunt-contrib-handlebars": "^1.0.0",
+    "grunt-contrib-watch": "^1.0.0"
   }
 }

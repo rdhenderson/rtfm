@@ -19,9 +19,12 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"
     integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
      <!-- <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script> -->
+     <!-- Handlebars browser-side -->
+	  <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.8/handlebars.min.js"></script>
 
-    <script src="./assets/javascript/modules/fuse.min.js" type="text/javascript"></script>
-    <script src="./assets/javascript/modules/fuzzycomplete.js" type="text/javascript"></script>
+    <!-- IMPORT THE CONCATENATED MODULES.JS (ALL JS FILES IN MODULES) -->
+    <script src="./assets/javascript/modules.js" type="text/javascript"></script>
+    <!-- <script src="./assets/javascript/templates.js" type="text/javascript"></script> -->
     <script src="./assets/javascript/search.js" type="text/javascript"></script>
 
 
@@ -107,6 +110,7 @@
 
         </div>
       </div>
+
     </div>
      <!--Footer-->
      <div class="row">
@@ -127,6 +131,44 @@
      </div>
     </div>
 
+<script id="method-template" type="x-handlebars-template">
+<div id="accordion" role="tablist" aria-multiselectable="true">
+  <h2>Express Methods</h2>
+  {{#each methods}}
+  <div class="card">
+    <div class="card-header" role="tab" id="{{link}}-header">
+      <h5 class="mb-0">
+        <a data-toggle="collapse" data-parent="#accordion" href="#{{link}}" aria-expanded="true" aria-controls="{{link}}">
+          {{name}}
+        </a>
+      </h5>
+    </div>
+
+    <div id="{{link}}" class="collapse" role="tabpanel" aria-labelledby="{{link}}-header">
+      <div class="card-block rightDiv">
+        {{{html}}}
+      </div>
+    </div>
+  </div>
+  {{/each}}
+</div>
+</script>
+
+<script id="method2-template" type="x-handlebars-template">
+  <ul>
+    {{#each methods}}
+          <li data-toggle="collapse" data-parent="#accordion" data-target="#{{shortName}}-body"  aria-expanded="true" aria-controls="collapseOne">
+            {{shortName}}
+          </li>
+      <div id="{{shortName}}-body" class="collapse" role="tabpanel" aria-labelledby="headingOne">
+        <div class="card-block">
+          {{{html}}}
+        </div>
+      </div>
+  {{/each}}
+  </ul>
+
+</script>
    <!--Showing and hiding the Search Results div elements-->
    <!-- <script>
        $(document).ready(function(){

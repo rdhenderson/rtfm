@@ -40,14 +40,14 @@ body {
 }
 
 .leftDiv {
-  height: 400px;
+  min-height: 400px;
   overflow-y: scroll;
   background-color: #FC6E51;
 }
 
 .rightDiv {
   overflow-y: scroll;
-  height: 400px;
+  min-height: 400px;
   background-color: #4FC1E9;
 }
 
