@@ -19,10 +19,14 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"
     integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
      <!-- <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script> -->
+     <!-- Handlebars browser-side -->
+	  <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.8/handlebars.min.js"></script>
 
-    <script src="./assets/javascript/modules/fuse.min.js" type="text/javascript"></script>
-    <script src="./assets/javascript/modules/fuzzycomplete.js" type="text/javascript"></script>
+    <!-- IMPORT THE CONCATENATED MODULES.JS (ALL JS FILES IN MODULES) -->
+    <script src="./assets/javascript/modules.js" type="text/javascript"></script>
+    <!-- <script src="./assets/javascript/templates.js" type="text/javascript"></script> -->
     <script src="./assets/javascript/search.js" type="text/javascript"></script>
+    <script src="//localhost:35729/livereload.js"></script>
 
 
   </head>
@@ -69,7 +73,9 @@
            <div class="input-group padding">
              <input type="text" id="search-input" class="form-control" placeholder="Enter code here...">
               <span class="input-group-btn">
-                <button class="btn btn-default" id="search-submit" type="button">Go!</button>
+                <button class="btn btn-default" id="search-submit" type="button">Submit</button>
+                <button class="btn btn-danger" id="search-clear" type="button">Clear</button>
+
               </span>
           </div>
         </div>
@@ -107,6 +113,7 @@
 
         </div>
       </div>
+
     </div>
      <!--Footer-->
      <div class="row">
@@ -126,28 +133,5 @@
        </div>
      </div>
     </div>
-
-   <!--Showing and hiding the Search Results div elements-->
-   <!-- <script>
-       $(document).ready(function(){
-       $("#searchbox").click((function(){
-       $("#stack-div").show();
-       $("#documentation-div").show();
-       $("#stack-div").removeClass("hidden");
-       $("#documentation-div").removeClass("hidden");
-       $("#stack-div-show").addClass("hidden");
-       $("#documentation-show").addClass("hidden");
-     }))
-    });
-$('#searchbox').on('click', function() {
-  console.log("clicked"); -->
-  <!-- // $.ajax({
-  //   url: "/api/stack/search/" + $("#enterSearch").val(),
-  //   success: function(result){
-  //     $("#searchInfo").html(result)
-  // }});
-}) -->
-
-   <!-- </script> -->
   </body>
 </html>

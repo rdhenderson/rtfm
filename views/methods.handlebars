@@ -1,0 +1,20 @@
+<div id="accordion" role="tablist" aria-multiselectable="true">
+  <h2>Express Methods</h2>
+  {{#each methods}}
+  <div class="card">
+    <div class="card-header" role="tab" id="{{link}}-header">
+      <h5 class="mb-0">
+        <a data-toggle="collapse" data-parent="#accordion" href="#{{link}}" aria-expanded="true" aria-controls="{{link}}">
+          {{name}}
+        </a>
+      </h5>
+    </div>
+
+    <div id="{{link}}" class="collapse" role="tabpanel" aria-labelledby="{{link}}-header">
+      <div class="card-block rightDiv">
+        {{{html}}}
+      </div>
+    </div>
+  </div>
+  {{/each}}
+</div>
