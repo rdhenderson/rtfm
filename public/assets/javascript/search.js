@@ -8,6 +8,7 @@
       // Set click handlers
       $('#stack-div').on('click', '.stack-question', getStackAnswers);
       $('#search-submit').on('click', searchHandler);
+      $('#search-clear').on('click', () => $('#search-input').val(''));
 
       // Init Methods and then populate fuzzy search handler
       getMethods().then( (methods) => initPage(methods)).catch( (err) => console.log(err));
