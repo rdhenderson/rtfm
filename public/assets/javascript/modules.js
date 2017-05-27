@@ -45,9 +45,9 @@ this["Template"]["methods"] = Handlebars.template({"1":function(container,depth0
 },"compiler":[7,">= 4.0.0"],"main":function(container,depth0,helpers,partials,data) {
     var stack1;
 
-  return "<div id=\"accordion\" role=\"tablist\" aria-multiselectable=\"true\">\n  <h2>Express Methods</h2>\n"
+  return "<div id=\"accordion\"  role=\"tablist\" aria-multiselectable=\"true\">\n  <label id=\"doc-method-listing-head\" data-toggle=\"collapse\" data-target=\"#doc-method-list\"> <h2> Express Methods </h2></label>\n  <div id=\"doc-query-result\"></div>\n  <div id=\"doc-method-list\" class=\"collapse show\">\n"
     + ((stack1 = helpers.each.call(depth0 != null ? depth0 : (container.nullContext || {}),(depth0 != null ? depth0.methods : depth0),{"name":"each","hash":{},"fn":container.program(1, data, 0),"inverse":container.noop,"data":data})) != null ? stack1 : "")
-    + "</div>\n";
+    + "</div>\n</div>\n";
 },"useData":true});
 
 this["Template"]["stack_answers"] = Handlebars.template({"1":function(container,depth0,helpers,partials,data) {

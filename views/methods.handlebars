@@ -1,5 +1,7 @@
-<div id="accordion" role="tablist" aria-multiselectable="true">
-  <h2>Express Methods</h2>
+<div id="accordion"  role="tablist" aria-multiselectable="true">
+  <label id="doc-method-listing-head" data-toggle="collapse" data-target="#doc-method-list"> <h2> Express Methods </h2></label>
+  <div id="doc-query-result"></div>
+  <div id="doc-method-list" class="collapse show">
   {{#each methods}}
   <div class="card">
     <div class="card-header" role="tab" id="{{link}}-header">
@@ -17,4 +19,5 @@
     </div>
   </div>
   {{/each}}
+</div>
 </div>
