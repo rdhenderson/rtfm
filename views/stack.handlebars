@@ -11,10 +11,12 @@
     </div>
     <div id="body-{{question_id}}" class="collapse" role="tabpanel" aria-labelledby="header-{{question_id}}">
       <div class="card-block leftDiv">
-        <button class="btn btn-primary stack-question" data-id="{{question_id}}">See Answers</button>
         {{{body}}}
+        <div id="answers-{{question_id}}">
+          <button class="btn btn-primary stack-question" data-id="{{question_id}}">See Answers</button>
+        </div>
       </div>
-      <div id="answers-{{question_id}}"></div>
+
       </div>
     </div>
   </div>
