@@ -22,9 +22,10 @@ function initPage(methods) {
     $(this).parent().find(".output").html($(this).parent().find("select").val());
   });
 
+  //DISCUSS: Hiding images to allow drawing method listing
   hideImages();
-  // const methodTemplateScript = $("#method-template").html();
-  // const methodTemplate = Handlebars.compile($("#method-template").html());
+
+  //Draw express method listing on load
   const methodRows = Template.methods( {methods: methods});
   $('#documentation-div').empty().html(methodRows);
 }
@@ -39,6 +40,14 @@ function getMethods() {
   });
 }
 
+function getMDNPage(){
+  $.get(`/api/mdn/get/`, (data) => {
+    // const questionRows = Template.stack( {questions: data.items });
+    console.log('MDN data', data);
+    //FIXME: mdn div doesn't exist
+    $('#mdn-div').empty().append(data.html);
+  });
+}
 function searchHandler() {
   hideImages();
   let query = encodeURIComponent($('#search-input').val().trim());
@@ -51,6 +60,8 @@ function searchHandler() {
     $('#doc-method-list').collapse('toggle');
   });
 
+  //FIXME: stack search sometimes fails to return if we don't strip out
+  // parentheticals
   $.get(`/api/stack/search/${expressQuery}`, (data) => {
     const questionRows = Template.stack( {questions: data.items });
     $('#stack-div').empty().append(questionRows);

@@ -49,7 +49,7 @@ module.exports = {
   getById : function (id, callback) {
     if (methods.length !== 0) {
       const match = methods.filter( (el) => el.shortName === id || el.name === id )[0];
-      console.log('match = ', match);
+      // console.log('match = ', match);
       return callback(null, match);
 
     } else {
