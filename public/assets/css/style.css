@@ -103,7 +103,15 @@ body {
 .padding {
   padding-top: 30px;
 }
-
+.doc-item {
+  background-color: #4FC1E9;
+  max-height: 300px;
+  overflow-y: auto;
+  text-align: left;
+}
+.doc-list {
+  min-height: 10px;
+}
 .ui-draggable, .ui-droppable {
 	background-position: top;
 }

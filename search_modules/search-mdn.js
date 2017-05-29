@@ -56,10 +56,6 @@ function getPage(url, callback) {
 }
 
 function parseMDNWiki (body, callback) {
-  // console.log('Parsing body', body);
-//   const util = require('util');
-//
-// console.log(util.inspect(util, { showHidden: true, depth: null }));
   const $ = cheerio.load(body);
   let wikiHead = $('#wiki-document-head');
   let wikiContent = $('#wiki-content');

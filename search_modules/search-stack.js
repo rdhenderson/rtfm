@@ -28,10 +28,11 @@ function queryStack (url, callback) {
 
  module.exports = {
   search : function (query, callback) {
-    //Create stackoverflow API search string
-    let url = 'http://api.stackexchange.com/2.2/search?';
+    // Create stackoverflow API search string
+    // NOTE: changed to advanced search to allow free text search strings
+    let url = 'http://api.stackexchange.com/2.2/search/advanced?';
     url += 'order=desc&site=stackoverflow&sort=relevance&tagged=javascript&filter=withbody';
-    url += '&intitle=' + encodeURIComponent(query);
+    url += '&q=' + encodeURIComponent(query);
     return queryStack(url, callback);
   },
   getAnswers : function ( id, callback ) {

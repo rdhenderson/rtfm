@@ -1,0 +1,10 @@
+{
+  "jquery": true,
+  "browser": true,
+  "node" : true,
+  "esversion": 6,
+  "globals" : {
+    "console" : false,
+    "Template" : false
+  }
+}

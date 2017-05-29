@@ -1,23 +1,45 @@
 'use strict';
+let methods = {};
 
 $(document).ready(() => {
-    // Initialize dropdown boxs
-    $('.dropdown-toggle').dropdown();
+  getExpressAPI(methods)
+  .then(getJqueryAPI)
+  .then( (methods) => initPage(methods) )
+  .catch( (err) => console.log(err) );
 
-    // Set click handlers
-    $('#stack-div').on('click', '.stack-question', getStackAnswers);
-    $('#search-submit').on('click', searchHandler);
-    $('#search-clear').on('click', () => $('#search-input').val(''));
+});
 
-    // Init Methods and then populate fuzzy search handler
-    getMethods()
-      .then( (methods) => initPage(methods))
-      .catch( (err) => console.log(err));
+function getJqueryAPI(methods) {
+  return new Promise( (resolve, reject) => {
+    return $.get('/api/jquery/methods/', (data) => {
+      methods.jquery = data;
+      return resolve(methods);
+    });
   });
+}
 
-function initPage(methods) {
+function getExpressAPI(methods) {
+  //return a promise object that calls resolve/reject to get express methods
+  return new Promise( (resolve, reject) => {
+    return $.get('/api/express/methods', (data) => {
+      methods.express = data;
+      return resolve(methods);
+    });
+  });
+}
+
+function initPage(methods, jqueryMethods, expressMethods) {
   // Initialize page elements after methods have been retrieved
-  $('#search-input').fuzzyComplete(methods);
+  // Initialize dropdown boxs
+  $('.dropdown-toggle').dropdown();
+
+  // Set click handlers
+  $('#stack-div').on('click', '.stack-question', getStackAnswers);
+  $('#search-submit').on('click', searchHandler);
+  $('#search-clear').on('click', () => $('#search-input').val(''));
+
+  // $('#search-input').fuzzyComplete(methods.express.concat(methods.jquery));
+
   $('input').on('keyup blur', () => {
     $(this).parent().find(".output").html($(this).parent().find("select").val());
   });
@@ -26,35 +48,19 @@ function initPage(methods) {
   hideImages();
 
   //Draw express method listing on load
-  const methodRows = Template.methods( {methods: methods});
-  $('#documentation-div').empty().html(methodRows);
+  const expressRows = Template.methods(methods);
+  $('#documentation-div').empty().html(expressRows);
+  const jqueryRows = Template.jquery(methods);
+  $('#jquery-div').empty().html(jqueryRows);
 }
 
-function getMethods() {
-  //return a promise object that calls resolve/reject to get express methods
-  return new Promise((resolve, reject) => {
-    console.log('in promise');
-    $.get('/api/express/methods', (data) => {
-      resolve(data);
-    });
-  });
-}
-
-function getMDNPage(){
-  $.get(`/api/mdn/get/`, (data) => {
-    // const questionRows = Template.stack( {questions: data.items });
-    console.log('MDN data', data);
-    //FIXME: mdn div doesn't exist
-    $('#mdn-div').empty().append(data.html);
-  });
-}
 function searchHandler() {
   hideImages();
   let query = encodeURIComponent($('#search-input').val().trim());
   //Strip the arguments portion of name before query to express
-  let expressQuery = query.split('(')[0];
 
   //Template literal expansion using backticks instead of quote/apostrophe
+  let expressQuery = query.split('(')[0];
   $.get(`/api/express/search/${expressQuery}`, (data) => {
     $('#doc-query-result').empty().html(data.html);
     $('#doc-method-list').collapse('toggle');
@@ -62,9 +68,18 @@ function searchHandler() {
 
   //FIXME: stack search sometimes fails to return if we don't strip out
   // parentheticals
-  $.get(`/api/stack/search/${expressQuery}`, (data) => {
+
+  $.get(`/api/stack/search/${query}`, (data) => {
     const questionRows = Template.stack( {questions: data.items });
     $('#stack-div').empty().append(questionRows);
+  });
+}
+
+function getMDNPage(pageURL){
+  const queryObj = { url:`/api/mdn/get/`, data: {url: pageURL} };
+  $.get(queryObj, (data) => {
+    //FIXME: mdn div doesn't exist
+    $('#mdn-div').empty().append(data.html);
   });
 }
 
@@ -78,10 +93,9 @@ function getStackAnswers() {
 
 //Look into a simpler .toggle
 function hideImages() {
-  $("#stack-div").show();
-  $("#documentation-div").show();
-  $("#stack-div").removeClass("hidden");
-  $("#documentation-div").removeClass("hidden");
+  $("#jquery-div").removeClass('hidden').show();
+  $("#stack-div").removeClass("hidden").show();
+  $("#documentation-div").removeClass("hidden").show();
   $("#stack-div-show").addClass("hidden");
   $("#documentation-show").addClass("hidden");
 }

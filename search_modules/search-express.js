@@ -10,25 +10,28 @@ const EXPRESS_API_URL = EXPRESS_BASE_URL + '4x/api.html';
 //Create empty methods array
 let methods = [];
 
+//Private function to escape special characters ignored by encodeURIComponent
 function escapeID( myid ) {
-  return "#" + myid.toLowerCase().replace( /(:|\.|\[|\]|,|=|@)/g, "\\$1" );
+  return myid.toLowerCase().replace( /(:|\.|\[|\]|,|=|@)/g, "\\$1" );
 }
 
 //Private function to query express and call callback function with cheerio object
 function queryExpress(url, callback) {
   request(url, (err, res, body) => callback(err, body) );
 }
-// Takes cheerio object and return a method object
-function parseExpressSection($elem) {
+
+// Takes cheerio/jquery object and return an express method object
+function parseExpressSection($el) {
   return {
-      name : $elem.children('h3').first().text(),
-      html : $elem.html(),
-      shortName: $elem.children('h3').first().text().split('(')[0],
-      link : $elem.children('h3').first().text().split('(')[0].split('.').join("")
+      name : $el.children('h3').first().text(),
+      html : $el.html(),
+      shortName: $el.children('h3').first().text().split('(')[0],
+      link : $el.children('h3').first().text().split('(')[0].split('.').join("")
   }
 }
 
 module.exports = {
+  //Return methods previously gathered
   methods : function () {
     return methods;
   },
@@ -46,18 +49,16 @@ module.exports = {
         return callback(null, methods);
     });
   },
-  getById : function (id, callback) {
-    if (methods.length !== 0) {
-      const match = methods.filter( (el) => el.shortName === id || el.name === id )[0];
-      // console.log('match = ', match);
+  getById : function (query, callback) {
+    if (methods.length > 0) {
+      const match = methods.filter( (el) =>  query.includes(el.shortName) )[0];
       return callback(null, match);
-
     } else {
-      queryURL = EXPRESS_API_URL + escapeID(id);
+      queryURL = EXPRESS_API_URL + '#' + escapeID(id); // Turn res.json into #res\.json
       queryExpress(queryURL, (err, body) => {
         if (err) throw err;
         const $ = cheerio.load(body);
-        return callback(err, parseExpressSection($('#'+id)));
+        return callback(null, parseExpressSection($('#'+id)));
       });
     }
   }
