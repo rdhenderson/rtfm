@@ -22,6 +22,7 @@ function queryExpress(url, callback) {
 
 // Takes cheerio/jquery object and return an express method object
 function parseExpressSection($el) {
+
   return {
       name : $el.children('h3').first().text(),
       html : $el.html(),
@@ -42,6 +43,9 @@ module.exports = {
         //Load response html into cheerio for jquery-style manipulation
         const $ = cheerio.load(body);
         //Add each section within api-doc as object to methods
+        $('table').attr('class', 'table');
+        $('thead').attr('class', 'thead-inverse');
+
         $("section", '#api-doc').each( (i, elem) => {
           methods.push(parseExpressSection($(elem)));
         });
