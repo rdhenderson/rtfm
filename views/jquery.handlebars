@@ -1,0 +1,23 @@
+<div id="accordion-jquery" class="doc-list" role="tablist" aria-multiselectable="true">
+  <label id="jquery-list-head" data-toggle="collapse" data-target="#jquery-list"> <h2> JQuery Methods </h2></label>
+  <div id="jquery-page-result"></div>
+  <div id="jquery-list" class="collapse show">
+  {{#each jquery}}
+  <div class="card">
+    <div class="card-header" role="tab" id="{{id}}-header">
+      <h5 class="mb-0">
+        <a data-toggle="collapse" data-parent="#accordion-jquery" href="#{{id}}" aria-expanded="true" aria-controls="{{id}}">
+          {{name}}
+        </a>
+      </h5>
+    </div>
+
+    <div id="{{id}}" class="collapse" role="tabpanel" aria-labelledby="{{id}}-header">
+      <div class="card-block doc-item">
+        {{{html}}}
+      </div>
+    </div>
+  </div>
+  {{/each}}
+</div>
+</div>
