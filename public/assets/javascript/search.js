@@ -50,7 +50,7 @@ function initPage(methods, jqueryMethods, expressMethods) {
   hideImages();
 
   //Draw express method listing on load
-  const expressRows = Template.methods(methods);
+  const expressRows = Template.express(methods);
   $('#documentation-div').empty().html(expressRows);
   const jqueryRows = Template.jquery(methods);
   $('#jquery-div').empty().html(jqueryRows);
@@ -64,8 +64,8 @@ function searchHandler() {
   //Template literal expansion using backticks instead of quote/apostrophe
   let expressQuery = query.split('(')[0];
   $.get(`/api/express/search/${expressQuery}`, (data) => {
-    $('#doc-query-result').empty().html(data.html);
-    $('#doc-method-list').collapse('toggle');
+    $('#express-query-result').empty().html(data.html);
+    // $('#express-method-list').collapse('toggle');
   });
 
   //FIXME: stack search sometimes fails to return if we don't strip out
