@@ -39,7 +39,7 @@ module.exports = {
   fetchAPI : function (callback) {
       let queryURL = EXPRESS_API_URL;
       queryExpress(queryURL, (err, body) => {
-        if (err) return console.err(err);
+        if (err) return console.log(err);
         //Load response html into cheerio for jquery-style manipulation
         const $ = cheerio.load(body);
         //Add each section within api-doc as object to methods
@@ -58,7 +58,7 @@ module.exports = {
       const match = methods.filter( (el) =>  query.includes(el.shortName) )[0];
       return callback(null, match);
     } else {
-      queryURL = EXPRESS_API_URL + '#' + escapeID(id); // Turn res.json into #res\.json
+      queryURL = EXPRESS_API_URL + '#' + escapeID(match); // Turn res.json into #res\.json
       queryExpress(queryURL, (err, body) => {
         if (err) throw err;
         const $ = cheerio.load(body);
