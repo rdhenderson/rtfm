@@ -1,5 +1,5 @@
 'use strict';
-
+const db = require('../models');
 const request = require('request');
 const cheerio = require('cheerio');
 
@@ -18,33 +18,46 @@ function queryJquery (url, callback) {
 function parseJqueryAPIList($el) {
   return {
       name : $el.children('a:first-child').text() || "error",
-      href : $el.children('a:first-child').attr('href'),
+      data_url : $el.children('a:first-child').attr('href'),
       html : $el.parent().next().html()
-  }
+  };
+}
+
+function fetchAPI (callback) {
+    let queryURL = JQUERY_API_URL;
+    queryJquery(queryURL, (err, body) => {
+      if (err) return console.err(err);
+      //Load response html into cheerio for jquery-style manipulation
+      const $ = cheerio.load(body);
+      //Add each section within api-doc as object to methods
+      $(".entry-title").each( (i, el) =>
+        methods.push(parseJqueryAPIList($(el)))
+      );
+
+      db.JQueryDoc.bulkCreate(methods)
+        .then(() => db.JQueryDoc.findAll())
+        .then((data) => callback(null, data));
+      // return callback(null, methods);
+  });
 }
 
 module.exports = {
   //Return methods previously gathered
-  methods : function () {
-    return methods;
+  getMethods : function (callback) {
+    if (methods.length) return callback(methods);
+    db.JQueryDoc.findAll()
+    .then( (data) => {
+      methods = data;
+      if (data.length) return callback(null, data);
+      return fetchAPI(callback);
+    })
+    .catch( (err) => console.err(err));
   },
-  fetchAPI : function (callback) {
-      let queryURL = JQUERY_API_URL;
-      queryJquery(queryURL, (err, body) => {
-        if (err) return console.err(err);
-        //Load response html into cheerio for jquery-style manipulation
-        const $ = cheerio.load(body);
-        //Add each section within api-doc as object to methods
-        $(".entry-title").each( (i, el) => {
-          const item = parseJqueryAPIList($(el));
-          item.id = `jquery-${i}`;
-          methods.push(item);
-        });
-        return callback(null, methods);
-    });
+  updateDB : function (callback) {
+    return fetchAPI(callback);
   },
   getById : function (href, callback) {
-    queryURL = 'https:' + href; // Turn res.json into #res\.json
+    queryURL = 'https:' + href;
     queryJquery(queryURL, (err, body) => {
       if (err) throw err;
       const $ = cheerio.load(body);

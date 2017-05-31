@@ -25,9 +25,10 @@ module.exports = function(grunt) {
     dev: {
       script: 'server.js',
       options: {
-        // nodeArgs: ['--debug'],
+        //  nodeArgs: [],
         env: {
-          PORT: '8080'
+          PORT: '8080',
+          DB_NAME: "rtfm"
         },
         // omit this property if you aren't serving HTML files and
         // don't want to open a browser tab on start
