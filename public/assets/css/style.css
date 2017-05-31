@@ -42,13 +42,13 @@ body {
 .leftDiv {
   min-height: 400px;
   overflow-y: scroll;
-  background-color: #FC6E51;
+  background-color: #636363;
 }
 
 .rightDiv {
   overflow-y: scroll;
   min-height: 400px;
-  background-color: #4FC1E9;
+  background-color: #636363;
 }
 
 .centerimg {
@@ -59,6 +59,10 @@ body {
   height: 210px;
   margin-top: 80px;
   margin-bottom: 80px;
+}
+
+.custom-select {
+  background: #c0c0c0;
 }
 
 /*Search Results Div Styling*/
