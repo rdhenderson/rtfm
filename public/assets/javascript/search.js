@@ -28,7 +28,7 @@ function getExpressAPI(methods) {
   });
 }
 
-function initPage(methods, jqueryMethods, expressMethods) {
+function initPage(methods) {
   // Initialize page elements after methods have been retrieved
   // Initialize dropdown boxs
 
@@ -37,9 +37,7 @@ function initPage(methods, jqueryMethods, expressMethods) {
   $('#language-select').on('change', languageSelectHandler);
   $('#search-submit').on('click', searchHandler);
   $('#search-clear').on('click', () => $('#search-input').val(''));
-  // $("#language-select").on("click", function(){
-  //   console.log($('#language-select option:selected').val());
-  // })
+
   // $('#search-input').fuzzyComplete(methods.express.concat(methods.jquery));
 
   $('input').on('keyup blur', () => {
@@ -47,15 +45,15 @@ function initPage(methods, jqueryMethods, expressMethods) {
   });
 
   //DISCUSS: Hiding images to allow drawing method listing
-//   hideImages();
+  //  hideImages();
 }
 
 function languageSelectHandler(){
   const language = $("#language-select option:selected").val();
-  console.log('Handling language selection :', language)
+  console.log('selecting language: ', language)
   switch(language) {
     case 'express':
-      const expressRows = Template.methods(methods);
+      const expressRows = Template.express(methods);
       $('#documentation-div').empty().html(expressRows);
       break;
     case 'jquery' :
@@ -66,8 +64,9 @@ function languageSelectHandler(){
       $('#documentation-div').empty().html("<h2> Please Select A Language </h2>");
   }
 }
+
 function searchHandler() {
-  hideImages();
+  // hideImages();
   let query = encodeURIComponent($('#search-input').val().trim());
   //Strip the arguments portion of name before query to express
   let language = $('#language-select option:selected').val();
@@ -105,9 +104,8 @@ function getStackAnswers() {
 
 //Look into a simpler .toggle
 function hideImages() {
-  $("#jquery-div").removeClass('hidden').show();
-  $("#stack-div").removeClass("hidden").show();
-  $("#documentation-div").removeClass("hidden").show();
-  $("#stack-div-show").addClass("hidden");
-  $("#documentation-show").addClass("hidden");
+  // $("#stack-div").removeClass("hidden").show();
+  // $("#documentation-div").removeClass("hidden").show();
+  // $("#stack-div-show").addClass("hidden");
+  // $("#documentation-show").addClass("hidden");
 }
