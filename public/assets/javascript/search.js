@@ -37,7 +37,9 @@ function initPage(methods, jqueryMethods, expressMethods) {
   $('#stack-div').on('click', '.stack-question', getStackAnswers);
   $('#search-submit').on('click', searchHandler);
   $('#search-clear').on('click', () => $('#search-input').val(''));
-
+  // $("#language-select").on("click", function(){
+  //   console.log($('#language-select option:selected').val());
+  // })
   // $('#search-input').fuzzyComplete(methods.express.concat(methods.jquery));
 
   $('input').on('keyup blur', () => {
@@ -58,7 +60,7 @@ function searchHandler() {
   hideImages();
   let query = encodeURIComponent($('#search-input').val().trim());
   //Strip the arguments portion of name before query to express
-
+  let language = $('#language-select option:selected').val();
   //Template literal expansion using backticks instead of quote/apostrophe
   let expressQuery = query.split('(')[0];
   $.get(`/api/express/search/${expressQuery}`, (data) => {
@@ -69,7 +71,7 @@ function searchHandler() {
   //FIXME: stack search sometimes fails to return if we don't strip out
   // parentheticals
 
-  $.get(`/api/stack/search/${query}`, (data) => {
+  $.get(`/api/stack/search/${query}/${language}`, (data) => {
     const questionRows = Template.stack( {questions: data.items });
     $('#stack-div').empty().append(questionRows);
   });
