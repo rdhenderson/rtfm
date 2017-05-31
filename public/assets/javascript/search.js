@@ -31,10 +31,10 @@ function getExpressAPI(methods) {
 function initPage(methods, jqueryMethods, expressMethods) {
   // Initialize page elements after methods have been retrieved
   // Initialize dropdown boxs
-  $('.dropdown-toggle').dropdown();
 
   // Set click handlers
   $('#stack-div').on('click', '.stack-question', getStackAnswers);
+  $('#language-select').on('change', languageSelectHandler);
   $('#search-submit').on('click', searchHandler);
   $('#search-clear').on('click', () => $('#search-input').val(''));
   // $("#language-select").on("click", function(){
@@ -49,13 +49,29 @@ function initPage(methods, jqueryMethods, expressMethods) {
   //DISCUSS: Hiding images to allow drawing method listing
   hideImages();
 
-  //Draw express method listing on load
-  const expressRows = Template.methods(methods);
-  $('#documentation-div').empty().html(expressRows);
-  const jqueryRows = Template.jquery(methods);
-  $('#jquery-div').empty().html(jqueryRows);
+  // //Draw express method listing on load
+  // const expressRows = Template.methods(methods);
+  // $('#documentation-div').empty().html(expressRows);
+  // const jqueryRows = Template.jquery(methods);
+  // $('#jquery-div').empty().html(jqueryRows);
 }
 
+function languageSelectHandler(){
+  const language = $("#language-select option:selected").val();
+  console.log('Handling language selection :', language)
+  switch(language) {
+    case 'express':
+      const expressRows = Template.methods(methods);
+      $('#documentation-div').empty().html(expressRows);
+      break;
+    case 'jquery' :
+      const jqueryRows = Template.jquery(methods);
+      $('#documentation-div').empty().html(jqueryRows);
+      break;
+    case 'default' :
+      $('#documentation-div').empty().html("<h2> Please Select A Language </h2>");
+  }
+}
 function searchHandler() {
   hideImages();
   let query = encodeURIComponent($('#search-input').val().trim());
