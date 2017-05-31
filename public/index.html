@@ -56,19 +56,14 @@
        <div class="col-md-6">
          <div class="center padding">
            <!-- Language Drop Down -->
-           <div class="btn-group">
-             <button type="button" id="dropdownmenu1" class="btn btn-default dropdown-toggle"
-             data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-               Action <span class="caret"></span>
-             </button>
-             <ul class="dropdown-menu" aria-labelledby="dropdownmenu1">
-               <li><a href="#">Express</a></li>
-               <li><a href="#">JavaScript</a></li>
-               <li><a href="#">JQuery</a></li>
-               <li role="separator" class="divider"></li>
-               <li><a href="#">Separated link</a></li>
-             </ul>
-           </div>
+
+               <select id="language-select" class="custom-select">
+                 <option selected>Choose a topic</option>
+                 <option value="express">Express</option>
+                 <option value="jquery">jQuery</option>
+                 <option value="javascript">Javascript</option>
+               </select>
+
            <!--Search Box-->
            <div class="input-group padding">
              <input type="text" id="search-input" class="form-control" placeholder="Enter code here...">
@@ -105,12 +100,12 @@
 
           <!--Empty Search Results Div-->
           <div class="row">
-            <div class="col-4 hidden leftDiv" id="stack-div">
+            <div class="col-6 hidden leftDiv" id="stack-div">
             </div>
-            <div class="col-4 hidden rightDiv" id="documentation-div">
+            <div class="col-6 hidden rightDiv" id="documentation-div">
             </div>
-            <div class="col-4 hidden rightDiv" id="jquery-div">
-            </div>
+            <!-- <div class="col-4 hidden rightDiv" id="jquery-div">
+            </div> -->
           </div>
 
         </div>
