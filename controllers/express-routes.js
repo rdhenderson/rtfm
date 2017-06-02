@@ -1,6 +1,7 @@
 //Require sequelize models
 const searchExpress = require('../search_modules/search-express.js');
 const searchFuzzy = require('../search_modules/search-fuzzy.js');
+const db = require('../models');
 
 module.exports = function(app) {
 
@@ -18,7 +19,7 @@ module.exports = function(app) {
       res.send ( results );
     });
   });
-
+}
   // app.get('/api/express/fuzzy/:query', (req, res) => {
   //   //get method list
   //   searchExpress(null, (err, results) => {
@@ -28,5 +29,3 @@ module.exports = function(app) {
   //     res.json(matches);
   //   });
   // });
-
-};

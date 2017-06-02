@@ -54,14 +54,10 @@ function fetchAPI (callback) {
 module.exports = {
   //Return methods previously gathered
   getMethods : function (callback) {
-    if (methods.length) return callback(methods);
     db.ExpressDoc.findAll()
     .then( (data) => {
-      methods = data;
-      if (data.length) return callback(null, data);
-      return fetchAPI(callback);
-    })
-    .catch( (err) => console.err(err));
+      return callback(null, data);
+    }).catch( (err) => console.err(err));
   },
   // Force an update to database
   updateDB : function (callback) {

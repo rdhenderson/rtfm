@@ -16,6 +16,9 @@ module.exports = function(sequelize, DataTypes) {
     },
     html: {
       type: DataTypes.TEXT
+    },
+    detail: {
+      type: DataTypes.TEXT
     }
 
   });
