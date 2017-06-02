@@ -1,8 +1,32 @@
+#red {
+  color: rgb(210, 115, 119);
+}
+
+#blue {
+  color: rgb(114, 174, 234);
+}
+
+#green {
+  color: rgb(160, 193, 129);
+}
+
+#quote {
+  color: rgb(201, 156, 110);
+}
+
 body {
   background-color: #353434;
   color: #eee;
 }
 
+.h1-style {
+  font-family: 'Roboto Mono', monospace;
+  font-size: 25px;
+}
+
+h3 {
+  font-size: 15px;
+}
 .right {
   text-align: right;
   position: absolute;
@@ -34,6 +58,19 @@ body {
 .borderbtm{
   border-bottom: 2px solid #eee;
 }
+
+.bg-faded {
+  background-color: #353434;
+}
+
+.navbar-light .navbar-brand {
+  color: #fff;
+}
+
+.jumbotron {
+  padding: 10px;
+  background-color: #b0b0b0;
+}
 /*Search Styling*/
 
 .smallimg {
@@ -45,13 +82,13 @@ body {
 .leftDiv {
   min-height: 400px;
   overflow-y: scroll;
-  background-color: #636363;
+  background-color: #b0b0b0;
 }
 
 .rightDiv {
   overflow-y: scroll;
   min-height: 400px;
-  background-color: #636363;
+  background-color: #b0b0b0;
 }
 
 .centerimg {
@@ -66,6 +103,9 @@ body {
 
 .custom-select {
   background: #c0c0c0;
+  position: relative;
+  left: 17%;
+  margin-top: 5px;
 }
 
 /*Search Results Div Styling*/
@@ -101,6 +141,23 @@ body {
 #documentation-div {
   overflow: auto;
 }
+
+h2 {
+  font-family: 'Roboto Mono', monospace;
+  color: #90ee90;
+  background-color: #353434;
+  font-size: 25px;
+  padding: 5px;
+  margin-top: 10px;
+  border-radius: 7px;
+}
+
+.input-group {
+  width: 50%;
+  margin: 10px;
+  height: 40%;
+}
+
 /*Footer Styling*/
 .social {
   width: 40px;
@@ -111,14 +168,38 @@ body {
   padding-top: 30px;
 }
 .doc-item {
-  background-color: #4FC1E9;
+  background-color: #ffffff;
   max-height: 300px;
   overflow-y: auto;
   text-align: left;
+  color: #000;
 }
 .doc-list {
   min-height: 10px;
 }
 .ui-draggable, .ui-droppable {
 	background-position: top;
+}
+
+/*Handlebars UI Styling*/
+.card-header-search{
+  background-color: #eee ;
+  color: #90ee90;
+  text-align: center;
+}
+
+.card {
+  margin: 7px;
+  border-radius: 7px;
+}
+
+a {
+  font-size: 16px;
+  color: #000;
+}
+
+code {
+  background-color: #bd4147;
+  color: #fff;
+
 }
