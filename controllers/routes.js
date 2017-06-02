@@ -22,18 +22,6 @@ module.exports = function(app) {
     });
   });
 
-  //Returns array of objects with name and html keys
-  app.get( '/api/updateData/', ( req, res ) => {
-    jqueryDocs.updateDB( (err, data ) => {
-      if (err) throw err;
-      console.log("Updated jquery models");
-    });
-    expressDocs.updateDB( (err, data) => {
-      if (err) throw err;
-      console.log("Updated express models");
-    })
-  });
-
   app.get( '/api/jquery/detail/:id', ( req, res ) => {
     jqueryDocs.getDetails(req.params.id, ( err, data ) => {
       if ( err ) throw err;

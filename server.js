@@ -30,11 +30,11 @@ let db = require("./models");
 require("./controllers/routes.js")(app);
 
 // Syncing our sequelize models and then starting our express app
-db.sequelize.sync({ force: true }).then(function() {
+db.sequelize.sync({ force: false }).then(function() {
   app.listen(PORT, function() {
     //Uncomment this line to seed database first time
-    //Will force an update of database -- FIXME -- NEED MORE ELEGANT SOLUTION. 
-    require('./search_modules/search-jquery.js').updateDB();
+    //Will force an update of database -- FIXME -- NEED MORE ELEGANT SOLUTION.
+    // require('./search_modules/search-jquery.js').updateDB();
     console.log("App listening on PORT " + PORT);
   });
 });
