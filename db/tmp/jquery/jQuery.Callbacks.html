@@ -1,0 +1,1087 @@
+<!doctype html>
+<!--[if IE 7 ]>		 <html class="no-js ie ie7 lte7 lte8 lte9" lang="en-US"> <![endif]-->
+<!--[if IE 8 ]>		 <html class="no-js ie ie8 lte8 lte9" lang="en-US"> <![endif]-->
+<!--[if IE 9 ]>		 <html class="no-js ie ie9 lte9>" lang="en-US"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--> <html class="no-js" lang="en-US"> <!--<![endif]-->
+<head data-live-domain="api.jquery.com">
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+	<title>jQuery.Callbacks() | jQuery API Documentation</title>
+
+	<meta name="author" content="jQuery Foundation - jquery.org">
+	<meta name="description" content="">
+
+	<meta name="viewport" content="width=device-width">
+
+	<link rel="shortcut icon" href="//api.jquery.com/jquery-wp-content/themes/api.jquery.com/i/favicon.ico">
+
+	<link rel="stylesheet" href="//api.jquery.com/jquery-wp-content/themes/jquery/css/base.css?v=1">
+	<link rel="stylesheet" href="//api.jquery.com/jquery-wp-content/themes/api.jquery.com/style.css">
+
+	<script src="//api.jquery.com/jquery-wp-content/themes/jquery/js/modernizr.custom.2.8.3.min.js"></script>
+
+	<script src="https://code.jquery.com/jquery-1.11.3.js"></script>
+
+	<script src="//api.jquery.com/jquery-wp-content/themes/jquery/js/plugins.js"></script>
+	<script src="//api.jquery.com/jquery-wp-content/themes/jquery/js/main.js"></script>
+
+	<script src="//use.typekit.net/wde1aof.js"></script>
+	<script>try{Typekit.load();}catch(e){}</script>
+
+<link rel='https://api.w.org/' href='//api.jquery.com/wp-json/' />
+<meta name="generator" content="WordPress 4.5.2" />
+<link rel="alternate" type="application/json+oembed" href="//api.jquery.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fapi.jquery.com%2FjQuery.Callbacks%2F" />
+<link rel="alternate" type="text/xml+oembed" href="//api.jquery.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fapi.jquery.com%2FjQuery.Callbacks%2F&#038;format=xml" />
+
+</head>
+<body class="api jquery single single-post postid-303 single-format-standard single-author singular">
+
+<header>
+	<section id="global-nav">
+		<nav>
+			<div class="constrain">
+				<ul class="projects">
+					<li class="project jquery"><a href="http://jquery.com/" title="jQuery">jQuery</a></li>
+					<li class="project jquery-ui"><a href="http://jqueryui.com/" title="jQuery UI">jQuery UI</a></li>
+					<li class="project jquery-mobile"><a href="http://jquerymobile.com/" title="jQuery Mobile">jQuery Mobile</a></li>
+					<li class="project sizzlejs"><a href="http://sizzlejs.com/" title="Sizzle">Sizzle</a></li>
+					<li class="project qunitjs"><a href="http://qunitjs.com/" title="QUnit">QUnit</a></li>
+				</ul>
+				<ul class="links">
+					<li><a href="http://plugins.jquery.com/">Plugins</a></li>
+					<li class="dropdown"><a href="http://contribute.jquery.org/">Contribute</a>
+						<ul>
+							<li><a href="http://contribute.jquery.org/CLA/">CLA</a></li>
+							<li><a href="http://contribute.jquery.org/style-guide/">Style Guides</a></li>
+							<li><a href="http://contribute.jquery.org/triage/">Bug Triage</a></li>
+							<li><a href="http://contribute.jquery.org/code/">Code</a></li>
+							<li><a href="http://contribute.jquery.org/documentation/">Documentation</a></li>
+							<li><a href="http://contribute.jquery.org/web-sites/">Web Sites</a></li>
+						</ul>
+					</li>
+					<li class="dropdown"><a href="http://events.jquery.org/">Events</a>
+						<ul class="wide">
+																		</ul>
+					</li>
+					<li class="dropdown"><a href="https://jquery.org/support/">Support</a>
+						<ul>
+							<li><a href="http://learn.jquery.com/">Learning Center</a></li>
+							<li><a href="http://try.jquery.com/">Try jQuery</a></li>
+							<li><a href="http://irc.jquery.org/">IRC/Chat</a></li>
+							<li><a href="http://forum.jquery.com/">Forums</a></li>
+							<li><a href="http://stackoverflow.com/tags/jquery/info">Stack Overflow</a></li>
+							<li><a href="https://jquery.org/support/">Commercial Support</a></li>
+						</ul>
+					</li>
+					<li class="dropdown"><a href="https://jquery.org/">jQuery Foundation</a>
+						<ul>
+							<li><a href="https://jquery.org/join/">Join</a></li>
+							<li><a href="https://jquery.org/members/">Members</a></li>
+							<li><a href="https://jquery.org/team/">Team</a></li>
+							<li><a href="https://jquery.org/conduct/">Conduct</a></li>
+							<li><a href="http://brand.jquery.org/">Brand Guide</a></li>
+							<li><a href="https://jquery.org/donate/">Donate</a></li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+		</nav>
+	</section>
+</header>
+
+<div id="container">
+	<div id="logo-events" class="constrain clearfix">
+		<h2 class="logo"><a href="http://jquery.com/" title="jQuery API Documentation">jQuery API Documentation</a></h2>
+
+		<aside><div id="broadcast"></div></aside>
+	</div>
+
+	<nav id="main" class="constrain clearfix">
+		<div class="menu-top-container">
+	<ul id="menu-top" class="menu">
+<li class="menu-item"><a href="http://jquery.com/download/">Download</a></li>
+<li class="menu-item"><a href="http://api.jquery.com/">API Documentation</a></li>
+<li class="menu-item"><a href="http://blog.jquery.com/">Blog</a></li>
+<li class="menu-item"><a href="http://plugins.jquery.com/">Plugins</a></li>
+<li class="menu-item"><a href="http://jquery.com/browser-support/">Browser Support</a></li>
+	</ul>
+</div>
+
+		<form method="get" class="searchform" action="//api.jquery.com/">
+	<button type="submit" class="icon-search"><span class="visuallyhidden">search</span></button>
+	<label>
+		<span class="visuallyhidden">Search jQuery API Documentation</span>
+		<input type="text" name="s" value=""
+			placeholder="Search">
+	</label>
+</form>
+	</nav>
+
+	<div id="content-wrapper" class="clearfix row">
+
+<div class="content-right twelve columns">
+	<div id="content">
+					
+<article id="post-303" class="post-303 post type-post status-publish format-standard hentry category-callbacks-object category-83">
+	<header class="entry-header">
+		<h1 class="entry-title">jQuery.Callbacks()</h1>
+		<hr>
+				<div class="entry-meta">
+			Categories: <span class="category"><a href="//api.jquery.com/category/callbacks-object/">Callbacks Object</a></span>		</div><!-- .entry-meta -->
+			</header><!-- .entry-header -->
+
+	<div class="entry-content">
+		<article id="jQuery-Callbacks1" class="entry method"><h2 class="section-title">
+<span class="name">jQuery.Callbacks( flags )</span><span class="returns">Returns: <a href="http://api.jquery.com/Types/#Callbacks">Callbacks</a></span>
+</h2>
+<div class="entry-wrapper">
+<p class="desc"><strong>Description: </strong>A multi-purpose callbacks list object that provides a powerful way to manage callback lists.</p>
+<ul class="signatures"><li class="signature">
+<h4 class="name">
+<span class="version-details">version added: <a href="/category/version/1.7/">1.7</a></span><a id="jQuery-Callbacks-flags" href="#jQuery-Callbacks-flags"><span class="icon-link"></span>jQuery.Callbacks( flags )</a>
+</h4>
+<ul><li>
+<div><strong>flags</strong></div>
+<div>Type: <a href="http://api.jquery.com/Types/#String">String</a>
+</div>
+<div>An optional list of space-separated flags that change how the callback list behaves.</div>
+</li></ul>
+</li></ul>
+<div class="longdesc" id="entry-longdesc">
+    <p>The <code>$.Callbacks()</code> function is internally used to provide the base functionality behind the jQuery <code>$.ajax()</code> and <code>$.Deferred()</code> components. It can be used as a similar base to define functionality for new components.</p>
+    <p><code>$.Callbacks()</code> supports a number of methods including <code><a href="/callbacks.add/">callbacks.add()</a></code>,<code><a href="/callbacks.remove/">callbacks.remove()</a></code>, <code><a href="/callbacks.fire/">callbacks.fire()</a></code> and <code><a href="/callbacks.disable/">callbacks.disable()</a></code>.</p>
+    <h3 id="getting-started">Getting started</h3>
+    <p>The following are two sample methods named <code>fn1</code> and <code>fn2</code>:</p>
+    <div class="syntaxhighlighter javascript">
+	<table>
+		<tbody>
+			<tr>
+				
+				<td class="gutter">
+					
+						<div class="line n1">1</div>
+					
+						<div class="line n2">2</div>
+					
+						<div class="line n3">3</div>
+					
+						<div class="line n4">4</div>
+					
+						<div class="line n5">5</div>
+					
+						<div class="line n6">6</div>
+					
+						<div class="line n7">7</div>
+					
+						<div class="line n8">8</div>
+					
+				</td>
+				
+				<td class="code">
+					<pre><div class="container"><div class="line"><code><span class="function"><span class="keyword">function</span> <span class="title">fn1</span><span class="params">( value )</span> {</span></code></div></div><div class="container"><div class="line"><code>  console.log( value );</code></div></div><div class="container"><div class="line"><code>}</code></div></div><div class="container"><div class="line"><code> </code></div></div><div class="container"><div class="line"><code><span class="function"><span class="keyword">function</span> <span class="title">fn2</span><span class="params">( value )</span> {</span></code></div></div><div class="container"><div class="line"><code>  console.log( <span class="string">&quot;fn2 says: &quot;</span> + value );</code></div></div><div class="container"><div class="line"><code>  <span class="keyword">return</span> <span class="literal">false</span>;</code></div></div><div class="container"><div class="line"><code>}</code></div></div></pre>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+
+    <p>These can be added as callbacks to a <code>$.Callbacks</code> list and invoked as follows:</p>
+    <div class="syntaxhighlighter javascript">
+	<table>
+		<tbody>
+			<tr>
+				
+				<td class="gutter">
+					
+						<div class="line n1">1</div>
+					
+						<div class="line n2">2</div>
+					
+						<div class="line n3">3</div>
+					
+						<div class="line n4">4</div>
+					
+						<div class="line n5">5</div>
+					
+						<div class="line n6">6</div>
+					
+						<div class="line n7">7</div>
+					
+						<div class="line n8">8</div>
+					
+						<div class="line n9">9</div>
+					
+						<div class="line n10">10</div>
+					
+				</td>
+				
+				<td class="code">
+					<pre><div class="container"><div class="line"><code><span class="keyword">var</span> callbacks = $.Callbacks();</code></div></div><div class="container"><div class="line"><code>callbacks.add( fn1 );</code></div></div><div class="container"><div class="line"><code> </code></div></div><div class="container"><div class="line"><code><span class="comment">// Outputs: foo!</span></code></div></div><div class="container"><div class="line"><code>callbacks.fire( <span class="string">&quot;foo!&quot;</span> );</code></div></div><div class="container"><div class="line"><code> </code></div></div><div class="container"><div class="line"><code>callbacks.add( fn2 );</code></div></div><div class="container"><div class="line"><code> </code></div></div><div class="container"><div class="line"><code><span class="comment">// Outputs: bar!, fn2 says: bar!</span></code></div></div><div class="container"><div class="line"><code>callbacks.fire( <span class="string">&quot;bar!&quot;</span> );</code></div></div></pre>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+
+    <p>The result of this is that it becomes simple to construct complex lists of callbacks where input values can be passed through to as many functions as needed with ease.</p>
+    <p>Two specific methods were being used above: <code>.add()</code> and <code>.fire()</code>. The <code>.add()</code> method supports adding new callbacks to the callback list, while the <code>.fire()</code> method executes the added functions and provides a way to pass arguments to be processed by the callbacks in the same list.</p>
+    <p>Another method supported by <code>$.Callbacks</code> is <code>.remove()</code>, which has the ability to remove a particular callback from the callback list. Here&apos;s a practical example of <code>.remove()</code> being used:</p>
+    <div class="syntaxhighlighter javascript">
+	<table>
+		<tbody>
+			<tr>
+				
+				<td class="gutter">
+					
+						<div class="line n1">1</div>
+					
+						<div class="line n2">2</div>
+					
+						<div class="line n3">3</div>
+					
+						<div class="line n4">4</div>
+					
+						<div class="line n5">5</div>
+					
+						<div class="line n6">6</div>
+					
+						<div class="line n7">7</div>
+					
+						<div class="line n8">8</div>
+					
+						<div class="line n9">9</div>
+					
+						<div class="line n10">10</div>
+					
+						<div class="line n11">11</div>
+					
+						<div class="line n12">12</div>
+					
+						<div class="line n13">13</div>
+					
+						<div class="line n14">14</div>
+					
+						<div class="line n15">15</div>
+					
+				</td>
+				
+				<td class="code">
+					<pre><div class="container"><div class="line"><code><span class="keyword">var</span> callbacks = $.Callbacks();</code></div></div><div class="container"><div class="line"><code>callbacks.add( fn1 );</code></div></div><div class="container"><div class="line"><code> </code></div></div><div class="container"><div class="line"><code><span class="comment">// Outputs: foo!</span></code></div></div><div class="container"><div class="line"><code>callbacks.fire( <span class="string">&quot;foo!&quot;</span> );</code></div></div><div class="container"><div class="line"><code> </code></div></div><div class="container"><div class="line"><code>callbacks.add( fn2 );</code></div></div><div class="container"><div class="line"><code> </code></div></div><div class="container"><div class="line"><code><span class="comment">// Outputs: bar!, fn2 says: bar!</span></code></div></div><div class="container"><div class="line"><code>callbacks.fire( <span class="string">&quot;bar!&quot;</span> );</code></div></div><div class="container"><div class="line"><code> </code></div></div><div class="container"><div class="line"><code>callbacks.remove( fn2 );</code></div></div><div class="container"><div class="line"><code> </code></div></div><div class="container"><div class="line"><code><span class="comment">// Only outputs foobar, as fn2 has been removed.</span></code></div></div><div class="container"><div class="line"><code>callbacks.fire( <span class="string">&quot;foobar&quot;</span> );</code></div></div></pre>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+
+    <h3 id="supported-flags">Supported Flags</h3>
+    <p>The <code>flags</code> argument is an optional argument to <code>$.Callbacks()</code>, structured as a list of space-separated strings that change how the callback list behaves (eg. <code>$.Callbacks( &quot;unique stopOnFalse&quot; )</code>).</p>
+    <h2>Possible flags:</h2>
+    <ul>
+      <li>
+<code>once</code>: Ensures the callback list can only be fired once (like a Deferred).</li>
+      <li>
+<code>memory</code>: Keeps track of previous values and will call any callback added after the list has been fired right away with the latest &quot;memorized&quot; values (like a Deferred).</li>
+      <li>
+<code>unique</code>: Ensures a callback can only be added once (so there are no duplicates in the list).</li>
+      <li>
+<code>stopOnFalse</code>: Interrupts callings when a callback returns false.</li>
+    </ul>
+    <p>By default a callback list will act like an event callback list and can be &quot;fired&quot; multiple times.</p>
+    <p>For examples of how <code>flags</code> should ideally be used, see below:</p>
+    <h2 id="once">
+<code>$.Callbacks( &quot;once&quot; )</code>:</h2>
+    <div class="syntaxhighlighter javascript">
+	<table>
+		<tbody>
+			<tr>
+				
+				<td class="gutter">
+					
+						<div class="line n1">1</div>
+					
+						<div class="line n2">2</div>
+					
+						<div class="line n3">3</div>
+					
+						<div class="line n4">4</div>
+					
+						<div class="line n5">5</div>
+					
+						<div class="line n6">6</div>
+					
+						<div class="line n7">7</div>
+					
+						<div class="line n8">8</div>
+					
+						<div class="line n9">9</div>
+					
+						<div class="line n10">10</div>
+					
+						<div class="line n11">11</div>
+					
+						<div class="line n12">12</div>
+					
+				</td>
+				
+				<td class="code">
+					<pre><div class="container"><div class="line"><code><span class="keyword">var</span> callbacks = $.Callbacks( <span class="string">&quot;once&quot;</span> );</code></div></div><div class="container"><div class="line"><code>callbacks.add( fn1 );</code></div></div><div class="container"><div class="line"><code>callbacks.fire( <span class="string">&quot;foo&quot;</span> );</code></div></div><div class="container"><div class="line"><code>callbacks.add( fn2 );</code></div></div><div class="container"><div class="line"><code>callbacks.fire( <span class="string">&quot;bar&quot;</span> );</code></div></div><div class="container"><div class="line"><code>callbacks.remove( fn2 );</code></div></div><div class="container"><div class="line"><code>callbacks.fire( <span class="string">&quot;foobar&quot;</span> );</code></div></div><div class="container"><div class="line"><code> </code></div></div><div class="container"><div class="line"><code><span class="comment">/*</span></code></div></div><div class="container"><div class="line"><code><span class="comment">output:</span></code></div></div><div class="container"><div class="line"><code><span class="comment">foo</span></code></div></div><div class="container"><div class="line"><code><span class="comment">*/</span></code></div></div></pre>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+
+    <h2 id="memory">
+<code>$.Callbacks( &quot;memory&quot; )</code>:</h2>
+    <div class="syntaxhighlighter javascript">
+	<table>
+		<tbody>
+			<tr>
+				
+				<td class="gutter">
+					
+						<div class="line n1">1</div>
+					
+						<div class="line n2">2</div>
+					
+						<div class="line n3">3</div>
+					
+						<div class="line n4">4</div>
+					
+						<div class="line n5">5</div>
+					
+						<div class="line n6">6</div>
+					
+						<div class="line n7">7</div>
+					
+						<div class="line n8">8</div>
+					
+						<div class="line n9">9</div>
+					
+						<div class="line n10">10</div>
+					
+						<div class="line n11">11</div>
+					
+						<div class="line n12">12</div>
+					
+						<div class="line n13">13</div>
+					
+						<div class="line n14">14</div>
+					
+						<div class="line n15">15</div>
+					
+						<div class="line n16">16</div>
+					
+				</td>
+				
+				<td class="code">
+					<pre><div class="container"><div class="line"><code><span class="keyword">var</span> callbacks = $.Callbacks( <span class="string">&quot;memory&quot;</span> );</code></div></div><div class="container"><div class="line"><code>callbacks.add( fn1 );</code></div></div><div class="container"><div class="line"><code>callbacks.fire( <span class="string">&quot;foo&quot;</span> );</code></div></div><div class="container"><div class="line"><code>callbacks.add( fn2 );</code></div></div><div class="container"><div class="line"><code>callbacks.fire( <span class="string">&quot;bar&quot;</span> );</code></div></div><div class="container"><div class="line"><code>callbacks.remove( fn2 );</code></div></div><div class="container"><div class="line"><code>callbacks.fire( <span class="string">&quot;foobar&quot;</span> );</code></div></div><div class="container"><div class="line"><code> </code></div></div><div class="container"><div class="line"><code><span class="comment">/*</span></code></div></div><div class="container"><div class="line"><code><span class="comment">output:</span></code></div></div><div class="container"><div class="line"><code><span class="comment">foo</span></code></div></div><div class="container"><div class="line"><code><span class="comment">fn2 says:foo</span></code></div></div><div class="container"><div class="line"><code><span class="comment">bar</span></code></div></div><div class="container"><div class="line"><code><span class="comment">fn2 says:bar</span></code></div></div><div class="container"><div class="line"><code><span class="comment">foobar</span></code></div></div><div class="container"><div class="line"><code><span class="comment">*/</span></code></div></div></pre>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+
+    <h2 id="unique">
+<code>$.Callbacks( &quot;unique&quot; )</code>:</h2>
+    <div class="syntaxhighlighter javascript">
+	<table>
+		<tbody>
+			<tr>
+				
+				<td class="gutter">
+					
+						<div class="line n1">1</div>
+					
+						<div class="line n2">2</div>
+					
+						<div class="line n3">3</div>
+					
+						<div class="line n4">4</div>
+					
+						<div class="line n5">5</div>
+					
+						<div class="line n6">6</div>
+					
+						<div class="line n7">7</div>
+					
+						<div class="line n8">8</div>
+					
+						<div class="line n9">9</div>
+					
+						<div class="line n10">10</div>
+					
+						<div class="line n11">11</div>
+					
+						<div class="line n12">12</div>
+					
+						<div class="line n13">13</div>
+					
+						<div class="line n14">14</div>
+					
+						<div class="line n15">15</div>
+					
+						<div class="line n16">16</div>
+					
+				</td>
+				
+				<td class="code">
+					<pre><div class="container"><div class="line"><code><span class="keyword">var</span> callbacks = $.Callbacks( <span class="string">&quot;unique&quot;</span> );</code></div></div><div class="container"><div class="line"><code>callbacks.add( fn1 );</code></div></div><div class="container"><div class="line"><code>callbacks.fire( <span class="string">&quot;foo&quot;</span> );</code></div></div><div class="container"><div class="line"><code>callbacks.add( fn1 ); <span class="comment">// Repeat addition</span></code></div></div><div class="container"><div class="line"><code>callbacks.add( fn2 );</code></div></div><div class="container"><div class="line"><code>callbacks.fire( <span class="string">&quot;bar&quot;</span> );</code></div></div><div class="container"><div class="line"><code>callbacks.remove( fn2 );</code></div></div><div class="container"><div class="line"><code>callbacks.fire( <span class="string">&quot;foobar&quot;</span> );</code></div></div><div class="container"><div class="line"><code> </code></div></div><div class="container"><div class="line"><code><span class="comment">/*</span></code></div></div><div class="container"><div class="line"><code><span class="comment">output:</span></code></div></div><div class="container"><div class="line"><code><span class="comment">foo</span></code></div></div><div class="container"><div class="line"><code><span class="comment">bar</span></code></div></div><div class="container"><div class="line"><code><span class="comment">fn2 says:bar</span></code></div></div><div class="container"><div class="line"><code><span class="comment">foobar</span></code></div></div><div class="container"><div class="line"><code><span class="comment">*/</span></code></div></div></pre>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+
+    <h2 id="stopOnFalse">
+<code>$.Callbacks( &quot;stopOnFalse&quot; )</code>:</h2>
+    <div class="syntaxhighlighter javascript">
+	<table>
+		<tbody>
+			<tr>
+				
+				<td class="gutter">
+					
+						<div class="line n1">1</div>
+					
+						<div class="line n2">2</div>
+					
+						<div class="line n3">3</div>
+					
+						<div class="line n4">4</div>
+					
+						<div class="line n5">5</div>
+					
+						<div class="line n6">6</div>
+					
+						<div class="line n7">7</div>
+					
+						<div class="line n8">8</div>
+					
+						<div class="line n9">9</div>
+					
+						<div class="line n10">10</div>
+					
+						<div class="line n11">11</div>
+					
+						<div class="line n12">12</div>
+					
+						<div class="line n13">13</div>
+					
+						<div class="line n14">14</div>
+					
+						<div class="line n15">15</div>
+					
+						<div class="line n16">16</div>
+					
+						<div class="line n17">17</div>
+					
+						<div class="line n18">18</div>
+					
+						<div class="line n19">19</div>
+					
+						<div class="line n20">20</div>
+					
+						<div class="line n21">21</div>
+					
+						<div class="line n22">22</div>
+					
+						<div class="line n23">23</div>
+					
+						<div class="line n24">24</div>
+					
+				</td>
+				
+				<td class="code">
+					<pre><div class="container"><div class="line"><code><span class="function"><span class="keyword">function</span> <span class="title">fn1</span><span class="params">( value )</span> {</span></code></div></div><div class="container"><div class="line"><code>  console.log( value );</code></div></div><div class="container"><div class="line"><code>  <span class="keyword">return</span> <span class="literal">false</span>;</code></div></div><div class="container"><div class="line"><code>}</code></div></div><div class="container"><div class="line"><code> </code></div></div><div class="container"><div class="line"><code><span class="function"><span class="keyword">function</span> <span class="title">fn2</span><span class="params">( value )</span> {</span></code></div></div><div class="container"><div class="line"><code>  fn1( <span class="string">&quot;fn2 says: &quot;</span> + value );</code></div></div><div class="container"><div class="line"><code>  <span class="keyword">return</span> <span class="literal">false</span>;</code></div></div><div class="container"><div class="line"><code>}</code></div></div><div class="container"><div class="line"><code> </code></div></div><div class="container"><div class="line"><code><span class="keyword">var</span> callbacks = $.Callbacks( <span class="string">&quot;stopOnFalse&quot;</span> );</code></div></div><div class="container"><div class="line"><code>callbacks.add( fn1 );</code></div></div><div class="container"><div class="line"><code>callbacks.fire( <span class="string">&quot;foo&quot;</span> );</code></div></div><div class="container"><div class="line"><code>callbacks.add( fn2 );</code></div></div><div class="container"><div class="line"><code>callbacks.fire( <span class="string">&quot;bar&quot;</span> );</code></div></div><div class="container"><div class="line"><code>callbacks.remove( fn2 );</code></div></div><div class="container"><div class="line"><code>callbacks.fire( <span class="string">&quot;foobar&quot;</span> );</code></div></div><div class="container"><div class="line"><code> </code></div></div><div class="container"><div class="line"><code><span class="comment">/*</span></code></div></div><div class="container"><div class="line"><code><span class="comment">output:</span></code></div></div><div class="container"><div class="line"><code><span class="comment">foo</span></code></div></div><div class="container"><div class="line"><code><span class="comment">bar</span></code></div></div><div class="container"><div class="line"><code><span class="comment">foobar</span></code></div></div><div class="container"><div class="line"><code><span class="comment">*/</span></code></div></div></pre>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+
+    <p>Because <code>$.Callbacks()</code> supports a list of flags rather than just one, setting several flags has a cumulative effect similar to &quot;&amp;&amp;&quot;. This means it&apos;s possible to combine flags to create callback lists that, say, both are <i>unique</i> and <i>ensure if list was already fired, adding more callbacks will have it called with the latest fired value</i> (i.e. <code>$.Callbacks(&quot;unique memory&quot;)</code>).</p>
+    <h2 id="unique-memory">
+<code>$.Callbacks( &apos;unique memory&apos; )</code>:</h2>
+    <div class="syntaxhighlighter javascript">
+	<table>
+		<tbody>
+			<tr>
+				
+				<td class="gutter">
+					
+						<div class="line n1">1</div>
+					
+						<div class="line n2">2</div>
+					
+						<div class="line n3">3</div>
+					
+						<div class="line n4">4</div>
+					
+						<div class="line n5">5</div>
+					
+						<div class="line n6">6</div>
+					
+						<div class="line n7">7</div>
+					
+						<div class="line n8">8</div>
+					
+						<div class="line n9">9</div>
+					
+						<div class="line n10">10</div>
+					
+						<div class="line n11">11</div>
+					
+						<div class="line n12">12</div>
+					
+						<div class="line n13">13</div>
+					
+						<div class="line n14">14</div>
+					
+						<div class="line n15">15</div>
+					
+						<div class="line n16">16</div>
+					
+						<div class="line n17">17</div>
+					
+						<div class="line n18">18</div>
+					
+						<div class="line n19">19</div>
+					
+						<div class="line n20">20</div>
+					
+						<div class="line n21">21</div>
+					
+						<div class="line n22">22</div>
+					
+						<div class="line n23">23</div>
+					
+						<div class="line n24">24</div>
+					
+						<div class="line n25">25</div>
+					
+						<div class="line n26">26</div>
+					
+						<div class="line n27">27</div>
+					
+						<div class="line n28">28</div>
+					
+						<div class="line n29">29</div>
+					
+						<div class="line n30">30</div>
+					
+						<div class="line n31">31</div>
+					
+				</td>
+				
+				<td class="code">
+					<pre><div class="container"><div class="line"><code><span class="function"><span class="keyword">function</span> <span class="title">fn1</span><span class="params">( value )</span> {</span></code></div></div><div class="container"><div class="line"><code>  console.log( value );</code></div></div><div class="container"><div class="line"><code>  <span class="keyword">return</span> <span class="literal">false</span>;</code></div></div><div class="container"><div class="line"><code>}</code></div></div><div class="container"><div class="line"><code> </code></div></div><div class="container"><div class="line"><code><span class="function"><span class="keyword">function</span> <span class="title">fn2</span><span class="params">( value )</span> {</span></code></div></div><div class="container"><div class="line"><code>  fn1( <span class="string">&quot;fn2 says: &quot;</span> + value );</code></div></div><div class="container"><div class="line"><code>  <span class="keyword">return</span> <span class="literal">false</span>;</code></div></div><div class="container"><div class="line"><code>}</code></div></div><div class="container"><div class="line"><code> </code></div></div><div class="container"><div class="line"><code><span class="keyword">var</span> callbacks = $.Callbacks( <span class="string">&quot;unique memory&quot;</span> );</code></div></div><div class="container"><div class="line"><code>callbacks.add( fn1 );</code></div></div><div class="container"><div class="line"><code>callbacks.fire( <span class="string">&quot;foo&quot;</span> );</code></div></div><div class="container"><div class="line"><code>callbacks.add( fn1 ); <span class="comment">// Repeat addition</span></code></div></div><div class="container"><div class="line"><code>callbacks.add( fn2 );</code></div></div><div class="container"><div class="line"><code>callbacks.fire( <span class="string">&quot;bar&quot;</span> );</code></div></div><div class="container"><div class="line"><code>callbacks.add( fn2 );</code></div></div><div class="container"><div class="line"><code>callbacks.fire( <span class="string">&quot;baz&quot;</span> );</code></div></div><div class="container"><div class="line"><code>callbacks.remove( fn2 );</code></div></div><div class="container"><div class="line"><code>callbacks.fire( <span class="string">&quot;foobar&quot;</span> );</code></div></div><div class="container"><div class="line"><code> </code></div></div><div class="container"><div class="line"><code><span class="comment">/*</span></code></div></div><div class="container"><div class="line"><code><span class="comment">output:</span></code></div></div><div class="container"><div class="line"><code><span class="comment">foo</span></code></div></div><div class="container"><div class="line"><code><span class="comment">fn2 says:foo</span></code></div></div><div class="container"><div class="line"><code><span class="comment">bar</span></code></div></div><div class="container"><div class="line"><code><span class="comment">fn2 says:bar</span></code></div></div><div class="container"><div class="line"><code><span class="comment">baz</span></code></div></div><div class="container"><div class="line"><code><span class="comment">fn2 says:baz</span></code></div></div><div class="container"><div class="line"><code><span class="comment">foobar</span></code></div></div><div class="container"><div class="line"><code><span class="comment">*/</span></code></div></div></pre>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+
+    <p>Flag combinations with <code>$.Callbacks()</code> are internally in jQuery for the <code>.done()</code> and <code>.fail()</code> functions on a Deferred &#x2014; both of which use <code>$.Callbacks(&apos;memory once&apos;)</code>.</p>
+    <p>The methods of <code>$.Callbacks</code> can also be detached, should there be a need to define short-hand versions for convenience:</p>
+    <div class="syntaxhighlighter javascript">
+	<table>
+		<tbody>
+			<tr>
+				
+				<td class="gutter">
+					
+						<div class="line n1">1</div>
+					
+						<div class="line n2">2</div>
+					
+						<div class="line n3">3</div>
+					
+						<div class="line n4">4</div>
+					
+						<div class="line n5">5</div>
+					
+						<div class="line n6">6</div>
+					
+						<div class="line n7">7</div>
+					
+						<div class="line n8">8</div>
+					
+				</td>
+				
+				<td class="code">
+					<pre><div class="container"><div class="line"><code><span class="keyword">var</span> callbacks = $.Callbacks(),</code></div></div><div class="container"><div class="line"><code>  add = callbacks.add,</code></div></div><div class="container"><div class="line"><code>  remove = callbacks.remove,</code></div></div><div class="container"><div class="line"><code>  fire = callbacks.fire;</code></div></div><div class="container"><div class="line"><code> </code></div></div><div class="container"><div class="line"><code>add( fn1 );</code></div></div><div class="container"><div class="line"><code>fire( <span class="string">&quot;hello world&quot;</span> );</code></div></div><div class="container"><div class="line"><code>remove( fn1 );</code></div></div></pre>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+
+    <h3 id="pubsub">$.Callbacks, $.Deferred and Pub/Sub</h3>
+    <p>The general idea behind pub/sub (Publish/Subscribe, or, the Observer pattern) is the promotion of loose coupling in applications. Rather than single objects calling on the methods of other objects, an object instead subscribes to a specific task or activity of another object and is notified when it occurs. Observers are also called Subscribers, and we refer to the object being observed as the Publisher (or the subject). Publishers notify subscribers when events occur.</p>
+    <p>To demonstrate the component-creation capabilities of <code>$.Callbacks()</code>, it&apos;s possible to implement a Pub/Sub system using only callback lists. Using <code>$.Callbacks</code> as a topics queue, a system for publishing and subscribing to topics can be implemented as follows:</p>
+    <div class="syntaxhighlighter javascript">
+	<table>
+		<tbody>
+			<tr>
+				
+				<td class="gutter">
+					
+						<div class="line n1">1</div>
+					
+						<div class="line n2">2</div>
+					
+						<div class="line n3">3</div>
+					
+						<div class="line n4">4</div>
+					
+						<div class="line n5">5</div>
+					
+						<div class="line n6">6</div>
+					
+						<div class="line n7">7</div>
+					
+						<div class="line n8">8</div>
+					
+						<div class="line n9">9</div>
+					
+						<div class="line n10">10</div>
+					
+						<div class="line n11">11</div>
+					
+						<div class="line n12">12</div>
+					
+						<div class="line n13">13</div>
+					
+						<div class="line n14">14</div>
+					
+						<div class="line n15">15</div>
+					
+						<div class="line n16">16</div>
+					
+						<div class="line n17">17</div>
+					
+						<div class="line n18">18</div>
+					
+						<div class="line n19">19</div>
+					
+				</td>
+				
+				<td class="code">
+					<pre><div class="container"><div class="line"><code><span class="keyword">var</span> topics = {};</code></div></div><div class="container"><div class="line"><code> </code></div></div><div class="container"><div class="line"><code>jQuery.Topic = <span class="keyword">function</span>( id ) {</code></div></div><div class="container"><div class="line"><code>  <span class="keyword">var</span> callbacks, method,</code></div></div><div class="container"><div class="line"><code>    topic = id &amp;&amp; topics[ id ];</code></div></div><div class="container"><div class="line"><code> </code></div></div><div class="container"><div class="line"><code>  <span class="keyword">if</span> ( !topic ) {</code></div></div><div class="container"><div class="line"><code>    callbacks = jQuery.Callbacks();</code></div></div><div class="container"><div class="line"><code>    topic = {</code></div></div><div class="container"><div class="line"><code>      publish: callbacks.fire,</code></div></div><div class="container"><div class="line"><code>      subscribe: callbacks.add,</code></div></div><div class="container"><div class="line"><code>      unsubscribe: callbacks.remove</code></div></div><div class="container"><div class="line"><code>    };</code></div></div><div class="container"><div class="line"><code>    <span class="keyword">if</span> ( id ) {</code></div></div><div class="container"><div class="line"><code>      topics[ id ] = topic;</code></div></div><div class="container"><div class="line"><code>    }</code></div></div><div class="container"><div class="line"><code>  }</code></div></div><div class="container"><div class="line"><code>  <span class="keyword">return</span> topic;</code></div></div><div class="container"><div class="line"><code>};</code></div></div></pre>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+
+    <p>This can then be used by parts of your application to publish and subscribe to events of interest quite easily:</p>
+    <div class="syntaxhighlighter javascript">
+	<table>
+		<tbody>
+			<tr>
+				
+				<td class="gutter">
+					
+						<div class="line n1">1</div>
+					
+						<div class="line n2">2</div>
+					
+						<div class="line n3">3</div>
+					
+						<div class="line n4">4</div>
+					
+						<div class="line n5">5</div>
+					
+						<div class="line n6">6</div>
+					
+						<div class="line n7">7</div>
+					
+						<div class="line n8">8</div>
+					
+						<div class="line n9">9</div>
+					
+						<div class="line n10">10</div>
+					
+						<div class="line n11">11</div>
+					
+						<div class="line n12">12</div>
+					
+						<div class="line n13">13</div>
+					
+						<div class="line n14">14</div>
+					
+						<div class="line n15">15</div>
+					
+						<div class="line n16">16</div>
+					
+						<div class="line n17">17</div>
+					
+						<div class="line n18">18</div>
+					
+						<div class="line n19">19</div>
+					
+						<div class="line n20">20</div>
+					
+				</td>
+				
+				<td class="code">
+					<pre><div class="container"><div class="line"><code><span class="comment">// Subscribers</span></code></div></div><div class="container"><div class="line"><code>$.Topic( <span class="string">&quot;mailArrived&quot;</span> ).subscribe( fn1 );</code></div></div><div class="container"><div class="line"><code>$.Topic( <span class="string">&quot;mailArrived&quot;</span> ).subscribe( fn2 );</code></div></div><div class="container"><div class="line"><code>$.Topic( <span class="string">&quot;mailSent&quot;</span> ).subscribe( fn1 );</code></div></div><div class="container"><div class="line"><code> </code></div></div><div class="container"><div class="line"><code><span class="comment">// Publisher</span></code></div></div><div class="container"><div class="line"><code>$.Topic( <span class="string">&quot;mailArrived&quot;</span> ).publish( <span class="string">&quot;hello world!&quot;</span> );</code></div></div><div class="container"><div class="line"><code>$.Topic( <span class="string">&quot;mailSent&quot;</span> ).publish( <span class="string">&quot;woo! mail!&quot;</span> );</code></div></div><div class="container"><div class="line"><code> </code></div></div><div class="container"><div class="line"><code><span class="comment">// Here, &quot;hello world!&quot; gets pushed to fn1 and fn2</span></code></div></div><div class="container"><div class="line"><code><span class="comment">// when the &quot;mailArrived&quot; notification is published</span></code></div></div><div class="container"><div class="line"><code><span class="comment">// with &quot;woo! mail!&quot; also being pushed to fn1 when</span></code></div></div><div class="container"><div class="line"><code><span class="comment">// the &quot;mailSent&quot; notification is published.</span></code></div></div><div class="container"><div class="line"><code> </code></div></div><div class="container"><div class="line"><code><span class="comment">/*</span></code></div></div><div class="container"><div class="line"><code><span class="comment">output:</span></code></div></div><div class="container"><div class="line"><code><span class="comment">hello world!</span></code></div></div><div class="container"><div class="line"><code><span class="comment">fn2 says: hello world!</span></code></div></div><div class="container"><div class="line"><code><span class="comment">woo! mail!</span></code></div></div><div class="container"><div class="line"><code><span class="comment">*/</span></code></div></div></pre>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+
+    <p>While this is useful, the implementation can be taken further. Using <code>$.Deferreds</code>,  it&apos;s possible to ensure publishers only publish notifications for subscribers once particular tasks have been completed (resolved). See the below code sample for some further comments on how this could be used in practice:</p>
+    <div class="syntaxhighlighter javascript">
+	<table>
+		<tbody>
+			<tr>
+				
+				<td class="gutter">
+					
+						<div class="line n1">1</div>
+					
+						<div class="line n2">2</div>
+					
+						<div class="line n3">3</div>
+					
+						<div class="line n4">4</div>
+					
+						<div class="line n5">5</div>
+					
+						<div class="line n6">6</div>
+					
+						<div class="line n7">7</div>
+					
+						<div class="line n8">8</div>
+					
+						<div class="line n9">9</div>
+					
+						<div class="line n10">10</div>
+					
+						<div class="line n11">11</div>
+					
+						<div class="line n12">12</div>
+					
+						<div class="line n13">13</div>
+					
+						<div class="line n14">14</div>
+					
+						<div class="line n15">15</div>
+					
+						<div class="line n16">16</div>
+					
+						<div class="line n17">17</div>
+					
+						<div class="line n18">18</div>
+					
+						<div class="line n19">19</div>
+					
+						<div class="line n20">20</div>
+					
+				</td>
+				
+				<td class="code">
+					<pre><div class="container"><div class="line"><code><span class="comment">// Subscribe to the mailArrived notification</span></code></div></div><div class="container"><div class="line"><code>$.Topic( <span class="string">&quot;mailArrived&quot;</span> ).subscribe( fn1 );</code></div></div><div class="container"><div class="line"><code> </code></div></div><div class="container"><div class="line"><code><span class="comment">// Create a new instance of Deferreds</span></code></div></div><div class="container"><div class="line"><code><span class="keyword">var</span> dfd = $.Deferred();</code></div></div><div class="container"><div class="line"><code> </code></div></div><div class="container"><div class="line"><code><span class="comment">// Define a new topic (without directly publishing)</span></code></div></div><div class="container"><div class="line"><code><span class="keyword">var</span> topic = $.Topic( <span class="string">&quot;mailArrived&quot;</span> );</code></div></div><div class="container"><div class="line"><code> </code></div></div><div class="container"><div class="line"><code><span class="comment">// When the deferred has been resolved, publish a</span></code></div></div><div class="container"><div class="line"><code><span class="comment">// notification to subscribers</span></code></div></div><div class="container"><div class="line"><code>dfd.done( topic.publish );</code></div></div><div class="container"><div class="line"><code> </code></div></div><div class="container"><div class="line"><code><span class="comment">// Here the Deferred is being resolved with a message</span></code></div></div><div class="container"><div class="line"><code><span class="comment">// that will be passed back to subscribers. It&apos;s possible to</span></code></div></div><div class="container"><div class="line"><code><span class="comment">// easily integrate this into a more complex routine</span></code></div></div><div class="container"><div class="line"><code><span class="comment">// (eg. waiting on an Ajax call to complete) so that</span></code></div></div><div class="container"><div class="line"><code><span class="comment">// messages are only published once the task has actually</span></code></div></div><div class="container"><div class="line"><code><span class="comment">// finished.</span></code></div></div><div class="container"><div class="line"><code>dfd.resolve( <span class="string">&quot;it&apos;s been published!&quot;</span> );</code></div></div></pre>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+
+  </div>
+</div></article>	</div><!-- .entry-content -->
+
+</article><!-- #post-303 -->
+			</div>
+
+	<div id="sidebar" class="widget-area" role="complementary">
+	<aside id="categories" class="widget">
+		<ul>
+				<li class="cat-item cat-item-1"><a href="//api.jquery.com/category/ajax/" >Ajax</a>
+<ul class='children'>
+	<li class="cat-item cat-item-2"><a href="//api.jquery.com/category/ajax/global-ajax-event-handlers/" >Global Ajax Event Handlers</a>
+</li>
+	<li class="cat-item cat-item-3"><a href="//api.jquery.com/category/ajax/helper-functions/" >Helper Functions</a>
+</li>
+	<li class="cat-item cat-item-4"><a href="//api.jquery.com/category/ajax/low-level-interface/" >Low-Level Interface</a>
+</li>
+	<li class="cat-item cat-item-5"><a href="//api.jquery.com/category/ajax/shorthand-methods/" >Shorthand Methods</a>
+</li>
+</ul>
+</li>
+	<li class="cat-item cat-item-6"><a href="//api.jquery.com/category/attributes/" >Attributes</a>
+</li>
+	<li class="cat-item cat-item-7 current-cat"><a href="//api.jquery.com/category/callbacks-object/" >Callbacks Object</a>
+</li>
+	<li class="cat-item cat-item-8"><a href="//api.jquery.com/category/core/" >Core</a>
+</li>
+	<li class="cat-item cat-item-9"><a href="//api.jquery.com/category/css/" >CSS</a>
+</li>
+	<li class="cat-item cat-item-10"><a href="//api.jquery.com/category/data/" >Data</a>
+</li>
+	<li class="cat-item cat-item-11"><a href="//api.jquery.com/category/deferred-object/" >Deferred Object</a>
+</li>
+	<li class="cat-item cat-item-87"><a href="//api.jquery.com/category/deprecated/" >Deprecated</a>
+<ul class='children'>
+	<li class="cat-item cat-item-90"><a href="//api.jquery.com/category/deprecated/deprecated-1.3/" >Deprecated 1.3</a>
+</li>
+	<li class="cat-item cat-item-88"><a href="//api.jquery.com/category/deprecated/deprecated-1.7/" >Deprecated 1.7</a>
+</li>
+	<li class="cat-item cat-item-89"><a href="//api.jquery.com/category/deprecated/deprecated-1.8/" >Deprecated 1.8</a>
+</li>
+	<li class="cat-item cat-item-94"><a href="//api.jquery.com/category/deprecated/deprecated-1.9/" >Deprecated 1.9</a>
+</li>
+	<li class="cat-item cat-item-93"><a href="//api.jquery.com/category/deprecated/deprecated-1.10/" >Deprecated 1.10</a>
+</li>
+	<li class="cat-item cat-item-98"><a href="//api.jquery.com/category/deprecated/deprecated-3.0/" >Deprecated 3.0</a>
+</li>
+</ul>
+</li>
+	<li class="cat-item cat-item-12"><a href="//api.jquery.com/category/dimensions/" >Dimensions</a>
+</li>
+	<li class="cat-item cat-item-13"><a href="//api.jquery.com/category/effects/" >Effects</a>
+<ul class='children'>
+	<li class="cat-item cat-item-14"><a href="//api.jquery.com/category/effects/basics/" >Basics</a>
+</li>
+	<li class="cat-item cat-item-15"><a href="//api.jquery.com/category/effects/custom-effects/" >Custom</a>
+</li>
+	<li class="cat-item cat-item-16"><a href="//api.jquery.com/category/effects/fading/" >Fading</a>
+</li>
+	<li class="cat-item cat-item-17"><a href="//api.jquery.com/category/effects/sliding/" >Sliding</a>
+</li>
+</ul>
+</li>
+	<li class="cat-item cat-item-18"><a href="//api.jquery.com/category/events/" >Events</a>
+<ul class='children'>
+	<li class="cat-item cat-item-19"><a href="//api.jquery.com/category/events/browser-events/" >Browser Events</a>
+</li>
+	<li class="cat-item cat-item-20"><a href="//api.jquery.com/category/events/document-loading/" >Document Loading</a>
+</li>
+	<li class="cat-item cat-item-21"><a href="//api.jquery.com/category/events/event-handler-attachment/" >Event Handler Attachment</a>
+</li>
+	<li class="cat-item cat-item-22"><a href="//api.jquery.com/category/events/event-object/" >Event Object</a>
+</li>
+	<li class="cat-item cat-item-23"><a href="//api.jquery.com/category/events/form-events/" >Form Events</a>
+</li>
+	<li class="cat-item cat-item-24"><a href="//api.jquery.com/category/events/keyboard-events/" >Keyboard Events</a>
+</li>
+	<li class="cat-item cat-item-25"><a href="//api.jquery.com/category/events/mouse-events/" >Mouse Events</a>
+</li>
+</ul>
+</li>
+	<li class="cat-item cat-item-26"><a href="//api.jquery.com/category/forms/" >Forms</a>
+</li>
+	<li class="cat-item cat-item-27"><a href="//api.jquery.com/category/internals/" >Internals</a>
+</li>
+	<li class="cat-item cat-item-28"><a href="//api.jquery.com/category/manipulation/" >Manipulation</a>
+<ul class='children'>
+	<li class="cat-item cat-item-29"><a href="//api.jquery.com/category/manipulation/class-attribute/" >Class Attribute</a>
+</li>
+	<li class="cat-item cat-item-30"><a href="//api.jquery.com/category/manipulation/copying/" >Copying</a>
+</li>
+	<li class="cat-item cat-item-32"><a href="//api.jquery.com/category/manipulation/dom-insertion-around/" >DOM Insertion, Around</a>
+</li>
+	<li class="cat-item cat-item-33"><a href="//api.jquery.com/category/manipulation/dom-insertion-inside/" >DOM Insertion, Inside</a>
+</li>
+	<li class="cat-item cat-item-34"><a href="//api.jquery.com/category/manipulation/dom-insertion-outside/" >DOM Insertion, Outside</a>
+</li>
+	<li class="cat-item cat-item-35"><a href="//api.jquery.com/category/manipulation/dom-removal/" >DOM Removal</a>
+</li>
+	<li class="cat-item cat-item-36"><a href="//api.jquery.com/category/manipulation/dom-replacement/" >DOM Replacement</a>
+</li>
+	<li class="cat-item cat-item-37"><a href="//api.jquery.com/category/manipulation/general-attributes/" >General Attributes</a>
+</li>
+	<li class="cat-item cat-item-38"><a href="//api.jquery.com/category/manipulation/style-properties/" >Style Properties</a>
+</li>
+</ul>
+</li>
+	<li class="cat-item cat-item-39"><a href="//api.jquery.com/category/miscellaneous/" >Miscellaneous</a>
+<ul class='children'>
+	<li class="cat-item cat-item-40"><a href="//api.jquery.com/category/miscellaneous/collection-manipulation/" >Collection Manipulation</a>
+</li>
+	<li class="cat-item cat-item-41"><a href="//api.jquery.com/category/miscellaneous/data-storage/" >Data Storage</a>
+</li>
+	<li class="cat-item cat-item-42"><a href="//api.jquery.com/category/miscellaneous/dom-element-methods/" >DOM Element Methods</a>
+</li>
+	<li class="cat-item cat-item-43"><a href="//api.jquery.com/category/miscellaneous/setup-methods/" >Setup Methods</a>
+</li>
+</ul>
+</li>
+	<li class="cat-item cat-item-44"><a href="//api.jquery.com/category/offset/" >Offset</a>
+</li>
+	<li class="cat-item cat-item-45"><a href="//api.jquery.com/category/properties/" >Properties</a>
+<ul class='children'>
+	<li class="cat-item cat-item-46"><a href="//api.jquery.com/category/properties/jquery-object-instance-properties/" >Properties of jQuery Object Instances</a>
+</li>
+	<li class="cat-item cat-item-47"><a href="//api.jquery.com/category/properties/global-jquery-object-properties/" >Properties of the Global jQuery Object</a>
+</li>
+</ul>
+</li>
+	<li class="cat-item cat-item-92"><a href="//api.jquery.com/category/removed/" >Removed</a>
+</li>
+	<li class="cat-item cat-item-48"><a href="//api.jquery.com/category/selectors/" >Selectors</a>
+<ul class='children'>
+	<li class="cat-item cat-item-49"><a href="//api.jquery.com/category/selectors/attribute-selectors/" >Attribute</a>
+</li>
+	<li class="cat-item cat-item-50"><a href="//api.jquery.com/category/selectors/basic-css-selectors/" >Basic</a>
+</li>
+	<li class="cat-item cat-item-51"><a href="//api.jquery.com/category/selectors/basic-filter-selectors/" >Basic Filter</a>
+</li>
+	<li class="cat-item cat-item-52"><a href="//api.jquery.com/category/selectors/child-filter-selectors/" >Child Filter</a>
+</li>
+	<li class="cat-item cat-item-53"><a href="//api.jquery.com/category/selectors/content-filter-selector/" >Content Filter</a>
+</li>
+	<li class="cat-item cat-item-54"><a href="//api.jquery.com/category/selectors/form-selectors/" >Form</a>
+</li>
+	<li class="cat-item cat-item-55"><a href="//api.jquery.com/category/selectors/hierarchy-selectors/" >Hierarchy</a>
+</li>
+	<li class="cat-item cat-item-56"><a href="//api.jquery.com/category/selectors/jquery-selector-extensions/" >jQuery Extensions</a>
+</li>
+	<li class="cat-item cat-item-57"><a href="//api.jquery.com/category/selectors/visibility-filter-selectors/" >Visibility Filter</a>
+</li>
+</ul>
+</li>
+	<li class="cat-item cat-item-58"><a href="//api.jquery.com/category/traversing/" >Traversing</a>
+<ul class='children'>
+	<li class="cat-item cat-item-59"><a href="//api.jquery.com/category/traversing/filtering/" >Filtering</a>
+</li>
+	<li class="cat-item cat-item-60"><a href="//api.jquery.com/category/traversing/miscellaneous-traversal/" >Miscellaneous Traversing</a>
+</li>
+	<li class="cat-item cat-item-61"><a href="//api.jquery.com/category/traversing/tree-traversal/" >Tree Traversal</a>
+</li>
+</ul>
+</li>
+	<li class="cat-item cat-item-63"><a href="//api.jquery.com/category/utilities/" >Utilities</a>
+</li>
+	<li class="cat-item cat-item-64"><a href="//api.jquery.com/category/version/" >Version</a>
+<ul class='children'>
+	<li class="cat-item cat-item-65"><a href="//api.jquery.com/category/version/1.0/" >Version 1.0</a>
+</li>
+	<li class="cat-item cat-item-66"><a href="//api.jquery.com/category/version/1.0.4/" >Version 1.0.4</a>
+</li>
+	<li class="cat-item cat-item-67"><a href="//api.jquery.com/category/version/1.1/" >Version 1.1</a>
+</li>
+	<li class="cat-item cat-item-68"><a href="//api.jquery.com/category/version/1.1.2/" >Version 1.1.2</a>
+</li>
+	<li class="cat-item cat-item-69"><a href="//api.jquery.com/category/version/1.1.3/" >Version 1.1.3</a>
+</li>
+	<li class="cat-item cat-item-70"><a href="//api.jquery.com/category/version/1.1.4/" >Version 1.1.4</a>
+</li>
+	<li class="cat-item cat-item-71"><a href="//api.jquery.com/category/version/1.2/" >Version 1.2</a>
+</li>
+	<li class="cat-item cat-item-72"><a href="//api.jquery.com/category/version/1.2.3/" >Version 1.2.3</a>
+</li>
+	<li class="cat-item cat-item-73"><a href="//api.jquery.com/category/version/1.2.6/" >Version 1.2.6</a>
+</li>
+	<li class="cat-item cat-item-74"><a href="//api.jquery.com/category/version/1.3/" >Version 1.3</a>
+</li>
+	<li class="cat-item cat-item-75"><a href="//api.jquery.com/category/version/1.4/" >Version 1.4</a>
+</li>
+	<li class="cat-item cat-item-76"><a href="//api.jquery.com/category/version/1.4.1/" >Version 1.4.1</a>
+</li>
+	<li class="cat-item cat-item-77"><a href="//api.jquery.com/category/version/1.4.2/" >Version 1.4.2</a>
+</li>
+	<li class="cat-item cat-item-78"><a href="//api.jquery.com/category/version/1.4.3/" >Version 1.4.3</a>
+</li>
+	<li class="cat-item cat-item-79"><a href="//api.jquery.com/category/version/1.4.4/" >Version 1.4.4</a>
+</li>
+	<li class="cat-item cat-item-80"><a href="//api.jquery.com/category/version/1.5/" >Version 1.5</a>
+</li>
+	<li class="cat-item cat-item-81"><a href="//api.jquery.com/category/version/1.5.1/" >Version 1.5.1</a>
+</li>
+	<li class="cat-item cat-item-82"><a href="//api.jquery.com/category/version/1.6/" >Version 1.6</a>
+</li>
+	<li class="cat-item cat-item-83"><a href="//api.jquery.com/category/version/1.7/" >Version 1.7</a>
+</li>
+	<li class="cat-item cat-item-84"><a href="//api.jquery.com/category/version/1.8/" >Version 1.8</a>
+</li>
+	<li class="cat-item cat-item-86"><a href="//api.jquery.com/category/version/1.9/" >Version 1.9</a>
+</li>
+	<li class="cat-item cat-item-97"><a href="//api.jquery.com/category/version/1.12-2.2/" >Version 1.12 &amp; 2.2</a>
+</li>
+	<li class="cat-item cat-item-95"><a href="//api.jquery.com/category/version/3.0/" >Version 3.0</a>
+</li>
+	<li class="cat-item cat-item-96"><a href="//api.jquery.com/category/version/3.1/" >Version 3.1</a>
+</li>
+</ul>
+</li>
+		</ul>
+	</aside>
+</div>
+</div>
+	</div>
+</div>
+
+<footer class="clearfix simple">
+	<div class="constrain">
+		<div class="row">
+			<div class="six columns offset-by-three">
+				<h3><span>Books</span></h3>
+				<ul class="books">
+					<li>
+						<a href="https://www.packtpub.com/web-development/learning-jquery-fourth-edition">
+							<img src="//api.jquery.com/jquery-wp-content/themes/jquery/content/books/learning-jquery-4th-ed.jpg" alt="Learning jQuery 4th Edition by Karl Swedberg and Jonathan Chaffer" width="92" height="114">
+							Learning jQuery Fourth Edition
+							<cite>Karl Swedberg and Jonathan Chaffer</cite>
+						</a>
+					</li>
+					<li>
+						<a href="https://www.manning.com/books/jquery-in-action-third-edition?a_bid=bdd5b7ad&amp;a_aid=141d9491">
+							<img src="//api.jquery.com/jquery-wp-content/themes/jquery/content/books/jquery-in-action.jpg" alt="jQuery in Action by Bear Bibeault, Yehuda Katz, and Aurelio De Rosa" width="92" height="114">
+							jQuery in Action
+							<cite>Bear Bibeault, Yehuda Katz, and Aurelio De Rosa</cite>
+						</a>
+					</li>
+					<li>
+						<a href="http://www.syncfusion.com/resources/techportal/ebooks/jquery?utm_medium=BizDev-jQuery.org0513">
+							<img src="//api.jquery.com/jquery-wp-content/themes/jquery/content/books/jquery-succinctly.jpg" alt="jQuery Succinctly by Cody Lindley" width="92" height="114">
+							jQuery Succinctly
+							<cite>Cody Lindley</cite>
+						</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+
+		
+<div id="legal">
+	<ul class="footer-site-links">
+			<li><a class="icon-pencil" href="http://learn.jquery.com/">Learning Center</a></li>
+			<li><a class="icon-group" href="http://forum.jquery.com/">Forum</a></li>
+			<li><a class="icon-wrench" href="http://api.jquery.com/">API</a></li>
+			<li><a class="icon-twitter" href="https://twitter.com/jquery">Twitter</a></li>
+			<li><a class="icon-comments" href="http://irc.jquery.org/">IRC</a></li>
+			<li><a class="icon-github" href="https://github.com/jquery">GitHub</a></li>
+	</ul>
+	<p class="copyright">
+		Copyright 2017 <a href="https://jquery.org/team/">The jQuery Foundation</a>.
+		<a href="https://jquery.org/license/">jQuery License</a>
+		<span class="sponsor-line"><a href="http://digitalocean.com" rel="nofollow" class="do-link">Web hosting by Digital Ocean</a> | <a href="http://www.stackpath.com" rel="nofollow" class="sp-link">CDN by StackPath</a></span>
+	</p>
+</div>
+
+	</div>
+</footer>
+
+<script>
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-1076265-1']);
+    _gaq.push(['_setDomainName', 'api.jquery.com']);
+    _gaq.push(['_setAllowLinker', true]);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+</script>
+<script type='text/javascript' src='//api.jquery.com/wp-includes/js/comment-reply.min.js?ver=4.5.2'></script>
+<script type='text/javascript' src='//api.jquery.com/wp-includes/js/wp-embed.min.js?ver=4.5.2'></script>
+
+</body>
+</html>

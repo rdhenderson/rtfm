@@ -33,10 +33,12 @@ require("./controllers/routes.js")(app);
 db.sequelize.sync({ force: true }).then(function() {
   app.listen(PORT, function() {
     //Uncomment this line to seed database first time
-    // require("./db/seeds.js")(db);
+    //Will force an update of database -- FIXME -- NEED MORE ELEGANT SOLUTION. 
+    require('./search_modules/search-jquery.js').updateDB();
     console.log("App listening on PORT " + PORT);
   });
 });
+
 
 // app.listen(PORT, function() {
 //   //Uncomment this line to seed database first time
