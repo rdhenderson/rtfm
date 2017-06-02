@@ -6,7 +6,6 @@ $(document).ready(() => {
   .then(getJqueryAPI)
   .then( (methods) => initPage(methods) )
   .catch( (err) => console.log(err) );
-
 });
 
 function getJqueryAPI(methods) {
@@ -38,7 +37,7 @@ function initPage(methods) {
   $('#search-submit').on('click', searchHandler);
   $('#search-clear').on('click', () => $('#search-input').val(''));
 
-  $('#search-input').fuzzyComplete(methods.express);
+  // $('#search-input').fuzzyComplete(methods.express);
 
   $('input').on('keyup blur', () => {
     $(this).parent().find(".output").html($(this).parent().find("select").val());

@@ -14,8 +14,6 @@ module.exports = function(app) {
   });
 
   app.get( '/api/express/search/:query', ( req, res ) => {
-    // db.expressDocs.findOne({where: {name: req.params.query})
-    //   .then( (results) => res.send(results));
     searchExpress.getById(req.params.query, ( err, results ) => {
       if (err) return console.log(err);
       res.send ( results );

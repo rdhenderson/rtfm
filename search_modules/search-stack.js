@@ -30,7 +30,7 @@ function queryStack (url, callback) {
   search : function (query, language, callback) {
     // Create stackoverflow API search string
     // NOTE: changed to advanced search to allow free text search strings
-
+    console.log("Querying stack");
     let url = 'http://api.stackexchange.com/2.2/search/advanced?';
     url += 'order=desc&site=stackoverflow&sort=relevance';
     url +="&tagged=" + language + "&filter=withbody";

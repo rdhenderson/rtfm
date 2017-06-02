@@ -4,7 +4,7 @@ const db = require('../models');
 
 module.exports = updateJqueryDetails;
 
-function updateJqueryDetails (db) {
+function updateJqueryDetails () {
   db.JQueryDoc.findAll().then(getJquery);
 }
 
