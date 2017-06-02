@@ -1,3 +1,19 @@
+#red {
+  color: rgb(210, 115, 119);
+}
+
+#blue {
+  color: rgb(114, 174, 234);
+}
+
+#green {
+  color: rgb(160, 193, 129);
+}
+
+#quote {
+  color: rgb(201, 156, 110);
+}
+
 body {
   background-color: #353434;
   color: #eee;
@@ -164,8 +180,8 @@ h2 {
 
 /*Handlebars UI Styling*/
 .card-header-search{
-  background-color: #90ee90;
-  color: #ffffff;
+  background-color: #eee ;
+  color: #90ee90;
   text-align: center;
 }
 
