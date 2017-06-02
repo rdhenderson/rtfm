@@ -14,7 +14,7 @@ module.exports = function(app) {
   });
 
   app.get( '/api/express/search/:query', ( req, res ) => {
-    searchExpress.getById(req.params.query, ( err, results ) => {
+    searchExpress.getByName(req.params.query, ( err, results ) => {
       if (err) return console.log(err);
       res.send ( results );
     });
