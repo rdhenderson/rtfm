@@ -9,8 +9,6 @@ function updateJqueryDetails () {
 }
 
 function getJquery(data) {
-  // console.log('Getting Jquery, ', data[0]);
-
   const detailRequests = data.map( (item) => {
     return new Promise( (resolve) => {
       getJqueryDetail(item, resolve)
@@ -18,7 +16,7 @@ function getJquery(data) {
   });
 
   Promise.all(detailRequests).then( (results) => {
-    results.forEach( (item) => console.log(item.name + " - " + item.detail.name) );
+    // results.forEach( (item) => console.log(item.name + " - " + item.detail.name) );
   }).catch( (err) => console.log("ERROR: ", err) );
 }
 

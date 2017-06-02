@@ -38,10 +38,3 @@ db.sequelize.sync({ force: false }).then(function() {
     console.log("App listening on PORT " + PORT);
   });
 });
-
-
-// app.listen(PORT, function() {
-//   //Uncomment this line to seed database first time
-//   // require("./db/seeds.js")(db);
-//   console.log("App listening on PORT " + PORT);
-// });

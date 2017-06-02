@@ -61,8 +61,9 @@ function getRawFile(url){
 module.exports = {
   scrapeJquery : scrapeJQueryAPI,
   getMethodBody : getRawFile,
-  updateFile : (name) => {
+  updateFile : (url) => {
+    const name = parseFilePath(url);
     requestFile(`https://api.jquery.com/${name}/`)
-    .then( (body) => writeAPI(`jquery/${name}`, body) );
+    .then( (body) => writeAPI(name, body) );
   }
 }
