@@ -13,7 +13,14 @@ module.exports = function(app) {
   });
 
   app.get( '/api/express/search/:query', ( req, res ) => {
-    searchExpress.getByName(req.params.query, ( err, results ) => {
+    searchExpress.search(req.params.query, ( err, results ) => {
+      if (err) return console.log(err);
+      res.send ( results );
+    });
+  });
+
+  app.get( '/api/express/fulltext/:query', ( req, res ) => {
+    searchExpress.search(req.params.query, ( err, results ) => {
       if (err) return console.log(err);
       res.send ( results );
     });

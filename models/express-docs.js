@@ -18,6 +18,12 @@ module.exports = function(sequelize, DataTypes) {
       type: DataTypes.TEXT,
     }
 
-  });
+  },
+  {
+      indexes: [
+        // add a FULLTEXT index
+        { type: 'FULLTEXT', name: 'text_idx', fields: ['html', 'name'] }
+      ]
+    });
   return ExpressDoc;
 };

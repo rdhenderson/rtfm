@@ -63,6 +63,16 @@ module.exports = {
   updateDB : function (callback) {
     return fetchAPI(callback);
   },
+  search : function (query, callback) {
+    // const against = 'more or less';
+    db.ExpressDoc.find({
+      where: ['MATCH (html) AGAINST(? IN NATURAL LANGUAGE MODE)', [query]]
+    }).then((results) => {
+      console.log('MATCH RESULTS', results.dataValues);
+      callback(null, results.dataValues)
+    });
+
+  },
   getByName : function (query, callback) {
     db.ExpressDoc.findAll().then( (data) => {
       //FIXME: NEED ERROR HANDLING FOR BAD SEARCH OR EMPTY DB
