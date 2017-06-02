@@ -56,7 +56,12 @@ module.exports = {
   updateDB : function (callback) {
     return fetchAPI(callback);
   },
-  getById : function (href, callback) {
+  getByName : function (query, callback) {
+    db.JQueryDoc.findAll().then( (data) => {
+      //FIXME: NEED ERROR HANDLING FOR BAD SEARCH OR EMPTY DB, ONLY RETURNING ONE MATCH
+      const match = data.filter( (el) =>  query.includes(el.name) );
+      return callback(null, match[0]);
+    });
   },
   getDetail : function (href, callback) {
 

@@ -1,7 +1,6 @@
 //Require sequelize models
-const searchExpress = require('../search_modules/search-express.js');
-const searchFuzzy = require('../search_modules/search-fuzzy.js');
-const db = require('../models');
+const searchExpress = require('../../search_modules/search-express.js');
+const searchFuzzy = require('../../search_modules/search-fuzzy.js');
 
 module.exports = function(app) {
 

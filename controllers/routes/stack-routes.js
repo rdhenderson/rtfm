@@ -1,4 +1,4 @@
-const stack = require('../search_modules/search-stack.js');
+const stack = require('../../search_modules/search-stack.js');
 
 module.exports = function(app) {
 
@@ -8,7 +8,7 @@ module.exports = function(app) {
       res.json(results);
     });
   });
-  
+
 
   app.get('/api/stack/question/:id', (req, res) => {
     stack.getAnswers(req.params.id, (err, results) => {

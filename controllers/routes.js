@@ -1,8 +1,5 @@
-//Require sequelize models
+
 const path = require('path');
-// const db = require("../models");
-const jqueryDocs = require('../search_modules/search-jquery.js');
-const expressDocs = require('../search_modules/search-express.js');
 
 module.exports = function(app) {
 
@@ -10,27 +7,9 @@ module.exports = function(app) {
     res.sendFile(path.join(__dirname, "../public/index.html"));
   });
 
-  app.get("/test-search.html", function(req, res) {
-    res.sendFile(path.join(__dirname, "../public/test-search.html"));
-  });
-
-  //Returns array of objects with name and html keys
-  app.get( '/api/jquery/methods/', ( req, res ) => {
-    jqueryDocs.getMethods( (err, data ) => {
-      if (err) throw err;
-      res.send(data);
-    });
-  });
-
-  app.get( '/api/jquery/detail/:id', ( req, res ) => {
-    jqueryDocs.getDetails(req.params.id, ( err, data ) => {
-      if ( err ) throw err;
-      res.send(data);
-    });
-  });
-
-  require('./express-routes.js')(app);
-  require('./stack-routes.js')(app);
-  require('./mdn-routes.js')(app);
-
+  // FIXME: Add index.js to routes/ so we can just require folder like sequelize models?
+  require('./routes/express-routes.js')(app);
+  require('./routes/jquery-routes.js')(app);
+  require('./routes/stack-routes.js')(app);
+  require('./routes/mdn-routes.js')(app);
 };

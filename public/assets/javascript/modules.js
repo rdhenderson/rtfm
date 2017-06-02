@@ -41,7 +41,7 @@ this["Template"]["express"] = Handlebars.template({"1":function(container,depth0
 },"compiler":[7,">= 4.0.0"],"main":function(container,depth0,helpers,partials,data) {
     var stack1;
 
-  return "<div id=\"accordion-express\" class=\"express-list\" role=\"tablist\" aria-multiselectable=\"true\">\n  <label id=\"doc-method-listing-head\" data-toggle=\"collapse\" data-target=\"#express-method-list\"> <h2> Express Methods </h2></label>\n  <div id=\"express-query-result\"></div>\n  <div id=\"express-method-list\" class=\"collapse show\">\n"
+  return "<div id=\"accordion-express\" class=\"express-list\" role=\"tablist\" aria-multiselectable=\"true\">\n  <label id=\"doc-method-listing-head\" data-toggle=\"collapse\" data-target=\"#express-method-list\"> <h2> Express Methods </h2></label>\n  <div id=\"doc-query-result\"></div>\n  <div id=\"express-method-list\" class=\"collapse show\">\n"
     + ((stack1 = helpers.each.call(depth0 != null ? depth0 : (container.nullContext || {}),(depth0 != null ? depth0.express : depth0),{"name":"each","hash":{},"fn":container.program(1, data, 0),"inverse":container.noop,"data":data})) != null ? stack1 : "")
     + "</div>\n</div>\n";
 },"useData":true});
@@ -152,7 +152,7 @@ this["Template"]["jquery"] = Handlebars.template({"1":function(container,depth0,
 },"compiler":[7,">= 4.0.0"],"main":function(container,depth0,helpers,partials,data) {
     var stack1;
 
-  return "<div id=\"accordion-jquery\" class=\"doc-list\" role=\"tablist\" aria-multiselectable=\"true\">\n  <label id=\"jquery-list-head\" data-toggle=\"collapse\" data-target=\"#jquery-list\"> <h2> JQuery Methods </h2></label>\n  <div id=\"jquery-page-result\"></div>\n  <div id=\"jquery-list\" class=\"collapse show\">\n"
+  return "<div id=\"accordion-jquery\" class=\"doc-list\" role=\"tablist\" aria-multiselectable=\"true\">\n  <label id=\"jquery-list-head\" data-toggle=\"collapse\" data-target=\"#jquery-list\"> <h2> JQuery Methods </h2></label>\n  <div id=\"doc-query-result\"></div>\n  <div id=\"jquery-list\" class=\"collapse show\">\n"
     + ((stack1 = helpers.each.call(depth0 != null ? depth0 : (container.nullContext || {}),(depth0 != null ? depth0.jquery : depth0),{"name":"each","hash":{},"fn":container.program(1, data, 0),"inverse":container.noop,"data":data})) != null ? stack1 : "")
     + "</div>\n</div>\n";
 },"useData":true});
