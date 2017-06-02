@@ -6,7 +6,7 @@ module.exports = function(app) {
 
   //Returns array of objects with name and html keys
   app.get( '/api/express/methods/', ( req, res ) => {
-    searchExpress.fetchAPI( ( err, results ) => {
+    searchExpress.getMethods( ( err, results ) => {
       if ( err ) throw err;
       res.send(results);
     });

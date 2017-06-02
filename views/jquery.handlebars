@@ -4,15 +4,15 @@
   <div id="jquery-list" class="collapse show">
   {{#each jquery}}
   <div class="card">
-    <div class="card-header-search" role="tab" id="{{id}}-header">
+    <div class="card-header" role="tab" id="jquery-{{id}}-header">
       <h5 class="mb-0">
-        <a data-toggle="collapse" data-parent="#accordion-jquery" href="#{{id}}" aria-expanded="true" aria-controls="{{id}}">
+        <a data-toggle="collapse" data-parent="#accordion-jquery" href="#jquery-{{id}}" aria-expanded="true" aria-controls="{{id}}">
           {{name}}
         </a>
       </h5>
     </div>
 
-    <div id="{{id}}" class="collapse" role="tabpanel" aria-labelledby="{{id}}-header">
+    <div id="jquery-{{id}}" class="collapse" role="tabpanel" aria-labelledby="jquery-{{id}}-header">
       <div class="card-block doc-item">
         {{{html}}}
       </div>

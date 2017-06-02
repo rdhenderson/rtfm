@@ -2,6 +2,7 @@
 
 const request = require('request');
 const cheerio = require('cheerio');
+const db = require('../models');
 
 // Private function that escapes CSS characters and adds leading # to identify ID
 const EXPRESS_BASE_URL = 'https://expressjs.com/en/';
@@ -22,48 +23,61 @@ function queryExpress(url, callback) {
 
 // Takes cheerio/jquery object and return an express method object
 function parseExpressSection($el) {
-
   return {
       name : $el.children('h3').first().text(),
-      html : $el.html(),
       shortName: $el.children('h3').first().text().split('(')[0],
+      html : $el.html(),
       link : $el.children('h3').first().text().split('(')[0].split('.').join("")
-  }
+  };
 }
 
+function fetchAPI (callback) {
+    let queryURL = EXPRESS_API_URL;
+    queryExpress(queryURL, (err, body) => {
+      if (err) return console.err(err);
+      //Load response html into cheerio for jquery-style manipulation
+      const $ = cheerio.load(body);
+      //Add each section within api-doc as object to methods
+      $('table').attr('class', 'table');
+      $('thead').attr('class', 'thead-inverse');
+
+      $("section", '#api-doc').each( (i, elem) => {
+        methods.push(parseExpressSection($(elem)));
+      });
+
+      // Add methods to database, retrieve and send to callback
+      db.ExpressDoc.bulkCreate(methods)
+        .then(() => db.ExpressDoc.findAll())
+        .then((data) => callback(null, data));
+  });
+}
 module.exports = {
   //Return methods previously gathered
-  methods : function () {
-    return methods;
+  getMethods : function (callback) {
+    if (methods.length) return callback(methods);
+    db.ExpressDoc.findAll()
+    .then( (data) => {
+      methods = data;
+      if (data.length) return callback(null, data);
+      return fetchAPI(callback);
+    })
+    .catch( (err) => console.err(err));
   },
-  fetchAPI : function (callback) {
-      let queryURL = EXPRESS_API_URL;
-      queryExpress(queryURL, (err, body) => {
-        if (err) return console.log(err);
-        //Load response html into cheerio for jquery-style manipulation
-        const $ = cheerio.load(body);
-        //Add each section within api-doc as object to methods
-        $('table').attr('class', 'table');
-        $('thead').attr('class', 'thead-inverse');
-
-        $("section", '#api-doc').each( (i, elem) => {
-          methods.push(parseExpressSection($(elem)));
-        });
-
-        return callback(null, methods);
-    });
+  // Force an update to database
+  updateDB : function (callback) {
+    return fetchAPI(callback);
   },
   getById : function (query, callback) {
-    if (methods.length > 0) {
-      const match = methods.filter( (el) =>  query.includes(el.shortName) )[0];
+    db.ExpressDoc.findAll().then( (data) => {
+      //FIXME: NEED ERROR HANDLING FOR BAD SEARCH OR EMPTY DB
+      const match = methods.filter( (el) =>  query.includes(el.shortName))[0];
       return callback(null, match);
-    } else {
-      queryURL = EXPRESS_API_URL + '#' + escapeID(match); // Turn res.json into #res\.json
-      queryExpress(queryURL, (err, body) => {
-        if (err) throw err;
-        const $ = cheerio.load(body);
-        return callback(null, parseExpressSection($('#'+id)));
-      });
-    }
+      // EXPRESS_API_URL + '#' + escapeID(id); // Turn res.json into #res\.json
+      // queryExpress(queryURL, (err, body) => {
+      //   if (err) throw err;
+      //   const $ = cheerio.load(body);
+      //   return callback(null, parseExpressSection($('#'+id)));
+      // });
+    });
   }
-}
+};

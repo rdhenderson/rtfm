@@ -19,7 +19,7 @@ module.exports = function(app) {
 
   //Returns array of objects with name and html keys
   app.get( '/api/jquery/methods/', ( req, res ) => {
-    jqueryDocs.fetchAPI( ( err, data ) => {
+    jqueryDocs.getMethods( ( err, data ) => {
       if ( err ) throw err;
       res.send(data);
     });
