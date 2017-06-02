@@ -33,36 +33,56 @@
 </head>
 
 <body>
+  <div class="row">
+    <div class="col-md-4">
   <nav class="navbar navbar-light bg-faded">
     <h1 class="navbar-brand mb-0 h1-style">Simplify My Code</h1>
-    <h1 class="right h1-style" id="tagline">"I can't RTFM!"</h1>
-  </nav>
-  <div class="jumbotron jumbotron-fluid">
-    <div class="row">
-      <div class="col-md-4">
-        <img class="smallimg" src="./assets/images/08.jpg" alt="Coding Image">
-      </div>
-      <div class="col-md-6">
-        <div class="center padding">
-          <!-- Language Drop Down -->
-          <select id="language-select" class="custom-select">
+    </div>
+    <div class="col-md-8">
+                <select id="language-select" class="custom-select">
                  <option selected>Choose a topic</option>
                  <option value="express">Express</option>
                  <option value="jquery">jQuery</option>
                  <option value="javascript">Javascript</option>
                </select>
+              <div class="input-group">
+            <input type="text" id="search-input" class="form-control" placeholder="Enter code here...">
+            
+                <button class="btn btn-default btn-sm" id="search-submit" type="button">Submit</button>
+                <button class="btn btn-danger btn-sm" id="search-clear" type="button">Clear</button>
+           
+          </div>
+  </div>
+    <h1 class="right h1-style" id="tagline">"I can't RTFM!"</h1>
+  </div>
+  </nav>
+  <div>
+  <!--<div class="jumbotron jumbotron-fluid">
+    <div class="row">
+      <div class="col-md-4">
+        <img class="smallimg" src="./assets/images/08.jpg" alt="Coding Image">
+      </div>
+      <div class="col-md-6">
+        <div class="center padding">-->
+          <!-- Language Drop Down -->
+          <!--<select id="language-select" class="custom-select">
+                 <option selected>Choose a topic</option>
+                 <option value="express">Express</option>
+                 <option value="jquery">jQuery</option>
+                 <option value="javascript">Javascript</option>
+               </select>-->
           <!--Search Box-->
-          <div class="input-group padding">
+          <!--<div class="input-group padding">
             <input type="text" id="search-input" class="form-control" placeholder="Enter code here...">
             <span class="input-group-btn">
                 <button class="btn btn-default" id="search-submit" type="button">Submit</button>
                 <button class="btn btn-danger" id="search-clear" type="button">Clear</button>
               </span>
-          </div>
-        </div>
+          </div>-->
+        <!--</div>
       </div>
     </div>
-  </div>
+  </div>-->
   <div class="container">
 
     <!--Search Container-->
