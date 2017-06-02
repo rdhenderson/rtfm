@@ -70,9 +70,9 @@ function searchHandler() {
   //Strip the arguments portion of name before query to express
   let language = $('#language-select option:selected').val();
   //Template literal expansion using backticks instead of quote/apostrophe
-  let expressQuery = query.split('(')[0];
-  $.get(`/api/express/search/${expressQuery}`, (data) => {
-    $('#express-query-result').empty().html(data.html);
+
+  $.get(`/api/${language}/search/${query}`, (data) => {
+     $('#doc-query-result').empty().html(data.html);
     // $('#express-method-list').collapse('toggle');
   });
 

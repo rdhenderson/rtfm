@@ -1,5 +1,5 @@
 //Require sequelize models
-const mdn = require('../search_modules/search-mdn.js');
+const mdn = require('../../search_modules/search-mdn.js');
 
 module.exports = function(app) {
   //Queries MDN and requests a JSON response

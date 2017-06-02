@@ -63,17 +63,11 @@ module.exports = {
   updateDB : function (callback) {
     return fetchAPI(callback);
   },
-  getById : function (query, callback) {
+  getByName : function (query, callback) {
     db.ExpressDoc.findAll().then( (data) => {
       //FIXME: NEED ERROR HANDLING FOR BAD SEARCH OR EMPTY DB
-      const match = methods.filter( (el) =>  query.includes(el.shortName))[0];
+      const match = data.filter( (el) =>  query.includes(el.shortName))[0];
       return callback(null, match);
-      // EXPRESS_API_URL + '#' + escapeID(id); // Turn res.json into #res\.json
-      // queryExpress(queryURL, (err, body) => {
-      //   if (err) throw err;
-      //   const $ = cheerio.load(body);
-      //   return callback(null, parseExpressSection($('#'+id)));
-      // });
     });
   }
 };

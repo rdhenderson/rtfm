@@ -1,7 +1,6 @@
 //Require sequelize models
-const searchExpress = require('../search_modules/search-express.js');
-const searchFuzzy = require('../search_modules/search-fuzzy.js');
-const db = require('../models');
+const searchExpress = require('../../search_modules/search-express.js');
+const searchFuzzy = require('../../search_modules/search-fuzzy.js');
 
 module.exports = function(app) {
 
@@ -14,7 +13,7 @@ module.exports = function(app) {
   });
 
   app.get( '/api/express/search/:query', ( req, res ) => {
-    searchExpress.getById(req.params.query, ( err, results ) => {
+    searchExpress.getByName(req.params.query, ( err, results ) => {
       if (err) return console.log(err);
       res.send ( results );
     });
