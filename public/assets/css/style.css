@@ -79,13 +79,13 @@ h3 {
     height: 210px;
 }
 
-.leftDiv {
+.left-div {
   min-height: 400px;
   overflow-y: scroll;
   background-color: #b0b0b0;
 }
 
-.rightDiv {
+.right-div {
   overflow-y: scroll;
   min-height: 400px;
   background-color: #b0b0b0;
