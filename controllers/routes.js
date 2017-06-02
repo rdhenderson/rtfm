@@ -19,11 +19,24 @@ module.exports = function(app) {
 
   //Returns array of objects with name and html keys
   app.get( '/api/jquery/methods/', ( req, res ) => {
-    jqueryDocs.getMethods( ( err, data ) => {
-      if ( err ) throw err;
+    jqueryDocs.getMethods( (err, data ) => {
+      if (err) throw err;
       res.send(data);
     });
+    // jqueryDocs.getMethods( ( err, data ) => {
+    //   if ( err ) throw err;
+    //   res.send(data);
+    // });
   });
+
+  app.get( '/api/jquery/detail/:id', ( req, res ) => {
+    db.JQueryDocs.findOne({where: {id : req.params.id }}).then( (results) => res.json(results) );
+    // jqueryDocs.getDetails('https://api.jquery.com/' + req.params.href, ( err, data ) => {
+    //   if ( err ) throw err;
+    //   res.send(data);
+    // });
+  });
+
 
   require('./express-routes.js')(app);
   require('./stack-routes.js')(app);

@@ -14,7 +14,49 @@
 
     <div id="jquery-{{id}}" class="collapse" role="tabpanel" aria-labelledby="jquery-{{id}}-header">
       <div class="card-block doc-item">
-        {{{html}}}
+        <div data-toggle="collapse" data-target="detail-{{id}}">
+          {{{html}}}
+        </div>
+        <div id="detail-{{id}}" class="collapse hidden">
+        <div>
+            <h2>{{detail.name}} </h2>
+            <p> {{detail.desc}} </p>
+        </div>
+          <h3 data-target="#long-desc-{{id}}" data-toggle="collapse">More Detail</h3>
+        <hr />
+        <div id="long-desc-{{id}}" class="collapse hidden">
+          {{{detail.longDesc}}}
+        </div>
+        <hr />
+        <h3 data-target="#example-cards-{{id}}" data-toggle="collapse">Examples</h3>
+        <div id="example-cards-{{id}}" class="collapse hidden">
+        {{#each detail.examples}}
+          <div class="card">
+            <div class="card-header" role="tab" id="example-header-{{id}}">
+              <!-- <h5 class="mb-0"> -->
+                <!-- <a data-toggle="collapse" data-parent="#accordion-jquery" href="#jquery-{{name}}" aria-expanded="true" aria-controls="{{id}}"> -->
+                  {{{this}}}
+                <!-- </a> -->
+              <!-- </h5> -->
+            </div>
+          </div>
+        {{/each}}
+          </div>
+          <div id="signatures" class="hidden">
+        {{#each signatures}}
+            <div id="jquery-{{id}}" class="collapse" role="tabpanel" aria-labelledby="jquery-{{id}}-header">
+              <div class="card-block doc-item">
+                <ul>
+                  <li>
+                    {{{this}}}
+                  </li>
+                </ul>
+              </div>
+            </div>
+          {{/each}}
+        </div>
+        </div>
+
       </div>
     </div>
   </div>

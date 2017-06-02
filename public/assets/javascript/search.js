@@ -38,7 +38,7 @@ function initPage(methods) {
   $('#search-submit').on('click', searchHandler);
   $('#search-clear').on('click', () => $('#search-input').val(''));
 
-  // $('#search-input').fuzzyComplete(methods.express.concat(methods.jquery));
+  $('#search-input').fuzzyComplete(methods.express);
 
   $('input').on('keyup blur', () => {
     $(this).parent().find(".output").html($(this).parent().find("select").val());
