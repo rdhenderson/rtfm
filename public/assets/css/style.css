@@ -1,3 +1,18 @@
+#search-input,
+ #search-submit,
+ #language-select {
+  color: #90ee90;
+  background: #353434;
+  font-family: 'Roboto Mono';
+  border: 2px solid rgb(114, 174, 234);
+}
+#language-select{
+  -webkit-appearance: menulist;
+}
+#search-submit {
+  color: rgb(210, 115, 119);
+}
+
 #sizing{
   width: 95%;
 
@@ -14,7 +29,7 @@ body {
 }
 
 #green {
-  color: rgb(160, 193, 129);
+  color: #90ee90;
 }
 
 #quote {
