@@ -1,13 +1,21 @@
+
+body{
+  font-family: 'Roboto Mono';
+}
+
 #search-input,
- #search-submit,
- #language-select {
+ #search-submit{
   color: #90ee90;
   background: #353434;
   font-family: 'Roboto Mono';
-  border: 2px solid rgb(114, 174, 234);
+  border: 2px solid #90ee90;
 }
+
 #language-select{
   -webkit-appearance: menulist;
+  color: #90ee90;
+  background: #353434;
+  font-family: 'Roboto Mono';
 }
 #search-submit {
   color: rgb(210, 115, 119);
@@ -74,7 +82,8 @@ h3 {
 }
 
 #tagline {
-  font-family: 'Tinos', serif;
+  font-family: 'Roboto Mono';
+  padding-top: 10px;
 }
 
 .borderbtm{
@@ -102,14 +111,14 @@ h3 {
 }
 
 .left-div {
-  min-height: 400px;
+  min-height: 700px;
   overflow-y: scroll;
   background-color: #b0b0b0;
 }
 
 .right-div {
   overflow-y: scroll;
-  min-height: 400px;
+  min-height: 700px;
   background-color: #b0b0b0;
 }
 
@@ -119,8 +128,8 @@ h3 {
   right: 35%;*/
   width: 210px;
   height: 210px;
-  margin-top: 80px;
-  margin-bottom: 80px;
+  margin-top: 200px;
+  margin-bottom: 200px;
 }
 
 .custom-select {
@@ -137,7 +146,7 @@ h3 {
   text-align: center;
   border-style: solid;
 
-  border-color: rgb(114, 174, 234);
+  border-color: #90ee90;
 }
 
 .verticalhr {
@@ -145,7 +154,9 @@ h3 {
   height: 300px;
   margin-top: 40px;
 }
-
+#footer{
+  color: rgb(114, 174, 234);
+}
 .smallicon {
   width:50px;
   height: 50px;
@@ -161,7 +172,7 @@ h3 {
 
 #stack-div {
   overflow: auto;
-  border-right: 3px solid rgb(114, 174, 234);
+  border-right: 3px solid #90ee90;
 
 }
 
@@ -224,7 +235,53 @@ label {
   text-align: center;
 }
 
+.card-block{
+  text-align: left;
+  color: #90ee90;
+  background: #353434;
+}
+.card-block p {
+  color: #90ee90;
+}
 
+.card-block a {
+  color: rgb(201, 156, 110);
+  font-size: 110%; 
+}
+
+.card-header-search a {
+  color: #000;
+}
+
+.card-block pre {
+  color: #90ee90;
+  background: #353434;
+}
+
+#doc-query-result {
+  color: #90ee90;
+  background: #353434;
+  tex-align: left;
+}
+#doc-query-result h3 {
+  color: rgb(210, 115, 119);
+  font-size: 200%;
+}
+#doc-query-result p {
+  color: #90ee90;
+  text-align: justify;
+  margin: 0 5%;
+}
+
+#doc-query-result p a {
+  color: rgb(201, 156, 110);
+  font-size: 110%;
+  text-align: center;
+}
+.language-js{
+  color: rgb(114, 174, 234);
+
+}
 .card {
   margin: 7px;
   border-radius: 7px;
@@ -236,7 +293,11 @@ a {
 }
 
 code {
-  background-color: #bd4147;
+  background-color: rgb(210, 115, 119);
   color: #fff;
 
+}
+.left-div p {
+  color: rgb(114, 174, 234);
+  font-size: 110%;
 }
