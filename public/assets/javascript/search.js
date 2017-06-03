@@ -36,6 +36,8 @@ function initPage(methods) {
   $('#language-select').on('change', languageSelectHandler);
   $('#search-submit').on('click', searchHandler);
   $('#search-clear').on('click', () => $('#search-input').val(''));
+  $("#documentation-div").on('click', '.detail-link', toggleDetails);
+  $("#documentation-div").on('click', '.example-link', toggleExamples);
 
   // $('#search-input').fuzzyComplete(methods.express);
 
@@ -45,6 +47,25 @@ function initPage(methods) {
 
   //DISCUSS: Hiding images to allow drawing method listing
   //  hideImages();
+}
+
+function toggleDetails() {
+  const id = $(this).data('id');
+  console.log('ID', id);
+  $.get(`/api/jquery/detail/${id}`, (data) => {
+    $(`#detail-${id}`).html(data.detail);
+    $(`#detail-${id}`).toggle();
+  });
+}
+
+function toggleExamples() {
+  const id = $(this).data('id');
+  console.log('ID', id);
+  $.get(`/api/jquery/detail/${id}`, (data) => {
+    const exampleHTML = Template.jquery_example({examples: data.examples});
+    $(`#examples-${id}`).html(exampleHTML);
+    $(`#examples-${id}`).toggle();
+  });
 }
 
 function languageSelectHandler(){

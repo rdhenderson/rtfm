@@ -45,22 +45,33 @@ module.exports = {
   getMethods : function (callback) {
     // if (methods.length) return callback(methods);
     db.JQueryDoc.findAll().then( (data) => {
-      const results = data.map( (el) => {
-        el.detail = JSON.parse(el.detail);
-        return el;
-      });
-        return callback(null, results);
+        return callback(null, data);
     });
     // .catch( (err) => console.err(err));
   },
   updateDB : function (callback) {
     return fetchAPI(callback);
   },
+  search : function (query, callback) {
+    db.JQueryDoc.find({
+      where: ['MATCH (detail) AGAINST(? IN NATURAL LANGUAGE MODE)', [query]]
+    }).then((results) => {
+      console.log('MATCH RESULTS', results.dataValues);
+      callback(null, results.dataValues);
+    });
+  },
   getByName : function (query, callback) {
     db.JQueryDoc.findAll().then( (data) => {
       //FIXME: NEED ERROR HANDLING FOR BAD SEARCH OR EMPTY DB, ONLY RETURNING ONE MATCH
-      const match = data.filter( (el) =>  query.includes(el.name) );
+      const match = data.filter( (el) =>  query.includes(el.data_url) );
       return callback(null, match[0]);
+    });
+  },
+  getById : function (id, callback) {
+    db.JQueryDoc.findOne({
+      where: {id: id}
+    }).then( (data) => {
+      return callback(null, data);
     });
   },
   getDetail : function (href, callback) {

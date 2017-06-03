@@ -1,65 +1,43 @@
-<div id="accordion-jquery" class="doc-list" role="tablist" aria-multiselectable="true">
-  <label id="jquery-list-head" data-toggle="collapse" data-target="#jquery-list"> <h2> JQuery Methods </h2></label>
+<div id="accordion-jquery" class="doc-list" role="tablist">
+  <label id="jquery-list-head" data-toggle="collapse" data-target="#jquery-list">
+    <h2> JQuery Methods </h2>
+  </label>
+
   <div id="doc-query-result"></div>
+
   <div id="jquery-list" class="collapse show">
-  {{#each jquery}}
-  <div class="card">
-    <div class="card-header" role="tab" id="jquery-{{id}}-header">
-      <h5 class="mb-0">
-        <a data-toggle="collapse" data-parent="#accordion-jquery" href="#jquery-{{id}}" aria-expanded="true" aria-controls="{{id}}">
-          {{name}}
-        </a>
-      </h5>
-    </div>
+    {{#each jquery}}
+      <div class="card">
 
-    <div id="jquery-{{id}}" class="collapse" role="tabpanel" aria-labelledby="jquery-{{id}}-header">
-      <div class="card-block doc-item">
-        <div data-toggle="collapse" data-target="detail-{{id}}">
-          {{{html}}}
-        </div>
-        <div id="detail-{{id}}" class="collapse hidden">
-        <div>
-            <h2>{{detail.name}} </h2>
-            <p> {{detail.desc}} </p>
-        </div>
-          <h3 data-target="#long-desc-{{id}}" data-toggle="collapse">More Detail</h3>
-        <hr />
-        <div id="long-desc-{{id}}" class="collapse hidden">
-          {{{detail.longDesc}}}
-        </div>
-        <hr />
-        <h3 data-target="#example-cards-{{id}}" data-toggle="collapse">Examples</h3>
-        <div id="example-cards-{{id}}" class="collapse hidden">
-        {{#each detail.examples}}
-          <div class="card">
-            <div class="card-header" role="tab" id="example-header-{{id}}">
-              <!-- <h5 class="mb-0"> -->
-                <!-- <a data-toggle="collapse" data-parent="#accordion-jquery" href="#jquery-{{name}}" aria-expanded="true" aria-controls="{{id}}"> -->
-                  {{{this}}}
-                <!-- </a> -->
-              <!-- </h5> -->
-            </div>
-          </div>
-        {{/each}}
-          </div>
-          <div id="signatures" class="hidden">
-        {{#each signatures}}
-            <div id="jquery-{{id}}" class="collapse" role="tabpanel" aria-labelledby="jquery-{{id}}-header">
-              <div class="card-block doc-item">
-                <ul>
-                  <li>
-                    {{{this}}}
-                  </li>
-                </ul>
-              </div>
-            </div>
-          {{/each}}
-        </div>
+        <div class="card-header" role="tab" id="jquery-{{id}}-header">
+          <h5 class="mb-0">
+            <a data-toggle="collapse" data-parent="#accordion-jquery" href="#accordion-{{id}}">
+              {{name}}
+            </a>
+          </h5>
         </div>
 
+        <div id="accordion-{{id}}" class="collapse" role="tabpanel">
+          <div class="card-block doc-item">
+            <h2> {{name}} </h2>
+            <p> {{{description}}} </p>
+            <h3>
+              <label class="btn btn-primary detail-link" data-id="{{id}}"> Details </label>
+                |
+                <label class="btn btn-primary example-link" data-id="{{id}}"> Examples </label>
+            </h3>
+            <div id="detail-{{id}}" class="collapse hidden">
+            <!-- Detail inserted here by front-end click handler-->
+            </div>
+
+            <div id="examples-{{id}}" class="collapse hidden">
+
+            </div>
+
+          </div>
+
+        </div>
       </div>
-    </div>
   </div>
   {{/each}}
-</div>
 </div>

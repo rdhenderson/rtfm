@@ -14,13 +14,28 @@ module.exports = function(sequelize, DataTypes) {
     data_url: {
       type: DataTypes.STRING
     },
-    html: {
+    detail: {
       type: DataTypes.TEXT
     },
-    detail: {
+    examples: {
+      type: DataTypes.TEXT,
+      get: function() {
+           return JSON.parse(this.getDataValue('examples'));
+       },
+       set: function(val) {
+           return this.setDataValue('examples', JSON.stringify(val));
+       }
+    },
+    description : {
       type: DataTypes.TEXT
     }
 
-  });
+  },
+  {
+      indexes: [
+        // add a FULLTEXT index
+        { type: 'FULLTEXT', name: 'text_idx', fields: ['detail', 'name', 'description'] }
+      ]
+    });
   return JQueryDoc;
 };
