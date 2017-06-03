@@ -8,6 +8,7 @@ module.exports = function(app) {
   });
 
   // FIXME: Add index.js to routes/ so we can just require folder like sequelize models?
+  // Documentation resources should be implemented as instances of a class or sub-classes
   require('./routes/express-routes.js')(app);
   require('./routes/jquery-routes.js')(app);
   require('./routes/stack-routes.js')(app);
