@@ -78,13 +78,56 @@ this["Template"]["jquery_example"] = Handlebars.template({"1":function(container
 },"compiler":[7,">= 4.0.0"],"main":function(container,depth0,helpers,partials,data) {
     var stack1;
 
-  return ((stack1 = helpers.each.call(depth0 != null ? depth0 : (container.nullContext || {}),(depth0 != null ? depth0.examples : depth0),{"name":"each","hash":{},"fn":container.program(1, data, 0),"inverse":container.noop,"data":data})) != null ? stack1 : "");
+  return "<h2> Examples </h2>\n"
+    + ((stack1 = helpers.each.call(depth0 != null ? depth0 : (container.nullContext || {}),(depth0 != null ? depth0.examples : depth0),{"name":"each","hash":{},"fn":container.program(1, data, 0),"inverse":container.noop,"data":data})) != null ? stack1 : "");
+},"useData":true});
+
+this["Template"]["jquery_modal"] = Handlebars.template({"1":function(container,depth0,helpers,partials,data) {
+    var stack1;
+
+  return "                      <div class=\"card\">\n                        <div class=\"card-header\" role=\"tab\">\n                          "
+    + ((stack1 = container.lambda(depth0, depth0)) != null ? stack1 : "")
+    + "\n                        </div>\n                      </div>\n";
+},"compiler":[7,">= 4.0.0"],"main":function(container,depth0,helpers,partials,data) {
+    var stack1, helper, alias1=depth0 != null ? depth0 : (container.nullContext || {}), alias2=helpers.helperMissing, alias3="function", alias4=container.escapeExpression;
+
+  return "<div class=\"modal fade bd-example-modal-lg\" tabindex=\"-1\" role=\"dialog\"\n     aria-labelledby=\"myLargeModalLabel\" aria-hidden=\"true\" id=\"jquery-modal-"
+    + alias4(((helper = (helper = helpers.id || (depth0 != null ? depth0.id : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"id","hash":{},"data":data}) : helper)))
+    + "\">\n<div class=\"modal-dialog modal-lg\">\n    <div id=\"detail-modal-content\" class=\"modal-content accordion\">\n        <div class=\"modal-header card-header-search\">\n          "
+    + alias4(((helper = (helper = helpers.name || (depth0 != null ? depth0.name : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"name","hash":{},"data":data}) : helper)))
+    + "\n            <button type=\"button\" class=\"close\" data-dismiss=\"modal\" aria-label=\"Close\">\n                <span aria-hidden=\"true\">X</span>\n            </button>\n            <h3>\n              <label class=\"btn btn-sm btn-primary\" data-parent=\"#detail-modal-content\" data-target=\"#modal-detail-"
+    + alias4(((helper = (helper = helpers.id || (depth0 != null ? depth0.id : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"id","hash":{},"data":data}) : helper)))
+    + "\" data-toggle=\"collapse\">\n                Details\n              </label>\n              <label class=\"btn btn-sm btn-primary\" data-parent=\"#detail-modal-content\" data-target=\"#modal-examples-"
+    + alias4(((helper = (helper = helpers.id || (depth0 != null ? depth0.id : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"id","hash":{},"data":data}) : helper)))
+    + "\" data-toggle=\"collapse\"> Examples </label>\n              <label class=\"btn btn-sm btn-danger \" data-parent=\"#detail-modal-content\" data-target=\"#jquery-modal-"
+    + alias4(((helper = (helper = helpers.id || (depth0 != null ? depth0.id : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"id","hash":{},"data":data}) : helper)))
+    + "\" data-dismiss=\"modal\"> Close </label>\n            </h3>\n        </div>\n        <div id=\"modal-detail-info-div\" class=\"modal-content accordion\">\n            <div class=\"card\" id=\"jquery-top-"
+    + alias4(((helper = (helper = helpers.id || (depth0 != null ? depth0.id : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"id","hash":{},"data":data}) : helper)))
+    + "\">\n              <div class=\"card-header-search\" role=\"tab\" id=\"modal-jquery-"
+    + alias4(((helper = (helper = helpers.id || (depth0 != null ? depth0.id : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"id","hash":{},"data":data}) : helper)))
+    + "-header\">\n                <h5 class=\"mb-0\">\n                      <h2> "
+    + alias4(((helper = (helper = helpers.name || (depth0 != null ? depth0.name : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"name","hash":{},"data":data}) : helper)))
+    + " </h2>\n                </h5>\n\n              </div>\n\n              <div id=\"modal-accordion-"
+    + alias4(((helper = (helper = helpers.id || (depth0 != null ? depth0.id : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"id","hash":{},"data":data}) : helper)))
+    + "\" role=\"tabpanel\">\n                <div class=\"card-block doc-item\">\n\n                  <p> "
+    + ((stack1 = ((helper = (helper = helpers.description || (depth0 != null ? depth0.description : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"description","hash":{},"data":data}) : helper))) != null ? stack1 : "")
+    + " </p>\n\n\n                  <div id=\"modal-detail-"
+    + alias4(((helper = (helper = helpers.id || (depth0 != null ? depth0.id : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"id","hash":{},"data":data}) : helper)))
+    + "\" data-parent=\"#modal-detail-info-div\" class=\"collapse hidden\">\n                    "
+    + ((stack1 = ((helper = (helper = helpers.detail || (depth0 != null ? depth0.detail : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"detail","hash":{},"data":data}) : helper))) != null ? stack1 : "")
+    + "\n                  </div>\n\n                  <div id=\"modal-examples-"
+    + alias4(((helper = (helper = helpers.id || (depth0 != null ? depth0.id : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"id","hash":{},"data":data}) : helper)))
+    + "\" data-parent=\"#modal-detail-info-div\" class=\"collapse hidden\">\n                    <h2> Examples </h2>\n"
+    + ((stack1 = helpers.each.call(alias1,(depth0 != null ? depth0.examples : depth0),{"name":"each","hash":{},"fn":container.program(1, data, 0),"inverse":container.noop,"data":data})) != null ? stack1 : "")
+    + "                  </div>\n\n                </div>\n\n              </div>\n            </div>\n        </div>\n        </div>\n\n        <div class=\"container-fluid\">\n            <div class=\"row\">\n\n                <div class=\"col-md-4\"></div>\n\n                <div id=\"modal-button\" class=\"col-md-4\" style=\"text-align: center;\">\n\n                </div>\n\n                <div class=\"col-md-4 col-md-offset-4\"></div>\n\n            </div>\n        </div>\n</div>\n</div>\n";
 },"useData":true});
 
 this["Template"]["jquery"] = Handlebars.template({"1":function(container,depth0,helpers,partials,data) {
     var stack1, helper, alias1=depth0 != null ? depth0 : (container.nullContext || {}), alias2=helpers.helperMissing, alias3="function", alias4=container.escapeExpression;
 
-  return "      <div class=\"card\">\n\n        <div class=\"card-header-search\" role=\"tab\" id=\"jquery-"
+  return "      <div class=\"card\" id=\"jquery-top-"
+    + alias4(((helper = (helper = helpers.id || (depth0 != null ? depth0.id : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"id","hash":{},"data":data}) : helper)))
+    + "\">\n        <div class=\"card-header-search\" role=\"tab\" id=\"jquery-"
     + alias4(((helper = (helper = helpers.id || (depth0 != null ? depth0.id : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"id","hash":{},"data":data}) : helper)))
     + "-header\">\n          <h5 class=\"mb-0\">\n            <a data-toggle=\"collapse\" data-parent=\"#accordion-jquery\" href=\"#accordion-"
     + alias4(((helper = (helper = helpers.id || (depth0 != null ? depth0.id : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"id","hash":{},"data":data}) : helper)))
@@ -96,11 +139,13 @@ this["Template"]["jquery"] = Handlebars.template({"1":function(container,depth0,
     + alias4(((helper = (helper = helpers.name || (depth0 != null ? depth0.name : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"name","hash":{},"data":data}) : helper)))
     + " </h2>\n            <p> "
     + ((stack1 = ((helper = (helper = helpers.description || (depth0 != null ? depth0.description : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"description","hash":{},"data":data}) : helper))) != null ? stack1 : "")
-    + " </p>\n            <h3>\n              <label class=\"btn btn-primary detail-link\" data-id=\""
+    + " </p>\n            <h3>\n              <label class=\"btn btn-primary detail-link\" data-target=\"#jquery-details\" data-toggle=\"modal\" data-id=\""
     + alias4(((helper = (helper = helpers.id || (depth0 != null ? depth0.id : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"id","hash":{},"data":data}) : helper)))
-    + "\"> Details </label>\n              <label class=\"btn btn-primary example-link\" data-id=\""
+    + "\">\n                Details\n              </label>\n              <label class=\"btn btn-primary example-link\" data-id=\""
     + alias4(((helper = (helper = helpers.id || (depth0 != null ? depth0.id : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"id","hash":{},"data":data}) : helper)))
-    + "\"> Examples </label>\n            </h3>\n            <div id=\"detail-"
+    + "\"> Examples </label>\n              <label class=\"btn btn-primary modal-link\" data-id=\""
+    + alias4(((helper = (helper = helpers.id || (depth0 != null ? depth0.id : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"id","hash":{},"data":data}) : helper)))
+    + "\"> Bigify This </label>\n            </h3>\n            <div id=\"detail-"
     + alias4(((helper = (helper = helpers.id || (depth0 != null ? depth0.id : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"id","hash":{},"data":data}) : helper)))
     + "\" class=\"collapse hidden\">\n            <!-- Detail inserted here by front-end click handler-->\n            </div>\n\n            <div id=\"examples-"
     + alias4(((helper = (helper = helpers.id || (depth0 != null ? depth0.id : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"id","hash":{},"data":data}) : helper)))

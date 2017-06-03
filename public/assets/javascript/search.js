@@ -38,6 +38,8 @@ function initPage(methods) {
   $('#search-clear').on('click', () => $('#search-input').val(''));
   $("#documentation-div").on('click', '.detail-link', toggleDetails);
   $("#documentation-div").on('click', '.example-link', toggleExamples);
+  $("#documentation-div").on('click', '.modal-link', drawModal);
+
 
   // $('#search-input').fuzzyComplete(methods.express);
 
@@ -60,13 +62,29 @@ function toggleDetails() {
 
 function toggleExamples() {
   const id = $(this).data('id');
-  console.log('ID', id);
   $.get(`/api/jquery/detail/${id}`, (data) => {
     const exampleHTML = Template.jquery_example({examples: data.examples});
     $(`#examples-${id}`).html(exampleHTML);
     $(`#examples-${id}`).toggle();
   });
 }
+function drawModal() {
+  console.log("drawing modal");
+
+  const id = $(this).data('id');
+  $.get(`/api/jquery/detail/${id}`, (data) => {
+    const newModal = Template.jquery_modal(data);
+    console.log("New Modal,", newModal);
+    $("#modal-div").empty().html(newModal);
+    $(`#jquery-modal-${id}`).modal();
+  });
+}
+
+
+//   $('#detail-modal').modal();
+//   $('#modal-detail-info-div').empty().append(modalContent);
+// }
+
 
 function languageSelectHandler(){
   const language = $("#language-select option:selected").val();

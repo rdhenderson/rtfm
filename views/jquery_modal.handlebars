@@ -1,0 +1,69 @@
+<div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog"
+     aria-labelledby="myLargeModalLabel" aria-hidden="true" id="jquery-modal-{{id}}">
+<div class="modal-dialog modal-lg">
+    <div id="detail-modal-content" class="modal-content accordion">
+        <div class="modal-header card-header-search">
+          {{name}}
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">X</span>
+            </button>
+            <h3>
+              <label class="btn btn-sm btn-primary" data-parent="#detail-modal-content" data-target="#modal-detail-{{id}}" data-toggle="collapse">
+                Details
+              </label>
+              <label class="btn btn-sm btn-primary" data-parent="#detail-modal-content" data-target="#modal-examples-{{id}}" data-toggle="collapse"> Examples </label>
+              <label class="btn btn-sm btn-danger " data-parent="#detail-modal-content" data-target="#jquery-modal-{{id}}" data-dismiss="modal"> Close </label>
+            </h3>
+        </div>
+        <div id="modal-detail-info-div" class="modal-content accordion">
+            <div class="card" id="jquery-top-{{id}}">
+              <div class="card-header-search" role="tab" id="modal-jquery-{{id}}-header">
+                <h5 class="mb-0">
+                      <h2> {{name}} </h2>
+                </h5>
+
+              </div>
+
+              <div id="modal-accordion-{{id}}" role="tabpanel">
+                <div class="card-block doc-item">
+
+                  <p> {{{description}}} </p>
+
+
+                  <div id="modal-detail-{{id}}" data-parent="#modal-detail-info-div" class="collapse hidden">
+                    {{{detail}}}
+                  </div>
+
+                  <div id="modal-examples-{{id}}" data-parent="#modal-detail-info-div" class="collapse hidden">
+                    <h2> Examples </h2>
+                    {{#each examples}}
+                      <div class="card">
+                        <div class="card-header" role="tab">
+                          {{{this}}}
+                        </div>
+                      </div>
+                    {{/each}}
+                  </div>
+
+                </div>
+
+              </div>
+            </div>
+        </div>
+        </div>
+
+        <div class="container-fluid">
+            <div class="row">
+
+                <div class="col-md-4"></div>
+
+                <div id="modal-button" class="col-md-4" style="text-align: center;">
+
+                </div>
+
+                <div class="col-md-4 col-md-offset-4"></div>
+
+            </div>
+        </div>
+</div>
+</div>
