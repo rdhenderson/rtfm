@@ -4,8 +4,7 @@
   "description": "Server for fuzzy searching and better code example discovery",
   "main": "server.js",
   "scripts": {
-    "test": "mocha",
-    "post-install": "node ./db/initDbScript.js <DATABASE NAME>"
+    "test": "mocha"
   },
   "repository": {
     "type": "git",
@@ -43,5 +42,9 @@
     "nodemon": "^1.11.0",
     "open": "0.0.5",
     "strict-uri-encode": "^2.0.0"
+  },
+  "engines" : {
+    "node" : "7.7.2",
+    "npm" : "4.1.2"
   }
 }
