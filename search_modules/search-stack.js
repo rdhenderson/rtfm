@@ -38,7 +38,7 @@ function queryStack (url, callback) {
     return queryStack(url, callback);
   },
   getAnswers : function ( id, callback ) {
-    const url = 'http://api.stackexchange.com/2.2/questions/' + id + '/answers/?pagesize=1&order=desc&sort=votes&site=stackoverflow&filter=withbody';
+    const url = 'http://api.stackexchange.com/2.2/questions/' + id + '/answers/?pagesize=10&order=desc&sort=votes&site=stackoverflow&filter=withbody';
     return queryStack(url, callback);
   }
 };
