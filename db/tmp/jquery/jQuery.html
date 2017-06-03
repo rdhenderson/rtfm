@@ -1,0 +1,1204 @@
+<!doctype html>
+<!--[if IE 7 ]>		 <html class="no-js ie ie7 lte7 lte8 lte9" lang="en-US"> <![endif]-->
+<!--[if IE 8 ]>		 <html class="no-js ie ie8 lte8 lte9" lang="en-US"> <![endif]-->
+<!--[if IE 9 ]>		 <html class="no-js ie ie9 lte9>" lang="en-US"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--> <html class="no-js" lang="en-US"> <!--<![endif]-->
+<head data-live-domain="api.jquery.com">
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+	<title>jQuery() | jQuery API Documentation</title>
+
+	<meta name="author" content="jQuery Foundation - jquery.org">
+	<meta name="description" content="">
+
+	<meta name="viewport" content="width=device-width">
+
+	<link rel="shortcut icon" href="//api.jquery.com/jquery-wp-content/themes/api.jquery.com/i/favicon.ico">
+
+	<link rel="stylesheet" href="//api.jquery.com/jquery-wp-content/themes/jquery/css/base.css?v=1">
+	<link rel="stylesheet" href="//api.jquery.com/jquery-wp-content/themes/api.jquery.com/style.css">
+
+	<script src="//api.jquery.com/jquery-wp-content/themes/jquery/js/modernizr.custom.2.8.3.min.js"></script>
+
+	<script src="https://code.jquery.com/jquery-1.11.3.js"></script>
+
+	<script src="//api.jquery.com/jquery-wp-content/themes/jquery/js/plugins.js"></script>
+	<script src="//api.jquery.com/jquery-wp-content/themes/jquery/js/main.js"></script>
+
+	<script src="//use.typekit.net/wde1aof.js"></script>
+	<script>try{Typekit.load();}catch(e){}</script>
+
+<link rel='https://api.w.org/' href='//api.jquery.com/wp-json/' />
+<meta name="generator" content="WordPress 4.5.2" />
+<link rel="alternate" type="application/json+oembed" href="//api.jquery.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fapi.jquery.com%2FjQuery%2F" />
+<link rel="alternate" type="text/xml+oembed" href="//api.jquery.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fapi.jquery.com%2FjQuery%2F&#038;format=xml" />
+
+</head>
+<body class="api jquery single single-post postid-339 single-format-standard single-author singular">
+
+<header>
+	<section id="global-nav">
+		<nav>
+			<div class="constrain">
+				<ul class="projects">
+					<li class="project jquery"><a href="http://jquery.com/" title="jQuery">jQuery</a></li>
+					<li class="project jquery-ui"><a href="http://jqueryui.com/" title="jQuery UI">jQuery UI</a></li>
+					<li class="project jquery-mobile"><a href="http://jquerymobile.com/" title="jQuery Mobile">jQuery Mobile</a></li>
+					<li class="project sizzlejs"><a href="http://sizzlejs.com/" title="Sizzle">Sizzle</a></li>
+					<li class="project qunitjs"><a href="http://qunitjs.com/" title="QUnit">QUnit</a></li>
+				</ul>
+				<ul class="links">
+					<li><a href="http://plugins.jquery.com/">Plugins</a></li>
+					<li class="dropdown"><a href="http://contribute.jquery.org/">Contribute</a>
+						<ul>
+							<li><a href="http://contribute.jquery.org/CLA/">CLA</a></li>
+							<li><a href="http://contribute.jquery.org/style-guide/">Style Guides</a></li>
+							<li><a href="http://contribute.jquery.org/triage/">Bug Triage</a></li>
+							<li><a href="http://contribute.jquery.org/code/">Code</a></li>
+							<li><a href="http://contribute.jquery.org/documentation/">Documentation</a></li>
+							<li><a href="http://contribute.jquery.org/web-sites/">Web Sites</a></li>
+						</ul>
+					</li>
+					<li class="dropdown"><a href="http://events.jquery.org/">Events</a>
+						<ul class="wide">
+																		</ul>
+					</li>
+					<li class="dropdown"><a href="https://jquery.org/support/">Support</a>
+						<ul>
+							<li><a href="http://learn.jquery.com/">Learning Center</a></li>
+							<li><a href="http://try.jquery.com/">Try jQuery</a></li>
+							<li><a href="http://irc.jquery.org/">IRC/Chat</a></li>
+							<li><a href="http://forum.jquery.com/">Forums</a></li>
+							<li><a href="http://stackoverflow.com/tags/jquery/info">Stack Overflow</a></li>
+							<li><a href="https://jquery.org/support/">Commercial Support</a></li>
+						</ul>
+					</li>
+					<li class="dropdown"><a href="https://jquery.org/">jQuery Foundation</a>
+						<ul>
+							<li><a href="https://jquery.org/join/">Join</a></li>
+							<li><a href="https://jquery.org/members/">Members</a></li>
+							<li><a href="https://jquery.org/team/">Team</a></li>
+							<li><a href="https://jquery.org/conduct/">Conduct</a></li>
+							<li><a href="http://brand.jquery.org/">Brand Guide</a></li>
+							<li><a href="https://jquery.org/donate/">Donate</a></li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+		</nav>
+	</section>
+</header>
+
+<div id="container">
+	<div id="logo-events" class="constrain clearfix">
+		<h2 class="logo"><a href="http://jquery.com/" title="jQuery API Documentation">jQuery API Documentation</a></h2>
+
+		<aside><div id="broadcast"></div></aside>
+	</div>
+
+	<nav id="main" class="constrain clearfix">
+		<div class="menu-top-container">
+	<ul id="menu-top" class="menu">
+<li class="menu-item"><a href="http://jquery.com/download/">Download</a></li>
+<li class="menu-item"><a href="http://api.jquery.com/">API Documentation</a></li>
+<li class="menu-item"><a href="http://blog.jquery.com/">Blog</a></li>
+<li class="menu-item"><a href="http://plugins.jquery.com/">Plugins</a></li>
+<li class="menu-item"><a href="http://jquery.com/browser-support/">Browser Support</a></li>
+	</ul>
+</div>
+
+		<form method="get" class="searchform" action="//api.jquery.com/">
+	<button type="submit" class="icon-search"><span class="visuallyhidden">search</span></button>
+	<label>
+		<span class="visuallyhidden">Search jQuery API Documentation</span>
+		<input type="text" name="s" value=""
+			placeholder="Search">
+	</label>
+</form>
+	</nav>
+
+	<div id="content-wrapper" class="clearfix row">
+
+<div class="content-right twelve columns">
+	<div id="content">
+					
+<article id="post-339" class="post-339 post type-post status-publish format-standard hentry category-core category-65 category-75">
+	<header class="entry-header">
+		<h1 class="entry-title">jQuery()</h1>
+		<hr>
+				<div class="entry-meta">
+			Categories: <span class="category"><a href="//api.jquery.com/category/core/">Core</a></span>		</div><!-- .entry-meta -->
+			</header><!-- .entry-header -->
+
+	<div class="entry-content">
+		Return a collection of matched elements either found in the DOM based on passed argument(s) or created by passing an HTML string.<div class="toc">
+<h4><span>Contents:</span></h4>
+<ul class="toc-list">
+<li>
+<a href="#jQuery1">jQuery( selector [, context ] )</a><ul>
+<li><a href="#jQuery-selector-context">jQuery( selector [, context ] )</a></li>
+<li><a href="#jQuery-element">jQuery( element )</a></li>
+<li><a href="#jQuery-elementArray">jQuery( elementArray )</a></li>
+<li><a href="#jQuery-object">jQuery( object )</a></li>
+<li><a href="#jQuery-selection">jQuery( selection )</a></li>
+<li><a href="#jQuery">jQuery()</a></li>
+</ul>
+</li>
+<li>
+<a href="#jQuery2">jQuery( html [, ownerDocument ] )</a><ul>
+<li><a href="#jQuery-html-ownerDocument">jQuery( html [, ownerDocument ] )</a></li>
+<li><a href="#jQuery-html-attributes">jQuery( html, attributes )</a></li>
+</ul>
+</li>
+<li>
+<a href="#jQuery3">jQuery( callback )</a><ul><li><a href="#jQuery-callback">jQuery( callback )</a></li></ul>
+</li>
+</ul>
+</div><article id="jQuery1" class="entry method"><h2 class="section-title">
+<span class="name">jQuery( selector [, context ] )</span><span class="returns">Returns: <a href="http://api.jquery.com/Types/#jQuery">jQuery</a></span>
+</h2>
+<div class="entry-wrapper">
+<p class="desc"><strong>Description: </strong>Accepts a string containing a CSS selector which is then used to match a set of elements.</p>
+<ul class="signatures">
+<li class="signature">
+<h4 class="name">
+<span class="version-details">version added: <a href="/category/version/1.0/">1.0</a></span><a id="jQuery-selector-context" href="#jQuery-selector-context"><span class="icon-link"></span>jQuery( selector [, context ] )</a>
+</h4>
+<ul>
+<li>
+<div><strong>selector</strong></div>
+<div>Type: <a href="http://api.jquery.com/Types/#Selector">Selector</a>
+</div>
+<div>A string containing a selector expression</div>
+</li>
+<li>
+<div><strong>context</strong></div>
+<div>Type: <a href="http://api.jquery.com/Types/#Element">Element</a> or <a href="http://api.jquery.com/Types/#jQuery">jQuery</a>
+</div>
+<div>A DOM Element, Document, or jQuery to use as context</div>
+</li>
+</ul>
+</li>
+<li class="signature">
+<h4 class="name">
+<span class="version-details">version added: <a href="/category/version/1.0/">1.0</a></span><a id="jQuery-element" href="#jQuery-element"><span class="icon-link"></span>jQuery( element )</a>
+</h4>
+<ul><li>
+<div><strong>element</strong></div>
+<div>Type: <a href="http://api.jquery.com/Types/#Element">Element</a>
+</div>
+<div>A DOM element to wrap in a jQuery object.</div>
+</li></ul>
+</li>
+<li class="signature">
+<h4 class="name">
+<span class="version-details">version added: <a href="/category/version/1.0/">1.0</a></span><a id="jQuery-elementArray" href="#jQuery-elementArray"><span class="icon-link"></span>jQuery( elementArray )</a>
+</h4>
+<ul><li>
+<div><strong>elementArray</strong></div>
+<div>Type: <a href="http://api.jquery.com/Types/#Array">Array</a>
+</div>
+<div>An array containing a set of DOM elements to wrap in a jQuery object.</div>
+</li></ul>
+</li>
+<li class="signature">
+<h4 class="name">
+<span class="version-details">version added: <a href="/category/version/1.0/">1.0</a></span><a id="jQuery-object" href="#jQuery-object"><span class="icon-link"></span>jQuery( object )</a>
+</h4>
+<ul><li>
+<div><strong>object</strong></div>
+<div>Type: <a href="http://api.jquery.com/Types/#PlainObject">PlainObject</a>
+</div>
+<div>A plain object to wrap in a jQuery object.</div>
+</li></ul>
+</li>
+<li class="signature">
+<h4 class="name">
+<span class="version-details">version added: <a href="/category/version/1.0/">1.0</a></span><a id="jQuery-selection" href="#jQuery-selection"><span class="icon-link"></span>jQuery( selection )</a>
+</h4>
+<ul><li>
+<div><strong>selection</strong></div>
+<div>Type: <a href="http://api.jquery.com/Types/#jQuery">jQuery</a>
+</div>
+<div>An existing jQuery object to clone.</div>
+</li></ul>
+</li>
+<li class="signature">
+<h4 class="name">
+<span class="version-details">version added: <a href="/category/version/1.4/">1.4</a></span><a id="jQuery" href="#jQuery"><span class="icon-link"></span>jQuery()</a>
+</h4>
+<ul><li><div class="null-signature">This signature does not accept any arguments.</div></li></ul>
+</li>
+</ul>
+<div class="longdesc" id="entry-longdesc">
+      <p>In the first formulation listed above,  <code>jQuery()</code> &#x2014; which can also be written as <code>$()</code> &#x2014; searches through the DOM for any elements that match the provided selector and creates a new jQuery object that references these elements:</p>
+      <div class="syntaxhighlighter javascript">
+	<table>
+		<tbody>
+			<tr>
+				
+				<td class="gutter">
+					
+						<div class="line n1">1</div>
+					
+				</td>
+				
+				<td class="code">
+					<pre><div class="container"><div class="line"><code>$( <span class="string">&quot;div.foo&quot;</span> );</code></div></div></pre>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+
+      <p>If no elements match the provided selector, the new jQuery object is &quot;empty&quot;; that is, it contains no elements and has <code><a href="/length/">.length</a></code> property of 0.</p>
+      <h4 id="selector-context">Selector Context</h4>
+      <p>By default, selectors perform their searches within the DOM starting at the document root. However, an alternate context can be given for the search by using the optional second parameter to the <code>$()</code> function. For example, to do a search within an event handler, the search can be restricted like so:</p>
+      <div class="syntaxhighlighter javascript">
+	<table>
+		<tbody>
+			<tr>
+				
+				<td class="gutter">
+					
+						<div class="line n1">1</div>
+					
+						<div class="line n2">2</div>
+					
+						<div class="line n3">3</div>
+					
+				</td>
+				
+				<td class="code">
+					<pre><div class="container"><div class="line"><code>$( <span class="string">&quot;div.foo&quot;</span> ).click(<span class="keyword">function</span>() {</code></div></div><div class="container"><div class="line"><code>  $( <span class="string">&quot;span&quot;</span>, <span class="keyword">this</span> ).addClass( <span class="string">&quot;bar&quot;</span> );</code></div></div><div class="container"><div class="line"><code>});</code></div></div></pre>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+
+      <p>When the search for the span selector is restricted to the context of <code>this</code>, only spans within the clicked element will get the additional class.</p>
+      <p>Internally, selector context is implemented with the <code>.find()</code> method, so  <code>$( &quot;span&quot;, this )</code> is equivalent to  <code>$( this ).find( &quot;span&quot; )</code>.</p>
+
+      <h4 id="using-dom-elements">Using DOM elements</h4>
+      <p>The second and third formulations of this function create a jQuery object using one or more DOM elements that were already selected in some other way. A jQuery object is created from the array elements in the order they appeared in the array; unlike most other multi-element jQuery operations, the elements are not sorted in DOM order. Elements will be copied from the array as-is and won&apos;t be unwrapped if they&apos;re already jQuery collections.</p>
+      <p>Please note that although you can pass text nodes and comment nodes into a jQuery collection this way, most operations don&apos;t support them. The few that do will have an explicit note on their API documentation page.</p>
+      <p>A common use of single-DOM-element construction is to call jQuery methods on an element that has been passed to a callback function through the keyword <code>this</code>:</p>
+      <div class="syntaxhighlighter javascript">
+	<table>
+		<tbody>
+			<tr>
+				
+				<td class="gutter">
+					
+						<div class="line n1">1</div>
+					
+						<div class="line n2">2</div>
+					
+						<div class="line n3">3</div>
+					
+				</td>
+				
+				<td class="code">
+					<pre><div class="container"><div class="line"><code>$( <span class="string">&quot;div.foo&quot;</span> ).click(<span class="keyword">function</span>() {</code></div></div><div class="container"><div class="line"><code>  $( <span class="keyword">this</span> ).slideUp();</code></div></div><div class="container"><div class="line"><code>});</code></div></div></pre>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+
+      <p>This example causes elements to be hidden with a sliding animation when clicked. Because the handler receives the clicked item in the <code>this</code> keyword as a bare DOM element, the element must be passed to the <code>$()</code> function before applying jQuery methods to it.</p>
+      <p>XML data returned from an Ajax call can be passed to the <code>$()</code> function so individual elements of the XML structure can be retrieved using <code>.find()</code> and other DOM traversal methods.</p>
+      <div class="syntaxhighlighter javascript">
+	<table>
+		<tbody>
+			<tr>
+				
+				<td class="gutter">
+					
+						<div class="line n1">1</div>
+					
+						<div class="line n2">2</div>
+					
+						<div class="line n3">3</div>
+					
+				</td>
+				
+				<td class="code">
+					<pre><div class="container"><div class="line"><code>$.post( <span class="string">&quot;url.xml&quot;</span>, <span class="keyword">function</span>( data ) {</code></div></div><div class="container"><div class="line"><code>  <span class="keyword">var</span> $child = $( data ).find( <span class="string">&quot;child&quot;</span> );</code></div></div><div class="container"><div class="line"><code>});</code></div></div></pre>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+
+
+      <h4 id="cloning-jquery-objects">Cloning jQuery Objects</h4>
+      <p>When a jQuery object is passed to the <code>$()</code> function, a clone of the object is created. This new jQuery object references the same DOM elements as the initial one.</p>
+
+      <h4 id="returning-empty-set">Returning an Empty Set</h4>
+      <p>As of jQuery 1.4, calling the <code>jQuery()</code> method with <em>no arguments</em> returns an empty jQuery set (with a <code><a href="/length/">.length</a></code> property of 0). In previous versions of jQuery, this would return a set containing the document node.</p>
+      <h4 id="working-with-plain-objects">Working With Plain Objects</h4>
+      <p>At present, the only operations supported on plain JavaScript objects wrapped in jQuery are: <code>.data()</code>,<code>.prop()</code>,<code>.on()</code>, <code>.off()</code>, <code>.trigger()</code> and <code>.triggerHandler()</code>. The use of <code>.data()</code> (or any method requiring <code>.data()</code>) on a plain object will result in a new property on the object called jQuery{randomNumber} (eg. jQuery123456789).</p>
+      <div class="syntaxhighlighter javascript">
+	<table>
+		<tbody>
+			<tr>
+				
+				<td class="gutter">
+					
+						<div class="line n1">1</div>
+					
+						<div class="line n2">2</div>
+					
+						<div class="line n3">3</div>
+					
+						<div class="line n4">4</div>
+					
+						<div class="line n5">5</div>
+					
+						<div class="line n6">6</div>
+					
+						<div class="line n7">7</div>
+					
+						<div class="line n8">8</div>
+					
+						<div class="line n9">9</div>
+					
+						<div class="line n10">10</div>
+					
+						<div class="line n11">11</div>
+					
+						<div class="line n12">12</div>
+					
+						<div class="line n13">13</div>
+					
+						<div class="line n14">14</div>
+					
+						<div class="line n15">15</div>
+					
+						<div class="line n16">16</div>
+					
+						<div class="line n17">17</div>
+					
+						<div class="line n18">18</div>
+					
+						<div class="line n19">19</div>
+					
+						<div class="line n20">20</div>
+					
+						<div class="line n21">21</div>
+					
+						<div class="line n22">22</div>
+					
+						<div class="line n23">23</div>
+					
+				</td>
+				
+				<td class="code">
+					<pre><div class="container"><div class="line"><code><span class="comment">// Define a plain object</span></code></div></div><div class="container"><div class="line"><code><span class="keyword">var</span> foo = { foo: <span class="string">&quot;bar&quot;</span>, hello: <span class="string">&quot;world&quot;</span> };</code></div></div><div class="container"><div class="line"><code> </code></div></div><div class="container"><div class="line"><code><span class="comment">// Pass it to the jQuery function</span></code></div></div><div class="container"><div class="line"><code><span class="keyword">var</span> $foo = $( foo );</code></div></div><div class="container"><div class="line"><code> </code></div></div><div class="container"><div class="line"><code><span class="comment">// Test accessing property values</span></code></div></div><div class="container"><div class="line"><code><span class="keyword">var</span> test1 = $foo.prop( <span class="string">&quot;foo&quot;</span> ); <span class="comment">// bar</span></code></div></div><div class="container"><div class="line"><code> </code></div></div><div class="container"><div class="line"><code><span class="comment">// Test setting property values</span></code></div></div><div class="container"><div class="line"><code>$foo.prop( <span class="string">&quot;foo&quot;</span>, <span class="string">&quot;foobar&quot;</span> );</code></div></div><div class="container"><div class="line"><code><span class="keyword">var</span> test2 = $foo.prop( <span class="string">&quot;foo&quot;</span> ); <span class="comment">// foobar</span></code></div></div><div class="container"><div class="line"><code> </code></div></div><div class="container"><div class="line"><code><span class="comment">// Test using .data() as summarized above</span></code></div></div><div class="container"><div class="line"><code>$foo.data( <span class="string">&quot;keyName&quot;</span>, <span class="string">&quot;someValue&quot;</span> );</code></div></div><div class="container"><div class="line"><code>console.log( $foo ); <span class="comment">// will now contain a jQuery{randomNumber} property</span></code></div></div><div class="container"><div class="line"><code> </code></div></div><div class="container"><div class="line"><code><span class="comment">// Test binding an event name and triggering</span></code></div></div><div class="container"><div class="line"><code>$foo.on( <span class="string">&quot;eventName&quot;</span>, <span class="function"><span class="keyword">function</span> <span class="params">()</span> {</span></code></div></div><div class="container"><div class="line"><code>  console.log( <span class="string">&quot;eventName was called&quot;</span> );</code></div></div><div class="container"><div class="line"><code>});</code></div></div><div class="container"><div class="line"><code> </code></div></div><div class="container"><div class="line"><code>$foo.trigger( <span class="string">&quot;eventName&quot;</span> ); <span class="comment">// Logs &quot;eventName was called&quot;</span></code></div></div></pre>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+
+      <p>Should <code>.trigger( &quot;eventName&quot; )</code> be used, it will search for an &quot;eventName&quot; property on the object and attempt to execute it after any attached jQuery handlers are executed. It does not check whether the property is a function or not. To avoid this behavior, <code>.triggerHandler( &quot;eventName&quot; )</code> should be used instead.</p>
+      <div class="syntaxhighlighter javascript">
+	<table>
+		<tbody>
+			<tr>
+				
+				<td class="gutter">
+					
+						<div class="line n1">1</div>
+					
+				</td>
+				
+				<td class="code">
+					<pre><div class="container"><div class="line"><code>$foo.triggerHandler( <span class="string">&quot;eventName&quot;</span> ); <span class="comment">// Also logs &quot;eventName was called&quot;</span></code></div></div></pre>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+
+    </div>
+<section class="entry-examples" id="entry-examples"><header><h2>Examples:</h2></header><div class="entry-example" id="example-0">
+<p>Find all p elements that are children of a div element and apply a border to them.</p>
+<div class="syntaxhighlighter xml">
+	<table>
+		<tbody>
+			<tr>
+				
+				<td class="gutter">
+					
+						<div class="line n1">1</div>
+					
+						<div class="line n2">2</div>
+					
+						<div class="line n3">3</div>
+					
+						<div class="line n4">4</div>
+					
+						<div class="line n5">5</div>
+					
+						<div class="line n6">6</div>
+					
+						<div class="line n7">7</div>
+					
+						<div class="line n8">8</div>
+					
+						<div class="line n9">9</div>
+					
+						<div class="line n10">10</div>
+					
+						<div class="line n11">11</div>
+					
+						<div class="line n12">12</div>
+					
+						<div class="line n13">13</div>
+					
+						<div class="line n14">14</div>
+					
+						<div class="line n15">15</div>
+					
+						<div class="line n16">16</div>
+					
+						<div class="line n17">17</div>
+					
+						<div class="line n18">18</div>
+					
+						<div class="line n19">19</div>
+					
+				</td>
+				
+				<td class="code">
+					<pre><div class="container"><div class="line"><code><span class="doctype">&lt;!doctype html&gt;</span></code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;<span class="title">html</span> <span class="attribute">lang</span>=<span class="value">&quot;en&quot;</span>&gt;</span></code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;<span class="title">head</span>&gt;</span></code></div></div><div class="container"><div class="line"><code>  <span class="tag">&lt;<span class="title">meta</span> <span class="attribute">charset</span>=<span class="value">&quot;utf-8&quot;</span>&gt;</span></code></div></div><div class="container"><div class="line"><code>  <span class="tag">&lt;<span class="title">title</span>&gt;</span>jQuery demo<span class="tag">&lt;/<span class="title">title</span>&gt;</span></code></div></div><div class="container"><div class="line"><code>  <span class="tag">&lt;<span class="title">script</span> <span class="attribute">src</span>=<span class="value">&quot;https://code.jquery.com/jquery-1.10.2.js&quot;</span>&gt;</span><span class="javascript"></span><span class="tag">&lt;/<span class="title">script</span>&gt;</span></code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;/<span class="title">head</span>&gt;</span></code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;<span class="title">body</span>&gt;</span></code></div></div><div class="container"><div class="line"><code> </code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;<span class="title">p</span>&gt;</span>one<span class="tag">&lt;/<span class="title">p</span>&gt;</span></code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;<span class="title">div</span>&gt;</span><span class="tag">&lt;<span class="title">p</span>&gt;</span>two<span class="tag">&lt;/<span class="title">p</span>&gt;</span><span class="tag">&lt;/<span class="title">div</span>&gt;</span></code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;<span class="title">p</span>&gt;</span>three<span class="tag">&lt;/<span class="title">p</span>&gt;</span></code></div></div><div class="container"><div class="line"><code> </code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;<span class="title">script</span>&gt;</span><span class="javascript"></span></code></div></div><div class="container"><div class="line"><code>$( <span class="string">&quot;div &gt; p&quot;</span> ).css( <span class="string">&quot;border&quot;</span>, <span class="string">&quot;1px solid gray&quot;</span> );</code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;/<span class="title">script</span>&gt;</span></code></div></div><div class="container"><div class="line"><code> </code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;/<span class="title">body</span>&gt;</span></code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;/<span class="title">html</span>&gt;</span></code></div></div></pre>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+
+<h4>Demo:</h4>
+<div class="demo code-demo"></div>
+</div>
+<div class="entry-example" id="example-1">
+<p>Find all inputs of type radio within the first form in the document.</p>
+<div class="syntaxhighlighter javascript">
+	<table>
+		<tbody>
+			<tr>
+				
+				<td class="gutter">
+					
+						<div class="line n1">1</div>
+					
+				</td>
+				
+				<td class="code">
+					<pre><div class="container"><div class="line"><code>$( <span class="string">&quot;input:radio&quot;</span>, document.forms[ <span class="number">0</span> ] );</code></div></div></pre>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+
+</div>
+<div class="entry-example" id="example-2">
+<p>Find all div elements within an XML document from an Ajax response.</p>
+<div class="syntaxhighlighter javascript">
+	<table>
+		<tbody>
+			<tr>
+				
+				<td class="gutter">
+					
+						<div class="line n1">1</div>
+					
+				</td>
+				
+				<td class="code">
+					<pre><div class="container"><div class="line"><code>$( <span class="string">&quot;div&quot;</span>, xml.responseXML );</code></div></div></pre>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+
+</div>
+<div class="entry-example" id="example-3">
+<p>Set the background color of the page to black.</p>
+<div class="syntaxhighlighter javascript">
+	<table>
+		<tbody>
+			<tr>
+				
+				<td class="gutter">
+					
+						<div class="line n1">1</div>
+					
+				</td>
+				
+				<td class="code">
+					<pre><div class="container"><div class="line"><code>$( document.body ).css( <span class="string">&quot;background&quot;</span>, <span class="string">&quot;black&quot;</span> );</code></div></div></pre>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+
+</div>
+<div class="entry-example" id="example-4">
+<p>Hide all the input elements within a form.</p>
+<div class="syntaxhighlighter javascript">
+	<table>
+		<tbody>
+			<tr>
+				
+				<td class="gutter">
+					
+						<div class="line n1">1</div>
+					
+				</td>
+				
+				<td class="code">
+					<pre><div class="container"><div class="line"><code>$( myForm.elements ).hide();</code></div></div></pre>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+
+</div></section>
+</div></article><article id="jQuery2" class="entry method"><h2 class="section-title">
+<span class="name">jQuery( html [, ownerDocument ] )</span><span class="returns">Returns: <a href="http://api.jquery.com/Types/#jQuery">jQuery</a></span>
+</h2>
+<div class="entry-wrapper">
+<p class="desc"><strong>Description: </strong>Creates DOM elements on the fly from the provided string of raw HTML.</p>
+<ul class="signatures">
+<li class="signature">
+<h4 class="name">
+<span class="version-details">version added: <a href="/category/version/1.0/">1.0</a></span><a id="jQuery-html-ownerDocument" href="#jQuery-html-ownerDocument"><span class="icon-link"></span>jQuery( html [, ownerDocument ] )</a>
+</h4>
+<ul>
+<li>
+<div><strong>html</strong></div>
+<div>Type: <a href="http://api.jquery.com/Types/#htmlString">htmlString</a>
+</div>
+<div>A string of HTML to create on the fly. Note that this parses HTML, <strong>not</strong> XML.</div>
+</li>
+<li>
+<div><strong>ownerDocument</strong></div>
+<div>Type: <a href="http://api.jquery.com/Types/#document">document</a>
+</div>
+<div>A document in which the new elements will be created.</div>
+</li>
+</ul>
+</li>
+<li class="signature">
+<h4 class="name">
+<span class="version-details">version added: <a href="/category/version/1.4/">1.4</a></span><a id="jQuery-html-attributes" href="#jQuery-html-attributes"><span class="icon-link"></span>jQuery( html, attributes )</a>
+</h4>
+<ul>
+<li>
+<div><strong>html</strong></div>
+<div>Type: <a href="http://api.jquery.com/Types/#htmlString">htmlString</a>
+</div>
+<div>A string defining a single, standalone, HTML element (e.g. &lt;div/&gt; or &lt;div&gt;&lt;/div&gt;).</div>
+</li>
+<li>
+<div><strong>attributes</strong></div>
+<div>Type: <a href="http://api.jquery.com/Types/#PlainObject">PlainObject</a>
+</div>
+<div>An object of attributes, events, and methods to call on the newly-created element.</div>
+</li>
+</ul>
+</li>
+</ul>
+<div class="longdesc" id="entry-longdesc-1">
+      <h4 id="creating-new-elements">Creating New Elements</h4>
+      <p>If a string is passed as the parameter to <code>$()</code>, jQuery examines the string to see if it looks like HTML (i.e., it starts with <code>&lt;tag ... &gt;</code>). If not, the string is interpreted as a selector expression, as explained above. But if the string appears to be an HTML snippet, jQuery attempts to create new DOM elements as described by the HTML. Then a jQuery object is created and returned that refers to these elements. You can perform any of the usual jQuery methods on this object:</p>
+      <div class="syntaxhighlighter javascript">
+	<table>
+		<tbody>
+			<tr>
+				
+				<td class="gutter">
+					
+						<div class="line n1">1</div>
+					
+				</td>
+				
+				<td class="code">
+					<pre><div class="container"><div class="line"><code>$( <span class="string">&quot;&lt;p id=&apos;test&apos;&gt;My &lt;em&gt;new&lt;/em&gt; text&lt;/p&gt;&quot;</span> ).appendTo( <span class="string">&quot;body&quot;</span> );</code></div></div></pre>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+
+      <p>For explicit parsing of a string to HTML, use the <a href="/jQuery.parseHTML/">$.parseHTML()</a> method.</p>
+      <p>By default, elements are created with an <code>.ownerDocument</code> matching the document into which the jQuery library was loaded. Elements being injected into a different document should be created using that document, e.g., <code>$(&quot;&lt;p&gt;hello iframe&lt;/p&gt;&quot;, $(&quot;#myiframe&quot;).prop(&quot;contentWindow&quot;).document)</code>.</p>
+      <p>If the HTML is more complex than a single tag without attributes, as it is in the above example, the actual creation of the elements is handled by the browser&apos;s <code>.innerHTML</code> mechanism. In most cases, jQuery creates a new <code>&lt;div&gt;</code> element and sets the <code>innerHTML</code> property of the element to the HTML snippet that was passed in. When the parameter has a single tag (with optional closing tag or quick-closing) &#x2014; <code>$( &quot;&lt;img&#xA0;/&gt;&quot; )</code> or <code>$( &quot;&lt;img&gt;&quot; )</code>, <code>$( &quot;&lt;a&gt;&lt;/a&gt;&quot; )</code> or <code>$( &quot;&lt;a&gt;&quot; )</code> &#x2014; jQuery creates the element using the native JavaScript <code>.createElement()</code> function.</p>
+      <p>When passing in complex HTML, some browsers may not generate a DOM that exactly replicates the HTML source provided. As mentioned, jQuery uses the browser&apos;s <code>.innerHTML</code> property to parse the passed HTML and insert it into the current document. During this process, some browsers filter out certain elements such as <code>&lt;html&gt;</code>, <code>&lt;title&gt;</code>, or <code>&lt;head&gt;</code> elements. As a result, the elements inserted may not be representative of the original string passed.</p>
+      <p>Filtering isn&apos;t, however, limited to these tags. For example, Internet Explorer prior to version 8 will also convert all <code>href</code> properties on links to absolute URLs, and Internet Explorer prior to version 9 will not correctly handle HTML5 elements without the addition of a separate <a href="http://code.google.com/p/html5shiv/">compatibility layer</a>.</p>
+      <p>To ensure cross-platform compatibility, the snippet must be well-formed. Tags that can contain other elements should be paired with a closing tag:</p>
+      <div class="syntaxhighlighter javascript">
+	<table>
+		<tbody>
+			<tr>
+				
+				<td class="gutter">
+					
+						<div class="line n1">1</div>
+					
+				</td>
+				
+				<td class="code">
+					<pre><div class="container"><div class="line"><code>$( <span class="string">&quot;&lt;a href=&apos;http://jquery.com&apos;&gt;&lt;/a&gt;&quot;</span> );</code></div></div></pre>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+
+      <p>Tags that cannot contain elements may be quick-closed or not:</p>
+      <div class="syntaxhighlighter javascript">
+	<table>
+		<tbody>
+			<tr>
+				
+				<td class="gutter">
+					
+						<div class="line n1">1</div>
+					
+						<div class="line n2">2</div>
+					
+				</td>
+				
+				<td class="code">
+					<pre><div class="container"><div class="line"><code>$( <span class="string">&quot;&lt;img&gt;&quot;</span> );</code></div></div><div class="container"><div class="line"><code>$( <span class="string">&quot;&lt;input&gt;&quot;</span> );</code></div></div></pre>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+
+      <p>When passing HTML to <code>jQuery()</code>, note that text nodes are not treated as DOM elements. With the exception of a few methods (such as <code>.content()</code>), they are generally ignored or removed. E.g:</p>
+      <div class="syntaxhighlighter javascript">
+	<table>
+		<tbody>
+			<tr>
+				
+				<td class="gutter">
+					
+						<div class="line n1">1</div>
+					
+						<div class="line n2">2</div>
+					
+				</td>
+				
+				<td class="code">
+					<pre><div class="container"><div class="line"><code><span class="keyword">var</span> el = $( <span class="string">&quot;&lt;br&gt;2&lt;br&gt;3&quot;</span> ); <span class="comment">// returns [&lt;br&gt;, &quot;2&quot;, &lt;br&gt;]</span></code></div></div><div class="container"><div class="line"><code>el = $( <span class="string">&quot;&lt;br&gt;2&lt;br&gt;3 &gt;&quot;</span> ); <span class="comment">// returns [&lt;br&gt;, &quot;2&quot;, &lt;br&gt;, &quot;3 &amp;gt;&quot;]</span></code></div></div></pre>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+
+      <p>This behavior is expected. <strong>As of jQuery 1.9.0</strong> (and unless using the <a href="https://github.com/jquery/jquery-migrate/#readme">jQuery Migrate plugin</a>), <code>jQuery()</code> requires the HTML string to start with a <code>&lt;</code> (i.e text nodes cannot appear at the front of the HTML string).</p>
+      <p><strong>As of jQuery 1.4</strong>, the second argument to <code>jQuery()</code> can accept a plain object consisting of a superset of the properties that can be passed to the <a href="/attr/">.attr()</a> method.</p>
+      <p><strong>Important:</strong> If the second argument is passed, the HTML string in the first argument must represent a simple element with no attributes. <strong>As of jQuery 1.4</strong>, any <a href="/category/events/">event type</a> can be passed in, and the following jQuery methods can be called: <a href="/val/">val</a>, <a href="/css/">css</a>, <a href="/html/">html</a>, <a href="/text/">text</a>, <a href="/data/">data</a>, <a href="/width/">width</a>, <a href="/height/">height</a>, or <a href="/offset/">offset</a>.</p>
+      <p><strong>As of jQuery 1.8</strong>, any jQuery instance method (a method of <code>jQuery.fn</code>) can be used as a property of the object passed to the second parameter:</p>
+      <div class="syntaxhighlighter javascript">
+	<table>
+		<tbody>
+			<tr>
+				
+				<td class="gutter">
+					
+						<div class="line n1">1</div>
+					
+						<div class="line n2">2</div>
+					
+						<div class="line n3">3</div>
+					
+						<div class="line n4">4</div>
+					
+						<div class="line n5">5</div>
+					
+						<div class="line n6">6</div>
+					
+						<div class="line n7">7</div>
+					
+						<div class="line n8">8</div>
+					
+				</td>
+				
+				<td class="code">
+					<pre><div class="container"><div class="line"><code>$( <span class="string">&quot;&lt;div&gt;&lt;/div&gt;&quot;</span>, {</code></div></div><div class="container"><div class="line"><code>  <span class="string">&quot;class&quot;</span>: <span class="string">&quot;my-div&quot;</span>,</code></div></div><div class="container"><div class="line"><code>  on: {</code></div></div><div class="container"><div class="line"><code>    touchstart: <span class="keyword">function</span>( event ) {</code></div></div><div class="container"><div class="line"><code>      <span class="comment">// Do something</span></code></div></div><div class="container"><div class="line"><code>    }</code></div></div><div class="container"><div class="line"><code>  }</code></div></div><div class="container"><div class="line"><code>}).appendTo( <span class="string">&quot;body&quot;</span> );</code></div></div></pre>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+
+      <p>The name <code>&quot;class&quot;</code> must be quoted in the object since it is a JavaScript reserved word, and <code>&quot;className&quot;</code> cannot be used since it refers to the DOM property, not the attribute. </p>
+      <p>While the second argument is convenient, its flexibility can lead to unintended consequences (e.g. <code>$( &quot;&lt;input&gt;&quot;, {size: &quot;4&quot;} )</code> calling the <code>.size()</code> method instead of setting the size attribute). The previous code block could thus be written instead as:</p>
+<div class="syntaxhighlighter javascript">
+	<table>
+		<tbody>
+			<tr>
+				
+				<td class="gutter">
+					
+						<div class="line n1">1</div>
+					
+						<div class="line n2">2</div>
+					
+						<div class="line n3">3</div>
+					
+						<div class="line n4">4</div>
+					
+						<div class="line n5">5</div>
+					
+						<div class="line n6">6</div>
+					
+						<div class="line n7">7</div>
+					
+						<div class="line n8">8</div>
+					
+				</td>
+				
+				<td class="code">
+					<pre><div class="container"><div class="line"><code>$( <span class="string">&quot;&lt;div&gt;&lt;/div&gt;&quot;</span> )</code></div></div><div class="container"><div class="line"><code>  .addClass( <span class="string">&quot;my-div&quot;</span> )</code></div></div><div class="container"><div class="line"><code>  .on({</code></div></div><div class="container"><div class="line"><code>    touchstart: <span class="keyword">function</span>( event ) {</code></div></div><div class="container"><div class="line"><code>      <span class="comment">// Do something</span></code></div></div><div class="container"><div class="line"><code>    }</code></div></div><div class="container"><div class="line"><code>  })</code></div></div><div class="container"><div class="line"><code>    .appendTo( <span class="string">&quot;body&quot;</span> );</code></div></div></pre>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+
+    </div>
+<section class="entry-examples" id="entry-examples-1"><header><h2>Examples:</h2></header><div class="entry-example" id="example-1-0">
+<p>Create a div element (and all of its contents) dynamically and append it to the body element. Internally, an element is created and its innerHTML property set to the given markup.</p>
+<div class="syntaxhighlighter javascript">
+	<table>
+		<tbody>
+			<tr>
+				
+				<td class="gutter">
+					
+						<div class="line n1">1</div>
+					
+				</td>
+				
+				<td class="code">
+					<pre><div class="container"><div class="line"><code>$( <span class="string">&quot;&lt;div&gt;&lt;p&gt;Hello&lt;/p&gt;&lt;/div&gt;&quot;</span> ).appendTo( <span class="string">&quot;body&quot;</span> )</code></div></div></pre>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+
+</div>
+<div class="entry-example" id="example-1-1">
+<p>Create some DOM elements.</p>
+<div class="syntaxhighlighter javascript">
+	<table>
+		<tbody>
+			<tr>
+				
+				<td class="gutter">
+					
+						<div class="line n1">1</div>
+					
+						<div class="line n2">2</div>
+					
+						<div class="line n3">3</div>
+					
+						<div class="line n4">4</div>
+					
+						<div class="line n5">5</div>
+					
+						<div class="line n6">6</div>
+					
+						<div class="line n7">7</div>
+					
+						<div class="line n8">8</div>
+					
+				</td>
+				
+				<td class="code">
+					<pre><div class="container"><div class="line"><code>$( <span class="string">&quot;&lt;div/&gt;&quot;</span>, {</code></div></div><div class="container"><div class="line"><code>  <span class="string">&quot;class&quot;</span>: <span class="string">&quot;test&quot;</span>,</code></div></div><div class="container"><div class="line"><code>  text: <span class="string">&quot;Click me!&quot;</span>,</code></div></div><div class="container"><div class="line"><code>  click: <span class="keyword">function</span>() {</code></div></div><div class="container"><div class="line"><code>    $( <span class="keyword">this</span> ).toggleClass( <span class="string">&quot;test&quot;</span> );</code></div></div><div class="container"><div class="line"><code>  }</code></div></div><div class="container"><div class="line"><code>})</code></div></div><div class="container"><div class="line"><code>  .appendTo( <span class="string">&quot;body&quot;</span> );</code></div></div></pre>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+
+</div></section>
+</div></article><article id="jQuery3" class="entry method"><h2 class="section-title">
+<span class="name">jQuery( callback )</span><span class="returns">Returns: <a href="http://api.jquery.com/Types/#jQuery">jQuery</a></span>
+</h2>
+<div class="entry-wrapper">
+<p class="desc"><strong>Description: </strong>Binds a function to be executed when the DOM has finished loading.</p>
+<ul class="signatures"><li class="signature">
+<h4 class="name">
+<span class="version-details">version added: <a href="/category/version/1.0/">1.0</a></span><a id="jQuery-callback" href="#jQuery-callback"><span class="icon-link"></span>jQuery( callback )</a>
+</h4>
+<ul><li>
+<div><strong>callback</strong></div>
+<div>Type: <a href="http://api.jquery.com/Types/#Function">Function</a>()</div>
+<div>The function to execute when the DOM is ready.</div>
+</li></ul>
+</li></ul>
+<div class="longdesc" id="entry-longdesc-2">
+      <p>This function behaves just like <code>$( document ).ready()</code>, in that it should be used to wrap other <code>$()</code> operations on your page that depend on the DOM being ready. While this function is, technically, chainable, there really isn&apos;t much use for chaining against it.</p>
+    </div>
+<section class="entry-examples" id="entry-examples-2"><header><h2>Examples:</h2></header><div class="entry-example" id="example-2-0">
+<p>Execute the function when the DOM is ready to be used.</p>
+<div class="syntaxhighlighter javascript">
+	<table>
+		<tbody>
+			<tr>
+				
+				<td class="gutter">
+					
+						<div class="line n1">1</div>
+					
+						<div class="line n2">2</div>
+					
+						<div class="line n3">3</div>
+					
+				</td>
+				
+				<td class="code">
+					<pre><div class="container"><div class="line"><code>$(<span class="keyword">function</span>() {</code></div></div><div class="container"><div class="line"><code>  <span class="comment">// Document is ready</span></code></div></div><div class="container"><div class="line"><code>});</code></div></div></pre>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+
+</div>
+<div class="entry-example" id="example-2-1">
+<p>Use both the shortcut for $(document).ready() and the argument to write failsafe jQuery code using the $ alias, without relying on the global alias.</p>
+<div class="syntaxhighlighter javascript">
+	<table>
+		<tbody>
+			<tr>
+				
+				<td class="gutter">
+					
+						<div class="line n1">1</div>
+					
+						<div class="line n2">2</div>
+					
+						<div class="line n3">3</div>
+					
+				</td>
+				
+				<td class="code">
+					<pre><div class="container"><div class="line"><code>jQuery(<span class="keyword">function</span>( $ ) {</code></div></div><div class="container"><div class="line"><code>  <span class="comment">// Your code using failsafe $ alias here...</span></code></div></div><div class="container"><div class="line"><code>});</code></div></div></pre>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+
+</div></section>
+</div></article>	</div><!-- .entry-content -->
+
+</article><!-- #post-339 -->
+			</div>
+
+	<div id="sidebar" class="widget-area" role="complementary">
+	<aside id="categories" class="widget">
+		<ul>
+				<li class="cat-item cat-item-1"><a href="//api.jquery.com/category/ajax/" >Ajax</a>
+<ul class='children'>
+	<li class="cat-item cat-item-2"><a href="//api.jquery.com/category/ajax/global-ajax-event-handlers/" >Global Ajax Event Handlers</a>
+</li>
+	<li class="cat-item cat-item-3"><a href="//api.jquery.com/category/ajax/helper-functions/" >Helper Functions</a>
+</li>
+	<li class="cat-item cat-item-4"><a href="//api.jquery.com/category/ajax/low-level-interface/" >Low-Level Interface</a>
+</li>
+	<li class="cat-item cat-item-5"><a href="//api.jquery.com/category/ajax/shorthand-methods/" >Shorthand Methods</a>
+</li>
+</ul>
+</li>
+	<li class="cat-item cat-item-6"><a href="//api.jquery.com/category/attributes/" >Attributes</a>
+</li>
+	<li class="cat-item cat-item-7"><a href="//api.jquery.com/category/callbacks-object/" >Callbacks Object</a>
+</li>
+	<li class="cat-item cat-item-8 current-cat"><a href="//api.jquery.com/category/core/" >Core</a>
+</li>
+	<li class="cat-item cat-item-9"><a href="//api.jquery.com/category/css/" >CSS</a>
+</li>
+	<li class="cat-item cat-item-10"><a href="//api.jquery.com/category/data/" >Data</a>
+</li>
+	<li class="cat-item cat-item-11"><a href="//api.jquery.com/category/deferred-object/" >Deferred Object</a>
+</li>
+	<li class="cat-item cat-item-87"><a href="//api.jquery.com/category/deprecated/" >Deprecated</a>
+<ul class='children'>
+	<li class="cat-item cat-item-90"><a href="//api.jquery.com/category/deprecated/deprecated-1.3/" >Deprecated 1.3</a>
+</li>
+	<li class="cat-item cat-item-88"><a href="//api.jquery.com/category/deprecated/deprecated-1.7/" >Deprecated 1.7</a>
+</li>
+	<li class="cat-item cat-item-89"><a href="//api.jquery.com/category/deprecated/deprecated-1.8/" >Deprecated 1.8</a>
+</li>
+	<li class="cat-item cat-item-94"><a href="//api.jquery.com/category/deprecated/deprecated-1.9/" >Deprecated 1.9</a>
+</li>
+	<li class="cat-item cat-item-93"><a href="//api.jquery.com/category/deprecated/deprecated-1.10/" >Deprecated 1.10</a>
+</li>
+	<li class="cat-item cat-item-98"><a href="//api.jquery.com/category/deprecated/deprecated-3.0/" >Deprecated 3.0</a>
+</li>
+</ul>
+</li>
+	<li class="cat-item cat-item-12"><a href="//api.jquery.com/category/dimensions/" >Dimensions</a>
+</li>
+	<li class="cat-item cat-item-13"><a href="//api.jquery.com/category/effects/" >Effects</a>
+<ul class='children'>
+	<li class="cat-item cat-item-14"><a href="//api.jquery.com/category/effects/basics/" >Basics</a>
+</li>
+	<li class="cat-item cat-item-15"><a href="//api.jquery.com/category/effects/custom-effects/" >Custom</a>
+</li>
+	<li class="cat-item cat-item-16"><a href="//api.jquery.com/category/effects/fading/" >Fading</a>
+</li>
+	<li class="cat-item cat-item-17"><a href="//api.jquery.com/category/effects/sliding/" >Sliding</a>
+</li>
+</ul>
+</li>
+	<li class="cat-item cat-item-18"><a href="//api.jquery.com/category/events/" >Events</a>
+<ul class='children'>
+	<li class="cat-item cat-item-19"><a href="//api.jquery.com/category/events/browser-events/" >Browser Events</a>
+</li>
+	<li class="cat-item cat-item-20"><a href="//api.jquery.com/category/events/document-loading/" >Document Loading</a>
+</li>
+	<li class="cat-item cat-item-21"><a href="//api.jquery.com/category/events/event-handler-attachment/" >Event Handler Attachment</a>
+</li>
+	<li class="cat-item cat-item-22"><a href="//api.jquery.com/category/events/event-object/" >Event Object</a>
+</li>
+	<li class="cat-item cat-item-23"><a href="//api.jquery.com/category/events/form-events/" >Form Events</a>
+</li>
+	<li class="cat-item cat-item-24"><a href="//api.jquery.com/category/events/keyboard-events/" >Keyboard Events</a>
+</li>
+	<li class="cat-item cat-item-25"><a href="//api.jquery.com/category/events/mouse-events/" >Mouse Events</a>
+</li>
+</ul>
+</li>
+	<li class="cat-item cat-item-26"><a href="//api.jquery.com/category/forms/" >Forms</a>
+</li>
+	<li class="cat-item cat-item-27"><a href="//api.jquery.com/category/internals/" >Internals</a>
+</li>
+	<li class="cat-item cat-item-28"><a href="//api.jquery.com/category/manipulation/" >Manipulation</a>
+<ul class='children'>
+	<li class="cat-item cat-item-29"><a href="//api.jquery.com/category/manipulation/class-attribute/" >Class Attribute</a>
+</li>
+	<li class="cat-item cat-item-30"><a href="//api.jquery.com/category/manipulation/copying/" >Copying</a>
+</li>
+	<li class="cat-item cat-item-32"><a href="//api.jquery.com/category/manipulation/dom-insertion-around/" >DOM Insertion, Around</a>
+</li>
+	<li class="cat-item cat-item-33"><a href="//api.jquery.com/category/manipulation/dom-insertion-inside/" >DOM Insertion, Inside</a>
+</li>
+	<li class="cat-item cat-item-34"><a href="//api.jquery.com/category/manipulation/dom-insertion-outside/" >DOM Insertion, Outside</a>
+</li>
+	<li class="cat-item cat-item-35"><a href="//api.jquery.com/category/manipulation/dom-removal/" >DOM Removal</a>
+</li>
+	<li class="cat-item cat-item-36"><a href="//api.jquery.com/category/manipulation/dom-replacement/" >DOM Replacement</a>
+</li>
+	<li class="cat-item cat-item-37"><a href="//api.jquery.com/category/manipulation/general-attributes/" >General Attributes</a>
+</li>
+	<li class="cat-item cat-item-38"><a href="//api.jquery.com/category/manipulation/style-properties/" >Style Properties</a>
+</li>
+</ul>
+</li>
+	<li class="cat-item cat-item-39"><a href="//api.jquery.com/category/miscellaneous/" >Miscellaneous</a>
+<ul class='children'>
+	<li class="cat-item cat-item-40"><a href="//api.jquery.com/category/miscellaneous/collection-manipulation/" >Collection Manipulation</a>
+</li>
+	<li class="cat-item cat-item-41"><a href="//api.jquery.com/category/miscellaneous/data-storage/" >Data Storage</a>
+</li>
+	<li class="cat-item cat-item-42"><a href="//api.jquery.com/category/miscellaneous/dom-element-methods/" >DOM Element Methods</a>
+</li>
+	<li class="cat-item cat-item-43"><a href="//api.jquery.com/category/miscellaneous/setup-methods/" >Setup Methods</a>
+</li>
+</ul>
+</li>
+	<li class="cat-item cat-item-44"><a href="//api.jquery.com/category/offset/" >Offset</a>
+</li>
+	<li class="cat-item cat-item-45"><a href="//api.jquery.com/category/properties/" >Properties</a>
+<ul class='children'>
+	<li class="cat-item cat-item-46"><a href="//api.jquery.com/category/properties/jquery-object-instance-properties/" >Properties of jQuery Object Instances</a>
+</li>
+	<li class="cat-item cat-item-47"><a href="//api.jquery.com/category/properties/global-jquery-object-properties/" >Properties of the Global jQuery Object</a>
+</li>
+</ul>
+</li>
+	<li class="cat-item cat-item-92"><a href="//api.jquery.com/category/removed/" >Removed</a>
+</li>
+	<li class="cat-item cat-item-48"><a href="//api.jquery.com/category/selectors/" >Selectors</a>
+<ul class='children'>
+	<li class="cat-item cat-item-49"><a href="//api.jquery.com/category/selectors/attribute-selectors/" >Attribute</a>
+</li>
+	<li class="cat-item cat-item-50"><a href="//api.jquery.com/category/selectors/basic-css-selectors/" >Basic</a>
+</li>
+	<li class="cat-item cat-item-51"><a href="//api.jquery.com/category/selectors/basic-filter-selectors/" >Basic Filter</a>
+</li>
+	<li class="cat-item cat-item-52"><a href="//api.jquery.com/category/selectors/child-filter-selectors/" >Child Filter</a>
+</li>
+	<li class="cat-item cat-item-53"><a href="//api.jquery.com/category/selectors/content-filter-selector/" >Content Filter</a>
+</li>
+	<li class="cat-item cat-item-54"><a href="//api.jquery.com/category/selectors/form-selectors/" >Form</a>
+</li>
+	<li class="cat-item cat-item-55"><a href="//api.jquery.com/category/selectors/hierarchy-selectors/" >Hierarchy</a>
+</li>
+	<li class="cat-item cat-item-56"><a href="//api.jquery.com/category/selectors/jquery-selector-extensions/" >jQuery Extensions</a>
+</li>
+	<li class="cat-item cat-item-57"><a href="//api.jquery.com/category/selectors/visibility-filter-selectors/" >Visibility Filter</a>
+</li>
+</ul>
+</li>
+	<li class="cat-item cat-item-58"><a href="//api.jquery.com/category/traversing/" >Traversing</a>
+<ul class='children'>
+	<li class="cat-item cat-item-59"><a href="//api.jquery.com/category/traversing/filtering/" >Filtering</a>
+</li>
+	<li class="cat-item cat-item-60"><a href="//api.jquery.com/category/traversing/miscellaneous-traversal/" >Miscellaneous Traversing</a>
+</li>
+	<li class="cat-item cat-item-61"><a href="//api.jquery.com/category/traversing/tree-traversal/" >Tree Traversal</a>
+</li>
+</ul>
+</li>
+	<li class="cat-item cat-item-63"><a href="//api.jquery.com/category/utilities/" >Utilities</a>
+</li>
+	<li class="cat-item cat-item-64"><a href="//api.jquery.com/category/version/" >Version</a>
+<ul class='children'>
+	<li class="cat-item cat-item-65"><a href="//api.jquery.com/category/version/1.0/" >Version 1.0</a>
+</li>
+	<li class="cat-item cat-item-66"><a href="//api.jquery.com/category/version/1.0.4/" >Version 1.0.4</a>
+</li>
+	<li class="cat-item cat-item-67"><a href="//api.jquery.com/category/version/1.1/" >Version 1.1</a>
+</li>
+	<li class="cat-item cat-item-68"><a href="//api.jquery.com/category/version/1.1.2/" >Version 1.1.2</a>
+</li>
+	<li class="cat-item cat-item-69"><a href="//api.jquery.com/category/version/1.1.3/" >Version 1.1.3</a>
+</li>
+	<li class="cat-item cat-item-70"><a href="//api.jquery.com/category/version/1.1.4/" >Version 1.1.4</a>
+</li>
+	<li class="cat-item cat-item-71"><a href="//api.jquery.com/category/version/1.2/" >Version 1.2</a>
+</li>
+	<li class="cat-item cat-item-72"><a href="//api.jquery.com/category/version/1.2.3/" >Version 1.2.3</a>
+</li>
+	<li class="cat-item cat-item-73"><a href="//api.jquery.com/category/version/1.2.6/" >Version 1.2.6</a>
+</li>
+	<li class="cat-item cat-item-74"><a href="//api.jquery.com/category/version/1.3/" >Version 1.3</a>
+</li>
+	<li class="cat-item cat-item-75"><a href="//api.jquery.com/category/version/1.4/" >Version 1.4</a>
+</li>
+	<li class="cat-item cat-item-76"><a href="//api.jquery.com/category/version/1.4.1/" >Version 1.4.1</a>
+</li>
+	<li class="cat-item cat-item-77"><a href="//api.jquery.com/category/version/1.4.2/" >Version 1.4.2</a>
+</li>
+	<li class="cat-item cat-item-78"><a href="//api.jquery.com/category/version/1.4.3/" >Version 1.4.3</a>
+</li>
+	<li class="cat-item cat-item-79"><a href="//api.jquery.com/category/version/1.4.4/" >Version 1.4.4</a>
+</li>
+	<li class="cat-item cat-item-80"><a href="//api.jquery.com/category/version/1.5/" >Version 1.5</a>
+</li>
+	<li class="cat-item cat-item-81"><a href="//api.jquery.com/category/version/1.5.1/" >Version 1.5.1</a>
+</li>
+	<li class="cat-item cat-item-82"><a href="//api.jquery.com/category/version/1.6/" >Version 1.6</a>
+</li>
+	<li class="cat-item cat-item-83"><a href="//api.jquery.com/category/version/1.7/" >Version 1.7</a>
+</li>
+	<li class="cat-item cat-item-84"><a href="//api.jquery.com/category/version/1.8/" >Version 1.8</a>
+</li>
+	<li class="cat-item cat-item-86"><a href="//api.jquery.com/category/version/1.9/" >Version 1.9</a>
+</li>
+	<li class="cat-item cat-item-97"><a href="//api.jquery.com/category/version/1.12-2.2/" >Version 1.12 &amp; 2.2</a>
+</li>
+	<li class="cat-item cat-item-95"><a href="//api.jquery.com/category/version/3.0/" >Version 3.0</a>
+</li>
+	<li class="cat-item cat-item-96"><a href="//api.jquery.com/category/version/3.1/" >Version 3.1</a>
+</li>
+</ul>
+</li>
+		</ul>
+	</aside>
+</div>
+</div>
+	</div>
+</div>
+
+<footer class="clearfix simple">
+	<div class="constrain">
+		<div class="row">
+			<div class="six columns offset-by-three">
+				<h3><span>Books</span></h3>
+				<ul class="books">
+					<li>
+						<a href="https://www.packtpub.com/web-development/learning-jquery-fourth-edition">
+							<img src="//api.jquery.com/jquery-wp-content/themes/jquery/content/books/learning-jquery-4th-ed.jpg" alt="Learning jQuery 4th Edition by Karl Swedberg and Jonathan Chaffer" width="92" height="114">
+							Learning jQuery Fourth Edition
+							<cite>Karl Swedberg and Jonathan Chaffer</cite>
+						</a>
+					</li>
+					<li>
+						<a href="https://www.manning.com/books/jquery-in-action-third-edition?a_bid=bdd5b7ad&amp;a_aid=141d9491">
+							<img src="//api.jquery.com/jquery-wp-content/themes/jquery/content/books/jquery-in-action.jpg" alt="jQuery in Action by Bear Bibeault, Yehuda Katz, and Aurelio De Rosa" width="92" height="114">
+							jQuery in Action
+							<cite>Bear Bibeault, Yehuda Katz, and Aurelio De Rosa</cite>
+						</a>
+					</li>
+					<li>
+						<a href="http://www.syncfusion.com/resources/techportal/ebooks/jquery?utm_medium=BizDev-jQuery.org0513">
+							<img src="//api.jquery.com/jquery-wp-content/themes/jquery/content/books/jquery-succinctly.jpg" alt="jQuery Succinctly by Cody Lindley" width="92" height="114">
+							jQuery Succinctly
+							<cite>Cody Lindley</cite>
+						</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+
+		
+<div id="legal">
+	<ul class="footer-site-links">
+			<li><a class="icon-pencil" href="http://learn.jquery.com/">Learning Center</a></li>
+			<li><a class="icon-group" href="http://forum.jquery.com/">Forum</a></li>
+			<li><a class="icon-wrench" href="http://api.jquery.com/">API</a></li>
+			<li><a class="icon-twitter" href="https://twitter.com/jquery">Twitter</a></li>
+			<li><a class="icon-comments" href="http://irc.jquery.org/">IRC</a></li>
+			<li><a class="icon-github" href="https://github.com/jquery">GitHub</a></li>
+	</ul>
+	<p class="copyright">
+		Copyright 2017 <a href="https://jquery.org/team/">The jQuery Foundation</a>.
+		<a href="https://jquery.org/license/">jQuery License</a>
+		<span class="sponsor-line"><a href="http://digitalocean.com" rel="nofollow" class="do-link">Web hosting by Digital Ocean</a> | <a href="http://www.stackpath.com" rel="nofollow" class="sp-link">CDN by StackPath</a></span>
+	</p>
+</div>
+
+	</div>
+</footer>
+
+<script>
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-1076265-1']);
+    _gaq.push(['_setDomainName', 'api.jquery.com']);
+    _gaq.push(['_setAllowLinker', true]);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+</script>
+<script type='text/javascript' src='//api.jquery.com/wp-includes/js/comment-reply.min.js?ver=4.5.2'></script>
+<script type='text/javascript' src='//api.jquery.com/wp-includes/js/wp-embed.min.js?ver=4.5.2'></script>
+
+</body>
+</html>
