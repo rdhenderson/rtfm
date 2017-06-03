@@ -185,6 +185,15 @@ h2 {
   height: 40%;
 }
 
+p {
+  color: #000
+}
+
+label {
+  display: block;
+  margin-bottom: 0;
+}
+
 /*Footer Styling*/
 .social {
   width: 40px;
@@ -210,10 +219,11 @@ h2 {
 
 /*Handlebars UI Styling*/
 .card-header-search{
-  background-color: #eee ;
-  color: #90ee90;
+  background-color: #90ee90 ;
+  color: #000;
   text-align: center;
 }
+
 
 .card {
   margin: 7px;

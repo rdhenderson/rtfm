@@ -4,7 +4,7 @@
   <div id="express-method-list" class="collapse show">
   {{#each express}}
   <div class="card">
-    <div class="card-header" role="tab" id="express-{{id}}-header">
+    <div class="card-header-search" role="tab" id="express-{{id}}-header">
       <h5 class="mb-0">
         <a data-toggle="collapse" data-parent="#accordion-express" href="#express-{{id}}" aria-expanded="true" aria-controls="{{link}}">
           {{name}}
@@ -14,7 +14,7 @@
 
     <div id="express-{{id}}" class="collapse" role="tabpanel" aria-labelledby="express-{{id}}-header">
       <div class="card-block doc-item">
-        {{{html}}}
+        {{{detail}}}
       </div>
     </div>
   </div>

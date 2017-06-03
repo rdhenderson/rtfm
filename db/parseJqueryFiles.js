@@ -1,9 +1,13 @@
 const searchJquery = require('../search_modules/search-jquery.js');
 const updateJqueryDetails = require('../search_modules/jquery-detail-update.js');
 const cheerio = require('cheerio');
+const request = require('request');
 
 const fs = require('fs');
 const db = require('../models');
+
+const EXPRESS_BASE_URL = 'https://expressjs.com/en/';
+const EXPRESS_API_URL = EXPRESS_BASE_URL + '4x/api.html';
 
 //Export will run database update
 module.exports = updateDatabase();
@@ -28,6 +32,7 @@ function getMethodFile(fileName){
   return new Promise( (resolve, reject) => {
     fs.readFile(__dirname + `/tmp/jquery/${fileName}.html`, (err, data) => {
           if (err) reject(err);
+          if (data.length === 0) console.log('File is empty - ', fileName);
           resolve(data);
         });
     });
@@ -37,7 +42,7 @@ function parseMethodDetail(body) {
     // Load method html file as body for jquery-style parsing
   return new Promise( (resolve, reject) => {
     const $ = cheerio.load(body);
-    const name = $(".entry-title").html();
+    const name = $(".entry-title").html() || "ERROR";
     // const data_url = item;
     const desc = $(".desc").html();
     const detail = $("#entry-longdesc").html();
@@ -58,11 +63,41 @@ function parseMethodDetail(body) {
   });
 }
 
+// Takes cheerio/jquery object and return an express method object
+function parseExpressSection($el) {
+  return ;
+}
+
+function fetchExpressAPI (callback) {
+    request(EXPRESS_API_URL, (err, res, body) => {
+      if (err) return console.log(err);
+      //Load response html into cheerio for jquery-style manipulation
+      let expressMethods = [];
+      const $ = cheerio.load(body);
+      //Add each section within api-doc as object to methods
+      $('table').attr('class', 'table');
+      $('thead').attr('class', 'thead-inverse');
+
+      $("section", '#api-doc').each( (i, el) => {
+        expressMethods.push({
+            name : $(el).children('h3').first().text(),
+            shortName: $(el).children('h3').first().text().split('(')[0],
+            detail : $(el).html(),
+            link : $(el).children('h3').first().text().split('(')[0].split('.').join("")
+        });
+      });
+
+      // Add methods to database, retrieve and send to callback
+      db.ExpressDoc.bulkCreate(expressMethods)
+        .then(() => db.ExpressDoc.findAll())
+        .then((data) => callback(null, data));
+  });
+}
 function updateDatabase() {
   db.sequelize.sync({ force: true }).then( () => {
 
     // Update express database
-    require('../search_modules/search-express.js').updateDB( () => console.log('Updated Express Table'));
+    fetchExpressAPI( () => console.log('Updated Express Table'));
 
     let methodsList = genMethodList();
     methodsList.forEach( (data_url) => {

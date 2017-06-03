@@ -1,3 +1,4 @@
+
 <!doctype html>
 <!--[if IE 7 ]>		 <html class="no-js ie ie7 lte7 lte8 lte9" lang="en-US"> <![endif]-->
 <!--[if IE 8 ]>		 <html class="no-js ie ie8 lte8 lte9" lang="en-US"> <![endif]-->
@@ -31,8 +32,8 @@
 
 <link rel='https://api.w.org/' href='//api.jquery.com/wp-json/' />
 <meta name="generator" content="WordPress 4.5.2" />
-<link rel="alternate" type="application/json+oembed" href="//api.jquery.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fapi.jquery.com%2FajaxSend%2F" />
-<link rel="alternate" type="text/xml+oembed" href="//api.jquery.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fapi.jquery.com%2FajaxSend%2F&#038;format=xml" />
+<link rel="alternate" type="application/json+oembed" href="//api.jquery.com/wp-json/oembed/1.0/embed?url=http%3A%2F%2Fapi.jquery.com%2FajaxSend%2F" />
+<link rel="alternate" type="text/xml+oembed" href="//api.jquery.com/wp-json/oembed/1.0/embed?url=http%3A%2F%2Fapi.jquery.com%2FajaxSend%2F&#038;format=xml" />
 
 </head>
 <body class="api jquery single single-post postid-17 single-format-standard single-author singular">
@@ -101,7 +102,7 @@
 		<div class="menu-top-container">
 	<ul id="menu-top" class="menu">
 <li class="menu-item"><a href="http://jquery.com/download/">Download</a></li>
-<li class="menu-item"><a href="http://api.jquery.com/">API Documentation</a></li>
+<li class="menu-item current"><a href="http://api.jquery.com/">API Documentation</a></li>
 <li class="menu-item"><a href="http://blog.jquery.com/">Blog</a></li>
 <li class="menu-item"><a href="http://plugins.jquery.com/">Plugins</a></li>
 <li class="menu-item"><a href="http://jquery.com/browser-support/">Browser Support</a></li>
@@ -122,7 +123,7 @@
 
 <div class="content-right twelve columns">
 	<div id="content">
-					
+
 <article id="post-17" class="post-17 post type-post status-publish format-standard hentry category-global-ajax-event-handlers category-65">
 	<header class="entry-header">
 		<h1 class="entry-title">.ajaxSend()</h1>
@@ -154,17 +155,17 @@
 	<table>
 		<tbody>
 			<tr>
-				
+
 				<td class="gutter">
-					
+
 						<div class="line n1">1</div>
-					
+
 						<div class="line n2">2</div>
-					
+
 						<div class="line n3">3</div>
-					
+
 				</td>
-				
+
 				<td class="code">
 					<pre><div class="container"><div class="line"><code><span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">&quot;trigger&quot;</span>&gt;</span>Trigger<span class="tag">&lt;/<span class="title">div</span>&gt;</span></code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">&quot;result&quot;</span>&gt;</span><span class="tag">&lt;/<span class="title">div</span>&gt;</span></code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">&quot;log&quot;</span>&gt;</span><span class="tag">&lt;/<span class="title">div</span>&gt;</span></code></div></div></pre>
 				</td>
@@ -178,17 +179,17 @@
 	<table>
 		<tbody>
 			<tr>
-				
+
 				<td class="gutter">
-					
+
 						<div class="line n1">1</div>
-					
+
 						<div class="line n2">2</div>
-					
+
 						<div class="line n3">3</div>
-					
+
 				</td>
-				
+
 				<td class="code">
 					<pre><div class="container"><div class="line"><code>$( document ).ajaxSend(<span class="keyword">function</span>() {</code></div></div><div class="container"><div class="line"><code>  $( <span class="string">&quot;.log&quot;</span> ).text( <span class="string">&quot;Triggered ajaxSend handler.&quot;</span> );</code></div></div><div class="container"><div class="line"><code>});</code></div></div></pre>
 				</td>
@@ -202,17 +203,17 @@
 	<table>
 		<tbody>
 			<tr>
-				
+
 				<td class="gutter">
-					
+
 						<div class="line n1">1</div>
-					
+
 						<div class="line n2">2</div>
-					
+
 						<div class="line n3">3</div>
-					
+
 				</td>
-				
+
 				<td class="code">
 					<pre><div class="container"><div class="line"><code>$( <span class="string">&quot;.trigger&quot;</span> ).click(<span class="keyword">function</span>() {</code></div></div><div class="container"><div class="line"><code>  $( <span class="string">&quot;.result&quot;</span> ).load( <span class="string">&quot;ajax/test.html&quot;</span> );</code></div></div><div class="container"><div class="line"><code>});</code></div></div></pre>
 				</td>
@@ -227,21 +228,21 @@
 	<table>
 		<tbody>
 			<tr>
-				
+
 				<td class="gutter">
-					
+
 						<div class="line n1">1</div>
-					
+
 						<div class="line n2">2</div>
-					
+
 						<div class="line n3">3</div>
-					
+
 						<div class="line n4">4</div>
-					
+
 						<div class="line n5">5</div>
-					
+
 				</td>
-				
+
 				<td class="code">
 					<pre><div class="container"><div class="line"><code>$( document ).ajaxSend(<span class="keyword">function</span>( event, jqxhr, settings ) {</code></div></div><div class="container"><div class="line"><code>  <span class="keyword">if</span> ( settings.url == <span class="string">&quot;ajax/test.html&quot;</span> ) {</code></div></div><div class="container"><div class="line"><code>    $( <span class="string">&quot;.log&quot;</span> ).text( <span class="string">&quot;Triggered ajaxSend handler.&quot;</span> );</code></div></div><div class="container"><div class="line"><code>  }</code></div></div><div class="container"><div class="line"><code>});</code></div></div></pre>
 				</td>
@@ -266,17 +267,17 @@
 	<table>
 		<tbody>
 			<tr>
-				
+
 				<td class="gutter">
-					
+
 						<div class="line n1">1</div>
-					
+
 						<div class="line n2">2</div>
-					
+
 						<div class="line n3">3</div>
-					
+
 				</td>
-				
+
 				<td class="code">
 					<pre><div class="container"><div class="line"><code>$( document ).ajaxSend(<span class="keyword">function</span>( event, request, settings ) {</code></div></div><div class="container"><div class="line"><code>  $( <span class="string">&quot;#msg&quot;</span> ).append( <span class="string">&quot;&lt;li&gt;Starting request at &quot;</span> + settings.url + <span class="string">&quot;&lt;/li&gt;&quot;</span> );</code></div></div><div class="container"><div class="line"><code>});</code></div></div></pre>
 				</td>
@@ -540,7 +541,7 @@
 			</div>
 		</div>
 
-		
+
 <div id="legal">
 	<ul class="footer-site-links">
 			<li><a class="icon-pencil" href="http://learn.jquery.com/">Learning Center</a></li>

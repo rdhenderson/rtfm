@@ -23,7 +23,7 @@
 this["Template"]["express"] = Handlebars.template({"1":function(container,depth0,helpers,partials,data) {
     var stack1, helper, alias1=depth0 != null ? depth0 : (container.nullContext || {}), alias2=helpers.helperMissing, alias3="function", alias4=container.escapeExpression;
 
-  return "  <div class=\"card\">\n    <div class=\"card-header\" role=\"tab\" id=\"express-"
+  return "  <div class=\"card\">\n    <div class=\"card-header-search\" role=\"tab\" id=\"express-"
     + alias4(((helper = (helper = helpers.id || (depth0 != null ? depth0.id : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"id","hash":{},"data":data}) : helper)))
     + "-header\">\n      <h5 class=\"mb-0\">\n        <a data-toggle=\"collapse\" data-parent=\"#accordion-express\" href=\"#express-"
     + alias4(((helper = (helper = helpers.id || (depth0 != null ? depth0.id : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"id","hash":{},"data":data}) : helper)))
@@ -36,7 +36,7 @@ this["Template"]["express"] = Handlebars.template({"1":function(container,depth0
     + "\" class=\"collapse\" role=\"tabpanel\" aria-labelledby=\"express-"
     + alias4(((helper = (helper = helpers.id || (depth0 != null ? depth0.id : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"id","hash":{},"data":data}) : helper)))
     + "-header\">\n      <div class=\"card-block doc-item\">\n        "
-    + ((stack1 = ((helper = (helper = helpers.html || (depth0 != null ? depth0.html : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"html","hash":{},"data":data}) : helper))) != null ? stack1 : "")
+    + ((stack1 = ((helper = (helper = helpers.detail || (depth0 != null ? depth0.detail : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"detail","hash":{},"data":data}) : helper))) != null ? stack1 : "")
     + "\n      </div>\n    </div>\n  </div>\n";
 },"compiler":[7,">= 4.0.0"],"main":function(container,depth0,helpers,partials,data) {
     var stack1;
@@ -104,7 +104,7 @@ this["Template"]["jquery_example"] = Handlebars.template({"1":function(container
 this["Template"]["jquery"] = Handlebars.template({"1":function(container,depth0,helpers,partials,data) {
     var stack1, helper, alias1=depth0 != null ? depth0 : (container.nullContext || {}), alias2=helpers.helperMissing, alias3="function", alias4=container.escapeExpression;
 
-  return "      <div class=\"card\">\n\n        <div class=\"card-header\" role=\"tab\" id=\"jquery-"
+  return "      <div class=\"card\">\n\n        <div class=\"card-header-search\" role=\"tab\" id=\"jquery-"
     + alias4(((helper = (helper = helpers.id || (depth0 != null ? depth0.id : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"id","hash":{},"data":data}) : helper)))
     + "-header\">\n          <h5 class=\"mb-0\">\n            <a data-toggle=\"collapse\" data-parent=\"#accordion-jquery\" href=\"#accordion-"
     + alias4(((helper = (helper = helpers.id || (depth0 != null ? depth0.id : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"id","hash":{},"data":data}) : helper)))
@@ -136,7 +136,7 @@ this["Template"]["jquery"] = Handlebars.template({"1":function(container,depth0,
 this["Template"]["mdn"] = Handlebars.template({"1":function(container,depth0,helpers,partials,data) {
     var stack1, helper, alias1=depth0 != null ? depth0 : (container.nullContext || {}), alias2=helpers.helperMissing, alias3="function", alias4=container.escapeExpression;
 
-  return "  <div class=\"card\">\n    <div class=\"card-header\" role=\"tab\" id=\""
+  return "  <div class=\"card\">\n    <div class=\"card-header-search\" role=\"tab\" id=\""
     + alias4(((helper = (helper = helpers.link || (depth0 != null ? depth0.link : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"link","hash":{},"data":data}) : helper)))
     + "-header\">\n      <h5 class=\"mb-0\">\n        <a data-toggle=\"collapse\" data-parent=\"#accordion\" href=\"#"
     + alias4(((helper = (helper = helpers.link || (depth0 != null ? depth0.link : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"link","hash":{},"data":data}) : helper)))
@@ -162,7 +162,7 @@ this["Template"]["mdn"] = Handlebars.template({"1":function(container,depth0,hel
 this["Template"]["stack_answers"] = Handlebars.template({"1":function(container,depth0,helpers,partials,data) {
     var stack1, helper, alias1=depth0 != null ? depth0 : (container.nullContext || {}), alias2=helpers.helperMissing, alias3="function", alias4=container.escapeExpression;
 
-  return "  <div class=\"card\">\n    <div class=\"card-header\" role=\"tab\" id=\"header-"
+  return "  <div class=\"card\">\n    <div class=\"card-header-search\" role=\"tab\" id=\"header-"
     + alias4(((helper = (helper = helpers.answer_id || (depth0 != null ? depth0.answer_id : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"answer_id","hash":{},"data":data}) : helper)))
     + "\">\n      <h5 class=\"mb-0\">\n        <a data-toggle=\"collapse\" data-parent=\"#answers-"
     + alias4(((helper = (helper = helpers.parent || (depth0 != null ? depth0.parent : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"parent","hash":{},"data":data}) : helper)))

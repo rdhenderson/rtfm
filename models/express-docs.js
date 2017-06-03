@@ -11,10 +11,10 @@ module.exports = function(sequelize, DataTypes) {
         len: [1, 255]
       }
     },
-    shortName: {
+    data_url: {
       type: DataTypes.TEXT
     },
-    html: {
+    detail: {
       type: DataTypes.TEXT,
     }
 
@@ -22,7 +22,7 @@ module.exports = function(sequelize, DataTypes) {
   {
       indexes: [
         // add a FULLTEXT index
-        { type: 'FULLTEXT', name: 'text_idx', fields: ['html', 'name'] }
+        { type: 'FULLTEXT', name: 'text_idx', fields: ['detail', 'name'] }
       ]
     });
   return ExpressDoc;

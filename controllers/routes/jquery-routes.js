@@ -1,26 +1,27 @@
 
-const path = require('path');
-const jqueryDocs = require('../../search_modules/search-jquery.js');
+const db = require('../../models');
 
 module.exports = function(app) {
+
   app.get( '/api/jquery/methods/', ( req, res ) => {
-    jqueryDocs.getMethods( (err, data ) => {
-      if (err) throw err;
+    db.JQueryDoc.findAll().then( (data) => {
       res.send(data);
-    });
+    }).catch( (err) => console.log(err));
   });
 
   app.get( '/api/jquery/detail/:id', ( req, res ) => {
-    jqueryDocs.getById(req.params.id, ( err, data ) => {
-      if ( err ) throw err;
+    db.JQueryDoc.findOne({
+      where: {id: req.params.id}
+    }).then( (data) => {
       res.send(data);
-    });
+    }).catch( (err) => console.log(err));
   });
 
   app.get( '/api/jquery/search/:query', ( req, res ) => {
-    jqueryDocs.getByName(req.params.query, ( err, data ) => {
-      if ( err ) throw err;
-      res.send(data);
-    });
+    db.JQueryDoc.find({
+      where: ['MATCH (detail, name, description) AGAINST(? IN NATURAL LANGUAGE MODE)', [req.params.query]]
+    }).then((data) => {
+        res.send(data.dataValues);
+    }).catch( (err) => console.log(err));
   });
 };
