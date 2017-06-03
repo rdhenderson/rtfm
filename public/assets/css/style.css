@@ -1,5 +1,9 @@
+#sizing{
+  width: 95%;
+
+}
 body {
-  padding-top: 110px; 
+  padding-top: 110px;
 }
 #red {
   color: rgb(210, 115, 119);
@@ -116,6 +120,9 @@ h3 {
   background-color: #abacac;
   width: 100%;
   text-align: center;
+  border-style: solid;
+
+  border-color: rgb(114, 174, 234);
 }
 
 .verticalhr {
@@ -139,6 +146,8 @@ h3 {
 
 #stack-div {
   overflow: auto;
+  border-right: 3px solid rgb(114, 174, 234);
+
 }
 
 #documentation-div {
