@@ -19,6 +19,7 @@
     "password": null,
     "database": "database_production",
     "host": "localhost",
-    "dialect": "mysql"
+    "dialect": "mysql",
+    "use_env_variable" : "JAWSDB_URL"
   }
 }

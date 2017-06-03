@@ -4,8 +4,7 @@
   "description": "Server for fuzzy searching and better code example discovery",
   "main": "server.js",
   "scripts": {
-    "test": "mocha",
-    "post-install": "node ./db/initDbScript.js <DATABASE NAME>"
+    "test": "mocha"
   },
   "repository": {
     "type": "git",
@@ -21,18 +20,20 @@
   "license": "MIT",
   "dependencies": {
     "body-parser": "^1.17.2",
-    "cheerio": "^0.22.0",
     "express": "^4.15.3",
     "fuse.js": "^3.0.3",
     "fuzzy": "^0.1.3",
+    "http": "0.0.0",
     "mysql": "^2.13.0",
-    "node-fetch": "^1.6.3",
-    "osmosis": "^1.1.4",
     "request": "^2.81.0",
-    "scrape-mdn": "^1.0.2",
-    "sequelize": "^3.30.4"
+    "sequelize": "^3.30.4",
+    "cheerio": "^0.22.0",
+    "osmosis": "^1.1.4"
   },
   "devDependencies": {
+
+    "node-fetch": "^1.6.3",
+    "scrape-mdn": "^1.0.2",
     "dotenv": "^4.0.0",
     "grunt": "^1.0.1",
     "grunt-concurrent": "^2.3.1",
@@ -43,5 +44,9 @@
     "nodemon": "^1.11.0",
     "open": "0.0.5",
     "strict-uri-encode": "^2.0.0"
+  },
+  "engines": {
+    "node": "7.7.2",
+    "npm": "4.1.2"
   }
 }
