@@ -74,6 +74,7 @@ module.exports = {
       return callback(null, data);
     });
   },
+
   getDetail : function (href, callback) {
 
   }
