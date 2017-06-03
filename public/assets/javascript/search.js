@@ -93,7 +93,7 @@ function searchHandler() {
   //Template literal expansion using backticks instead of quote/apostrophe
 
   $.get(`/api/${language}/search/${query}`, (data) => {
-     $('#doc-query-result').empty().html(data.html);
+     $('#doc-query-result').empty().html(data.html || data.detail);
     // $('#express-method-list').collapse('toggle');
   });
 

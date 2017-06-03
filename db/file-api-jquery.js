@@ -41,17 +41,29 @@ function scrapeJQueryAPI () {
     //Add each section within api-doc as object to methods
     $(".entry-title").each( (i, el) => {
       const url = "https:" + $(el).children('a:first-child').attr('href');
+      console.log('url ', url);
       requestFile(url)
       .then( (data) => writeAPI(parseFilePath(url), data) );
     });
   });
 }
 
+function getRawFile(url){
+  const filePath = parseFilePath(url);
+  return new Promise( (resolve, reject) => {
+    fs.readFile(__dirname + filePath, (err, data) => {
+      if(err) throw error;
+      resolve(data)
+    });
+  });
+}
 
 module.exports = {
   scrapeJquery : scrapeJQueryAPI,
-  updateFile : (name) => {
+  getMethodBody : getRawFile,
+  updateFile : (url) => {
+    const name = parseFilePath(url);
     requestFile(`https://api.jquery.com/${name}/`)
-    .then( (body) => writeAPI(`jquery/${name}`, body) );
+    .then( (body) => writeAPI(name, body) );
   }
 }

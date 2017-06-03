@@ -26,15 +26,14 @@ function parseExpressSection($el) {
   return {
       name : $el.children('h3').first().text(),
       shortName: $el.children('h3').first().text().split('(')[0],
-      html : $el.html(),
+      detail : $el.html(),
       link : $el.children('h3').first().text().split('(')[0].split('.').join("")
   };
 }
 
 function fetchAPI (callback) {
-    let queryURL = EXPRESS_API_URL;
-    queryExpress(queryURL, (err, body) => {
-      if (err) return console.err(err);
+    request(EXPRESS_API_URL, (err, res, body) => {
+      if (err) return console.log(err);
       //Load response html into cheerio for jquery-style manipulation
       const $ = cheerio.load(body);
       //Add each section within api-doc as object to methods
@@ -51,6 +50,7 @@ function fetchAPI (callback) {
         .then((data) => callback(null, data));
   });
 }
+
 module.exports = {
   //Return methods previously gathered
   getMethods : function (callback) {
@@ -76,7 +76,7 @@ module.exports = {
   getByName : function (query, callback) {
     db.ExpressDoc.findAll().then( (data) => {
       //FIXME: NEED ERROR HANDLING FOR BAD SEARCH OR EMPTY DB
-      const match = data.filter( (el) =>  query.includes(el.shortName))[0];
+      const match = data.filter( (el) =>  query.includes(el.data_url))[0];
       return callback(null, match);
     });
   }
