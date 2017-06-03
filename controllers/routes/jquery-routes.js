@@ -11,7 +11,7 @@ module.exports = function(app) {
   });
 
   app.get( '/api/jquery/detail/:id', ( req, res ) => {
-    jqueryDocs.getDetails(req.params.id, ( err, data ) => {
+    jqueryDocs.getById(req.params.id, ( err, data ) => {
       if ( err ) throw err;
       res.send(data);
     });
