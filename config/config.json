@@ -4,8 +4,7 @@
     "password": null,
     "database": "rtfm",
     "host": "localhost",
-    "dialect": "mysql",
-    "logging": false
+    "dialect": "mysql"
   },
   "test": {
     "username": "root",

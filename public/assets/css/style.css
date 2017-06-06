@@ -3,6 +3,10 @@ body{
   font-family: 'Roboto Mono';
 }
 
+.star {
+  color: yellow;
+}
+
 #search-input,
  #search-submit{
   color: #90ee90;
@@ -246,7 +250,7 @@ label {
 
 .card-block a {
   color: rgb(201, 156, 110);
-  font-size: 110%; 
+  font-size: 110%;
 }
 
 .card-header-search a {

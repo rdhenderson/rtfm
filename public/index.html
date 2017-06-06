@@ -17,8 +17,6 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb"
     crossorigin="anonymous"></script>
 
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn"
-    crossorigin="anonymous"></script>
   <!-- <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script> -->
   <!-- Handlebars browser-side -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.8/handlebars.min.js"></script>
@@ -46,7 +44,10 @@
          <option value="jquery">jQuery</option>
          <option value="javascript">Javascript</option>
        </select>
-
+   <div class="input-group">
+     <input type="text" id="user-input" class="form-control" placeholder="Enter Username..">
+         <button class="btn btn-default btn-sm" id="user-submit" type="button"><strong>Submit</strong></button>
+   </div>
     <div class="input-group">
       <input type="text" id="search-input" class="form-control" placeholder="Enter code here...">
           <button class="btn btn-default btn-sm" id="search-submit" type="button"><strong>Submit</strong></button>

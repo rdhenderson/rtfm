@@ -26,6 +26,8 @@ app.use(express.static("./public"));
 // Requiring our models for syncing
 let db = require("./models");
 
+// let User = require('./models').User;
+
 // Routes =============================================================
 require("./controllers/routes.js")(app);
 
@@ -36,6 +38,22 @@ db.sequelize.sync({ force: false }).then(function() {
     //Will force an update of database -- FIXME -- NEED MORE ELEGANT SOLUTION.
     // require('./search_modules/search-jquery.js').updateDB();
     console.log("App listening on PORT " + PORT);
+
+    //DB Testing:
+    // const User_id = "7e284b7c-82bc-4b0e-a5fe-58258f70d9d2";
+    // for( var key in db.User) {
+    //   // if (db.User.hasOwnProperty(key))
+    //
+    //    if (key.includes('set'))  console.log('db.User.' + key);
+    // }
+
+    console.log('Associations: ', db.ExpressDoc.associations);
+    // db.User.setBookmarks( {UserId: User_id, ExpressDocId : 1})
+    // db.User.create({username: "Bob", role: 'user'})
+    // db.ExpressDoc.getUser({where: {id:1}})
+    // const type = $("#language-select option:selected").val();
+    // .then( (results) => console.log("posted", results) );
+
   });
 });
 

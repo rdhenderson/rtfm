@@ -1,5 +1,6 @@
 'use strict';
 let methods = {};
+let currentUser = "test";
 
 $(document).ready(() => {
   getExpressAPI(methods)
@@ -38,6 +39,11 @@ function initPage(methods) {
   $('#search-clear').on('click', () => $('#search-input').val(''));
   $("#documentation-div").on('click', '.detail-link', toggleDetails);
   $("#documentation-div").on('click', '.example-link', toggleExamples);
+  $("#documentation-div").on('click', '.star', starArticle);
+  $("#user-submit").on('click', () => {
+    $.post('api/user', {username: $("#user-input").val() })
+      .then( (uid) => currentUser = uid );
+  });
 
   // $('#search-input').fuzzyComplete(methods.express);
 
@@ -47,6 +53,13 @@ function initPage(methods) {
 
   //DISCUSS: Hiding images to allow drawing method listing
   //  hideImages();
+}
+
+function starArticle(){
+  const id = $(this).data('id');
+  const User_id = "7e284b7c-82bc-4b0e-a5fe-58258f70d9d2";
+  // const type = $("#language-select option:selected").val();
+  $.post(`/api/bookmark`, {UserId: User_id, ExpressDocId : 1}).then( (results) => console.log("posted", results));
 }
 
 function toggleDetails() {

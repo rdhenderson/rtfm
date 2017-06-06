@@ -21,6 +21,8 @@ fs
   })
   .forEach(function(file) {
     var model = sequelize['import'](path.join(__dirname, file));
+    // console.log("model names: ", model.name);
+
     db[model.name] = model;
   });
 
@@ -32,5 +34,15 @@ Object.keys(db).forEach(function(modelName) {
 
 db.sequelize = sequelize;
 db.Sequelize = Sequelize;
+
+// Declare Custom Association
+// db.ExpressDoc.belongsToMany(db.User, {through: 'Bookmark'});
+// db.JQueryDoc.belongsToMany(db.User, {through: 'user_jquery',as: 'Method'});
+User.belongsToMany(models.ExpressDoc, { through: "Bookmark"});
+ExpressDoc.belongsToMany(models.User, { through: "Bookmark"});
+
+// db.User.belongsToMany(db.ExpressDoc,  {through: "docs"});
+
+// db.User.hasMany(db.JQueryDoc, {through: 'userJQuery', as: 'Method'});
 
 module.exports = db;
